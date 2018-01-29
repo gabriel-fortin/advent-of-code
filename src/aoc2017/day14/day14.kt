@@ -1,6 +1,8 @@
 package aoc2017.day14
 
-import aoc2017.KnotHash
+import common.KnotHash
+import common.FindUnion
+import common.FindUnionImpl
 
 //const val ONE = '1'
 //const val ZERO = '0'
@@ -88,70 +90,6 @@ fun hexadecimalToBinary(c: Char): String {
     result[2] = if ((asInt and (1 shl 1)) > 0) ONE else ZERO
     result[3] = if ((asInt and (1 shl 0)) > 0) ONE else ZERO
     return result.joinToString("")
-}
-
-interface FindUnion {
-    /** returns the id for the newly created set */
-    fun addSet(): Int
-
-    /** "union": returns the id of the merged sets */
-    fun joinSets(set1: Int, set2: Int): Int
-
-    /** "find": returns the id of the set containing the given element */
-    fun findSet(element: Int): Int
-
-//    /** returns a list of "union-ed" sets */
-//    fun allSets(): List<Int>
-
-    /** Number of sets currently in the structure */
-    var setCount: Int
-}
-
-class FindUnionImpl : FindUnion {
-    private val parents: MutableMap<Int, Int?> = HashMap()
-    private var lastIndex = -1
-
-    /** Number of sets */
-    override var setCount = 0
-
-    override fun addSet(): Int {
-        setCount++
-        parents[++lastIndex] = null
-        return lastIndex
-    }
-
-    override fun joinSets(set1: Int, set2: Int): Int {
-        if (set1 !in (0..lastIndex) || set2 !in (0..lastIndex)) {
-            throw Exception("invalid argument")
-        }
-
-        val set1Root = findSet(set1)
-
-        if (findSet(set2) == set1Root) return set1Root
-
-        setCount--
-
-        /* attach set2 and all its ascendants to the new root */
-        var el = set2
-        while (true) {
-            val p = parents[el]
-            parents[el] = set1Root
-            el = p ?: break
-        }
-
-        return set1Root
-    }
-
-    override fun findSet(element: Int): Int {
-        var el = element
-        while (true) {
-            el = parents[el] ?: return el
-        }
-    }
-
-//    override fun allSets(): List<Int> {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//    }
 }
 
 

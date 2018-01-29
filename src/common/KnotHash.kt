@@ -1,4 +1,4 @@
-package aoc2017
+package common
 
 
 class KnotHash(val size: Int = 256) {
