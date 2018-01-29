@@ -9,9 +9,8 @@ fun main(args: Array<String>) {
 //    val seedA = 65
 //    val seedB = 8921
 
-    val genA = { AdventGenerator(seedA, factorA) }
-    val genA_ = { generator(seedA, factorA) }
-    val genB = { AdventGenerator(seedB, factorB) }
+    val genA = { generator(seedA, factorA) }
+    val genB = { generator(seedB, factorB) }
 
     // part 1
     judge(40_000_000, genA(), genB())
@@ -28,19 +27,6 @@ fun generator(seed: Int, factor: Int) =
         generateSequence(seed) { x ->
             ((x.toLong() * factor) % 2147483647).toInt()
         }
-
-class AdventGenerator(seed: Int, val factor: Int) : Sequence<Int> {
-    var value: Long = seed.toLong()
-
-    override fun iterator(): Iterator<Int> = object : Iterator<Int> {
-        override fun hasNext(): Boolean = true
-
-        override fun next(): Int {
-            value = (value * factor) % 2147483647
-            return value.toInt()
-        }
-    }
-}
 
 fun judge(sampleSize: Int, genA: Sequence<Int>, genB: Sequence<Int>): Int {
     fun bitmask(n: Int): Int = n and ((1 shl 16) - 1)
