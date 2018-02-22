@@ -3,7 +3,7 @@ package aoc2017.day16
 
 const val LENGTH = 16
 val programs: String = ('a'..'p').joinToString("")
-const val repetitions = 1000000000
+const val repetitions = 1000_000_000 - 1
 
 fun main(args: Array<String>) {
     // simpler inputs for debugging
@@ -12,22 +12,18 @@ fun main(args: Array<String>) {
 
     var input = preprocess(rawInput)
     println("input size: ${input.size}")
-    input = optimize(input)
+//    input = optimize(input)
     println("input size: ${input.size}")
 
     val part1 = preprocess(rawInput)
             .fold(programs) { acc, cmd ->
-//                print(cmd)
                 val after = cmd.process(acc)
-//                println("   -> $after")
                 after
             }
 
-    println(part1)
+    println("part 1: " + part1)
 
-    part2BruteForce(part1, input)
-
-//    part2Intelligent(part1, input)
+    part2UsingCycleDetection(part1, input)
 
 }
 
@@ -50,6 +46,31 @@ fun optimize(input: List<Command>): List<Command> {
                 }
             }
             .filterNot { it is Command.Spin }
+}
+
+fun part2UsingCycleDetection(startOrder: String, danceMoves: List<Command>) {
+    var acc = startOrder
+    var cycleSize = repetitions + 1  // dummy value
+
+    for (i in 1..repetitions) {
+        acc = danceMoves.fold(acc) { acc, cmd ->
+            cmd.process(acc)
+        }
+        if (acc == startOrder) {
+            cycleSize = i
+            break
+        }
+    }
+
+    println("cycle size: $cycleSize")
+
+    for (i in 1..(repetitions%cycleSize)) {
+        acc = danceMoves.fold(acc) { acc, cmd ->
+            cmd.process(acc)
+        }
+    }
+
+    println("RESULT - part 2 - cycle detection: $acc")
 }
 
 
@@ -103,7 +124,25 @@ fun part2BruteForce(startOrder: String, danceMoves: List<Command>) {
         acc = danceMoves.fold(acc) { acc, cmd ->
             cmd.process(acc)
         }
+        if (acc == startOrder) {
+            println("@@@@ repetition spotted after $i repetitions")
+        }
     }
 
     println("   RESULT brute      :  $acc")
 }
+
+fun measure(block: () -> Unit) {
+    val nanoTimeBefore = System.nanoTime()
+    block()
+    val nanoTimeAfter = System.nanoTime()
+    val nanoDiff = nanoTimeAfter - nanoTimeBefore
+    println("   >> MEASURED TIME: ${nanoDiff / 1000_000_000.0}s")
+}
+
+/*
+ Bare:
+ >> MEASURED TIME: 12.346357102s
+ With optimization:
+ >> MEASURED TIME: 10.141489832s
+*/
