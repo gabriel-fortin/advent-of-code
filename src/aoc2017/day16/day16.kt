@@ -132,14 +132,6 @@ fun part2BruteForce(startOrder: String, danceMoves: List<Command>) {
     println("   RESULT brute      :  $acc")
 }
 
-fun measure(block: () -> Unit) {
-    val nanoTimeBefore = System.nanoTime()
-    block()
-    val nanoTimeAfter = System.nanoTime()
-    val nanoDiff = nanoTimeAfter - nanoTimeBefore
-    println("   >> MEASURED TIME: ${nanoDiff / 1000_000_000.0}s")
-}
-
 /*
  Bare:
  >> MEASURED TIME: 12.346357102s
