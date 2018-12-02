@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="" />
+    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/aoc2018/day01/day01.kt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/aoc2018/day01/input.kt" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,55 +16,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="day10_part2.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aoc2017/day10/day10_part2.kt">
+      <file leaf-file-name="input.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aoc2018/day01/input.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="27" selection-end-column="37" />
-              <folding>
-                <element signature="n#!!block;n#Kekeke2#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="day14.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aoc2017/day14/day14.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2159">
-              <caret line="135" column="22" lean-forward="true" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
-              <folding>
-                <element signature="n#!!block;n#hexadecimalToBinary#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="day15.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aoc2017/day15/day15.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="38" column="49" lean-forward="true" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="day16.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="day01.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/aoc2018/day01/day01.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="day16.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aoc2017/day16/day16.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KnotHash.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aoc2017/KnotHash.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="2244">
+              <caret line="132" column="1" lean-forward="false" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -80,11 +60,16 @@
     <findStrings>
       <find>&quot;reg&quot;</find>
       <find>'0'</find>
+      <find>\\n&quot;\s*\+\n\s+&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>reg</replace>
       <replace>ZERO</replace>
+      <replace />
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -132,12 +117,21 @@
         <option value="$PROJECT_DIR$/src/aoc2017/KnotHash.kt" />
         <option value="$PROJECT_DIR$/src/aoc2017/day14/day14.kt" />
         <option value="$PROJECT_DIR$/src/aoc2017/day15/day15.kt" />
+        <option value="/RegExp Fragment (input.kt:49323).regexp" />
+        <option value="/RegExp Fragment (input.kt:49428).regexp" />
+        <option value="/RegExp Fragment (input.kt:49672).regexp" />
+        <option value="$PROJECT_DIR$/src/aoc2017/day16/input.kt" />
+        <option value="$PROJECT_DIR$/src/aoc2017/day16/Command.kt" />
         <option value="$PROJECT_DIR$/src/aoc2017/day16/day16.kt" />
+        <option value="$PROJECT_DIR$/src/common/Profiling.kt" />
+        <option value="$PROJECT_DIR$/src/aoc2017/day17/day17.kt" />
+        <option value="$PROJECT_DIR$/src/aoc2018/day01/day01.kt" />
+        <option value="$PROJECT_DIR$/src/aoc2018/day01/input.kt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="49" />
+    <option name="x" value="2609" />
     <option name="y" value="24" />
     <option name="width" value="1193" />
     <option name="height" value="1416" />
@@ -156,6 +150,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -171,6 +166,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,27 +184,54 @@
               <item name="advent_of_code_2017" type="b2602c69:ProjectViewProjectNode" />
               <item name="advent_of_code_2017" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="day1" type="462c0819:PsiDirectoryNode" />
+              <item name="aoc2017" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="advent_of_code_2017" type="b2602c69:ProjectViewProjectNode" />
               <item name="advent_of_code_2017" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="aoc2017" type="462c0819:PsiDirectoryNode" />
+              <item name="day16" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advent_of_code_2017" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advent_of_code_2017" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aoc2017" type="462c0819:PsiDirectoryNode" />
+              <item name="day17" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advent_of_code_2017" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advent_of_code_2017" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="day01" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advent_of_code_2017" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advent_of_code_2017" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="aoc2017.day16" />
+      <recent name="common" />
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/aoc2016/day1" />
       <recent name="$PROJECT_DIR$/src" />
@@ -225,7 +249,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.Day 16">
+  <component name="RunManager" selected="Kotlin.Day 1">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -267,7 +291,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="2016 Day 1 Final" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="2016 Day 1 Final" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2016">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -279,7 +303,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="2016 Day 1" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="2016 Day 1" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2016">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -291,7 +315,19 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 10 part 1" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 1" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="aoc2018.day01.Day01Kt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <module name="advent_of_code_2017" />
+      <envs />
+    </configuration>
+    <configuration name="Day 10 part 1" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -303,7 +339,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 10 part 2" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 10 part 2" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -315,7 +351,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 11" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 11" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -327,7 +363,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 12" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 12" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -339,7 +375,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 14" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 14" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -351,7 +387,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 15" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 15" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -363,7 +399,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 16" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 16" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -375,7 +411,19 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 2" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 17" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="aoc2017.day17.Day17Kt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <module name="advent_of_code_2017" />
+      <envs />
+    </configuration>
+    <configuration name="Day 2" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -387,7 +435,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 3" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 3" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -399,7 +447,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 4" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 4" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -411,7 +459,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 6" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 6" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -423,7 +471,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 7" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 7" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -435,7 +483,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 8" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 8" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -447,7 +495,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day 9" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day 9" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -459,7 +507,7 @@
       <module name="advent_of_code_2017" />
       <envs />
     </configuration>
-    <configuration name="Day1" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration name="Day1" type="JetRunConfigurationType" factoryName="Kotlin" folderName="2017">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -520,24 +568,26 @@
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
-    <list size="17">
-      <item index="0" class="java.lang.String" itemvalue="Kotlin.Day1" />
-      <item index="1" class="java.lang.String" itemvalue="Kotlin.Day 2" />
-      <item index="2" class="java.lang.String" itemvalue="Kotlin.Day 3" />
-      <item index="3" class="java.lang.String" itemvalue="Kotlin.Day 4" />
-      <item index="4" class="java.lang.String" itemvalue="Kotlin.Day 6" />
-      <item index="5" class="java.lang.String" itemvalue="Kotlin.Day 14" />
-      <item index="6" class="java.lang.String" itemvalue="Kotlin.Day 15" />
-      <item index="7" class="java.lang.String" itemvalue="Kotlin.Day 16" />
-      <item index="8" class="java.lang.String" itemvalue="Kotlin.Day 7" />
-      <item index="9" class="java.lang.String" itemvalue="Kotlin.Day 8" />
-      <item index="10" class="java.lang.String" itemvalue="Kotlin.Day 9" />
-      <item index="11" class="java.lang.String" itemvalue="Kotlin.Day 10 part 1" />
-      <item index="12" class="java.lang.String" itemvalue="Kotlin.Day 10 part 2" />
-      <item index="13" class="java.lang.String" itemvalue="Kotlin.Day 11" />
-      <item index="14" class="java.lang.String" itemvalue="Kotlin.Day 12" />
-      <item index="15" class="java.lang.String" itemvalue="Kotlin.2016 Day 1" />
-      <item index="16" class="java.lang.String" itemvalue="Kotlin.2016 Day 1 Final" />
+    <list size="19">
+      <item index="0" class="java.lang.String" itemvalue="Kotlin.2016 Day 1" />
+      <item index="1" class="java.lang.String" itemvalue="Kotlin.2016 Day 1 Final" />
+      <item index="2" class="java.lang.String" itemvalue="Kotlin.Day1" />
+      <item index="3" class="java.lang.String" itemvalue="Kotlin.Day 2" />
+      <item index="4" class="java.lang.String" itemvalue="Kotlin.Day 3" />
+      <item index="5" class="java.lang.String" itemvalue="Kotlin.Day 4" />
+      <item index="6" class="java.lang.String" itemvalue="Kotlin.Day 6" />
+      <item index="7" class="java.lang.String" itemvalue="Kotlin.Day 7" />
+      <item index="8" class="java.lang.String" itemvalue="Kotlin.Day 8" />
+      <item index="9" class="java.lang.String" itemvalue="Kotlin.Day 9" />
+      <item index="10" class="java.lang.String" itemvalue="Kotlin.Day 10 part 1" />
+      <item index="11" class="java.lang.String" itemvalue="Kotlin.Day 10 part 2" />
+      <item index="12" class="java.lang.String" itemvalue="Kotlin.Day 11" />
+      <item index="13" class="java.lang.String" itemvalue="Kotlin.Day 12" />
+      <item index="14" class="java.lang.String" itemvalue="Kotlin.Day 14" />
+      <item index="15" class="java.lang.String" itemvalue="Kotlin.Day 15" />
+      <item index="16" class="java.lang.String" itemvalue="Kotlin.Day 16" />
+      <item index="17" class="java.lang.String" itemvalue="Kotlin.Day 17" />
+      <item index="18" class="java.lang.String" itemvalue="Kotlin.Day 1" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -557,19 +607,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="24" width="1193" height="1416" extended-state="4" />
+    <frame x="2609" y="24" width="1193" height="1416" extended-state="4" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952815" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920218" sideWeight="0.50304615" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26179606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952815" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26103795" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3353989" sideWeight="0.49695387" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920218" sideWeight="0.49695387" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24895222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.281114" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36377475" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -583,6 +633,32 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -602,98 +678,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/aoc2017/day6/day6.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2017/day6/input.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2017/day3/day3.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2017/day3/Wanderer.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2017/day1/day1.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2016/day1/2016_day1.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2016/day1/2016_day1_final.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2017/day1/day1.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="31" lean-forward="false" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2016/day1/2016_day1.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="62" lean-forward="false" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2017/day1/day1.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2016/day1/2016_day1.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="62" lean-forward="false" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2016/day1/2016_day1.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/day1_final.kt" />
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/collections/TypeAliases.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="67" lean-forward="true" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/collections/Collections.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -927,45 +911,213 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="27" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!block;n#Kekeke2#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aoc2017/KnotHash.kt">
+    <entry file="file://$PROJECT_DIR$/src/common/KnotHash.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/kotlinc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2088">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aoc2017/day14/day14.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="135" column="22" lean-forward="true" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!block;n#hexadecimalToBinary#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="679">
+          <caret line="51" column="39" lean-forward="true" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aoc2017/day15/day15.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="38" column="49" lean-forward="true" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
-          <folding />
+        <state relative-caret-position="476">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/text/regex/Regex.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="101" column="11" lean-forward="false" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aoc2017/day16/Command.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/FindUnionImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/Profiling.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aoc2017/day17/day17.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aoc2017/day16/input.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aoc2017/day16/day16.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        <state relative-caret-position="2244">
+          <caret line="132" column="1" lean-forward="false" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/aoc2018/day01/input.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aoc2018/day01/day01.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>advent_of_code_2017</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>KotlinJavaRuntime</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
