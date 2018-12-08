@@ -1,6 +1,12 @@
 package aoc2018.day02
 
-fun preprocess(rawInput: String): List<String> = rawInput.split("\n")
+fun preprocess(rawInput: String): List<String> = rawInput.split("\n", " ")
+
+val case_1_1 = "bababc"
+
+val testInput = "abcdef bababc abbcde abcccd aabcdd abcdee ababab"
+    // expected partial results: (0,0) (1,1) (1,0) (0,1) (1,0) (1,0) (0,1)
+    // total result: 4 * 3 = 12
 
 val rawInput =
         "prtkqyluibmtcwqaezjmhgfndx\n" +
