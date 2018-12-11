@@ -8,8 +8,16 @@ fun main(arg: Array<String>){
             .reduce(::pairReducer)
             .let(::checksum)
 
+    val part2: String = input
+            .let(::findPairWhichHasOneLetterOfDifference)
+            .let { (w1, w2) -> w1.zip(w2) } // transform pair of strings in list of character pairs
+            .filter { (c1, c2) -> c1 == c2} // cut out differing letters
+            .map { it.first }  // take just one letter from the pair
+            .joinToString("") // transform list of characters into a string
+
     println()
     println("Result - part 1: $part1")
+    println("Result - part 2: $part2")
 
 }
 
@@ -43,3 +51,21 @@ fun pairReducer(p1: Pair<Int, Int>, p2: Pair<Int, Int>): Pair<Int, Int> = Pair(
         p1.second + p2.second)
 
 fun checksum(pair: Pair<Int, Int>) = pair.first * pair.second
+
+fun numberOfDifferingLetters(word1: String, word2: String): Int {
+    if (word1.length != word2.length) throw Exception("words have different length")
+
+    return word1.zip(word2)
+            .count { (a, b) -> a != b }
+}
+
+fun findPairWhichHasOneLetterOfDifference(allWords: List<String>): Pair<String, String>{
+    for (i in 0 until allWords.size-1) {
+        for (j in i+1 until allWords.size) {
+            val w1 = allWords[i]
+            val w2 = allWords[j]
+            if (numberOfDifferingLetters(w1, w2) == 1) return Pair(w1, w2)
+        }
+    }
+    throw Exception("No pair was found")
+}
