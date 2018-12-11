@@ -1,5 +1,26 @@
 package aoc2018.day03
 
+fun preprocess(input: String): List<ElfClaim> {
+    return input
+            .split("\n")
+            .map(::parseSingleElfClaim)
+}
+
+fun parseSingleElfClaim(input: String): ElfClaim {
+    val groupValues = Regex("#(\\d+) @ (\\d+),(\\d+): (\\d+)x(\\d+)")
+            .matchEntire(input)
+            ?.groupValues
+            ?: throw Exception("pattern did not match for: $input")
+
+    return ElfClaim(
+            groupValues[1].toInt(),
+            groupValues[2].toInt(),
+            groupValues[3].toInt(),
+            groupValues[4].toInt(),
+            groupValues[5].toInt()
+    )
+}
+
 val rawInput1 =
         "#1 @ 871,327: 16x20\n" +
         "#2 @ 676,717: 27x26\n" +
