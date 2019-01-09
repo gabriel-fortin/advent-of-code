@@ -16,38 +16,35 @@ fun main(args: Array<String>){
 
 fun countTotalOverlap(claims: List<ElfClaim>): Int {
     // compute how much surface must be analyzed, how many rows to analyze
-    val maxStrip: Int = claims
-            .maxBy { it.top + it.height - 1 }
-            ?.let { it.top + it.height }
-            ?: throw Exception("wat? no claims?")
+    val maxStrip: Int = maxStripNumber(claims)
 
-    // for each row countOverlapInStrip
+    // for each row count number of inches covered at least twice
     return (1..maxStrip)
             .fold(0) { currentTotal, strip ->
                 currentTotal + countOverlapInStrip(strip, claims)
             }
 }
 
+fun countOverlapInStrip(strip: Int, allClaims: List<ElfClaim>): Int = analyzeStrip(strip, allClaims)
+        .toList()
+        // count only inches claimed by more than one elf
+        .filter { it.second.count() > 1 }
+        .size
 
-fun countOverlapInStrip(strip: Int, allClaims: List<ElfClaim>): Int {
+fun analyzeStrip(strip: Int, allClaims: List<ElfClaim>): Map<Int, List<ElfClaim>> {
     // filter out claims not intersecting with the strip (optimization)
     val claims: List<ElfClaim> = claimsApplicableToStrip(strip, allClaims)
 
-    // create a hashmap which counts how many claims there are for each inch in the strip
-    // (i.e. for each cell in the row)
-    val claimedInchesInStrip = claims
-            .fold(hashMapOf<Int, Int>()) { claimedInches, claim ->
-                // add intersection of claim and strip to the result
-                (claim.left until (claim.left + claim.width))
-                        .forEach { claimedInches.merge(it, 1, Int::plus) }
-
-                claimedInches
+    return claims
+            // produce all inches for all claims
+            .flatMap { claim ->
+                val rangeStart = claim.left
+                val rangeEnd = claim.left + claim.width
+                (rangeStart until rangeEnd)
+                        .map { inch -> Pair(inch, claim) }
             }
-
-    return claimedInchesInStrip
-            // count only inches claimed by more than one elf
-            .filter { it.value > 1 }
-            .size
+            // group them by inches, collect claims collecting each inch
+            .groupBy({it.first}, {it.second})
 }
 
 fun claimsApplicableToStrip(strip: Int, allClaims: List<ElfClaim>): List<ElfClaim> {
@@ -58,3 +55,8 @@ fun claimsApplicableToStrip(strip: Int, allClaims: List<ElfClaim>): List<ElfClai
                 strip < (it.top + it.height)
             }
 }
+
+fun maxStripNumber(claims: List<ElfClaim>): Int = claims
+        .maxBy { it.top + it.height - 1 }
+        ?.let { it.top + it.height }
+        ?: throw Exception("wat? no claims?")
