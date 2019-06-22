@@ -20,16 +20,16 @@ fun countTotalOverlap(claims: List<ElfClaim>): Int {
 
     // for each row count number of inches covered at least twice
     return (1..maxStrip)
-            .fold(0) { currentTotal, strip ->
-                currentTotal + countOverlapInStrip(strip, claims)
-            }
+            .map { countOverlapInStrip(it, claims) }
+            .sum()
 }
 
-fun countOverlapInStrip(strip: Int, allClaims: List<ElfClaim>): Int = analyzeStrip(strip, allClaims)
-        .toList()
-        // count only inches claimed by more than one elf
-        .filter { it.second.count() > 1 }
-        .size
+fun countOverlapInStrip(strip: Int, allClaims: List<ElfClaim>): Int =
+        analyzeStrip(strip, allClaims)
+                .toList()
+                // count only inches claimed by more than one elf
+                .filter { it.second.count() > 1 }
+                .size
 
 fun analyzeStrip(strip: Int, allClaims: List<ElfClaim>): Map<Int, List<ElfClaim>> {
     // filter out claims not intersecting with the strip (optimization)
