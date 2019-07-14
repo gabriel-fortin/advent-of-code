@@ -3,7 +3,7 @@ package aoc2018.day03
 fun preprocess(input: String): List<ElfClaim> {
     return input
             .split("\n")
-            .filterNot { it.isNullOrEmpty() }
+            .filterNot { it.isEmpty() }
             .map(::parseSingleElfClaim)
 }
 
@@ -25,6 +25,11 @@ fun parseSingleElfClaim(input: String): ElfClaim {
 val test_01__4 =
         "#1 @ 2,2: 3x3\n" +
         "#2 @ 3,3: 3x3"
+
+val test_02__3 =
+        "#1 @ 2,2: 3x3\n" +
+        "#2 @ 3,3: 3x3\n" +
+        "#3 @ 5,2: 9x1"
 
 val rawInput1 =
         "#1 @ 871,327: 16x20\n" +
