@@ -3,109 +3,16 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="AutomaticModuleUnloader">
+    <loaded-modules>
+      <module name="2021" />
+    </loaded-modules>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="reorganise the whole project before starting aoc2021&#10;&#10;The 2021 edition will have its own module">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2016/day1/2016_day1.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2016/day1/2016_day1_final.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day1/day1.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day10/day10_part1.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day10/day10_part2.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day11/data.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day11/day11.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day12/data.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day12/day12.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day13/Input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day13/day13.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day14/day14.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day15/day15.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day16/Command.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day16/day16.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day16/input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day17/day17.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day2/day2.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day3/Wanderer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day3/day3.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day4/data.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day4/day4.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day6/day6.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day6/input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day7/data.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day7/day7.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day8/data.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day8/day8.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day9/data.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2017/day9/day9.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2018/day01/day01.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2018/day01/input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2018/day02/day02.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2018/day02/input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2018/day03/ElfClaim.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2018/day03/day03.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2018/day03/input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2018/day04/input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2019/day01/day01.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2019/day01/input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2019/day02/day02.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/aoc2019/day02/input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/common/FindUnion.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/common/FindUnionImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/common/KnotHash.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2017-2019/src/common/Profiling.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2021/2021.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2021/src/hello.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/2021/src/day01/day01.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2021/src/day01/input.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advent_of_code_2017.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2017-2019/2017-2019.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2016/day1/2016_day1.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2016/day1/2016_day1_final.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day1/day1.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day10/day10_part1.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day10/day10_part2.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day11/data.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day11/day11.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day12/data.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day12/day12.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day13/Input.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day13/day13.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day14/day14.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day15/day15.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day16/Command.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day16/day16.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day16/input.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day17/day17.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day2/day2.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day3/Wanderer.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day3/day3.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day4/data.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day4/day4.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day6/day6.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day6/input.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day7/data.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day7/day7.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day8/data.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day8/day8.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day9/data.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2017/day9/day9.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2018/day01/day01.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2018/day01/input.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2018/day02/day02.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2018/day02/input.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2018/day03/ElfClaim.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2018/day03/day03.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2018/day03/input.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2018/day04/input.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2019/day01/day01.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2019/day01/input.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2019/day02/day02.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2019/day02/input.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/FindUnion.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/FindUnionImpl.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/KnotHash.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Profiling.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Kotlin Worksheet" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -143,6 +50,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -353,7 +268,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.2021 - hello">
+  <component name="RunManager" selected="Kotlin.2021 - Day 01">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -419,6 +334,15 @@
     <configuration name="2019 - Day 2" type="JetRunConfigurationType" folderName="2019">
       <option name="MAIN_CLASS_NAME" value="aoc2019.day02.Day02Kt" />
       <shortenClasspath name="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="2021 - Day 01" type="JetRunConfigurationType">
+      <option name="MAIN_CLASS_NAME" value="day01.Day01Kt" />
+      <module name="2021" />
+      <shortenClasspath name="NONE" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2021/src/day01" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -537,19 +461,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="2021" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="2021" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -569,7 +480,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Kotlin.2021 - hello" />
       <item itemvalue="Kotlin.2016 Day 1" />
       <item itemvalue="Kotlin.2016 Day 1 Final" />
       <item itemvalue="Kotlin.Day1" />
@@ -592,6 +502,8 @@
       <item itemvalue="Kotlin.2018 - Day 3" />
       <item itemvalue="Kotlin.2019 - Day 1" />
       <item itemvalue="Kotlin.2019 - Day 2" />
+      <item itemvalue="Kotlin.2021 - hello" />
+      <item itemvalue="Kotlin.2021 - Day 01" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -725,7 +637,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575495361663</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="reorganise the whole project before starting aoc2021&#10;&#10;The 2021 edition will have its own module">
+      <created>1646475315822</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1646475315822</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -755,6 +674,9 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="UnloadedModulesList">
+    <module name="2017-2019" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
