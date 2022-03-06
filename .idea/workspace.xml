@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2021/2021.iml" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/aoc2021.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2021/aoc2021.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2021/src/day01/day01.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2021/src/day01/input.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2021/src/day01/input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2021/src/day02/Movement.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2021/src/day02/Position.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2021/src/day02/day02.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2021/src/day02/input.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2021/src/day02/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aoc2021/src/day02/Movement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day02/Movement.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aoc2021/src/day02/Position.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day02/Position.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aoc2021/src/day02/day02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day02/day02.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +250,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="CodeWithMe" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -670,7 +662,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646591568571</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Magic refactor and add 2021 - day 2 - part 1">
+      <created>1646600578406</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1646600578406</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Refactor for part 2">
+      <created>1646601161226</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1646601161226</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -730,7 +736,9 @@
     <MESSAGE value="2019-day01 part 2" />
     <MESSAGE value="reorganise the whole project before starting aoc2021&#10;&#10;The 2021 edition will have its own module" />
     <MESSAGE value="Add 2021 - day 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 1" />
+    <MESSAGE value="Magic refactor and add 2021 - day 2 - part 1" />
+    <MESSAGE value="Refactor for part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor for part 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
