@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/2017-2019/2017-2019.iml" filepath="$PROJECT_DIR$/2017-2019/2017-2019.iml" />
-      <module fileurl="file://$PROJECT_DIR$/2021/2021.iml" filepath="$PROJECT_DIR$/2021/2021.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aoc2021/aoc2021.iml" filepath="$PROJECT_DIR$/aoc2021/aoc2021.iml" />
     </modules>
   </component>
 </project>

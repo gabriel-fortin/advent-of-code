@@ -3,16 +3,20 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="AutomaticModuleUnloader">
-    <loaded-modules>
-      <module name="2021" />
-    </loaded-modules>
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/2021/src/day01/day01.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2021/src/day01/input.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2021/2021.iml" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/aoc2021.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2021/aoc2021.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2021/src/day01/day01.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2021/src/day01/input.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2021/src/day01/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2021/src/day02/Movement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2021/src/day02/Position.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2021/src/day02/day02.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2021/src/day02/input.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2021/src/day02/input.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +32,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Worksheet" />
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -250,25 +254,26 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/2017-2019/2017-2019.iml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/aoc2021" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/aoc2016/day1" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="day02" />
       <recent name="aoc2018.day03" />
       <recent name="aoc2017.day16" />
       <recent name="common" />
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/aoc2016/day1" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
   </component>
-  <component name="RunManager" selected="Kotlin.2021 - Day 01">
+  <component name="RunManager" selected="Kotlin.2021 - Day 02">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -340,17 +345,18 @@
     </configuration>
     <configuration name="2021 - Day 01" type="JetRunConfigurationType">
       <option name="MAIN_CLASS_NAME" value="day01.Day01Kt" />
-      <module name="2021" />
+      <module name="aoc2021" />
       <shortenClasspath name="NONE" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2021/src/day01" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day01" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="2021 - hello" type="JetRunConfigurationType">
-      <option name="MAIN_CLASS_NAME" value="HelloKt" />
-      <module name="2021" />
+    <configuration name="2021 - Day 02" type="JetRunConfigurationType">
+      <option name="MAIN_CLASS_NAME" value="day02.Day02Kt" />
+      <module name="aoc2021" />
       <shortenClasspath name="NONE" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day02" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -461,6 +467,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="aoc2021" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="aoc2021" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -502,8 +521,8 @@
       <item itemvalue="Kotlin.2018 - Day 3" />
       <item itemvalue="Kotlin.2019 - Day 1" />
       <item itemvalue="Kotlin.2019 - Day 2" />
-      <item itemvalue="Kotlin.2021 - hello" />
       <item itemvalue="Kotlin.2021 - Day 01" />
+      <item itemvalue="Kotlin.2021 - Day 02" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -644,7 +663,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646475315822</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Add 2021 - day 1">
+      <created>1646591568571</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1646591568571</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -675,9 +701,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
-  <component name="UnloadedModulesList">
-    <module name="2017-2019" />
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -706,7 +729,8 @@
     <MESSAGE value="2019-day01 refactor for next part" />
     <MESSAGE value="2019-day01 part 2" />
     <MESSAGE value="reorganise the whole project before starting aoc2021&#10;&#10;The 2021 edition will have its own module" />
-    <option name="LAST_COMMIT_MESSAGE" value="reorganise the whole project before starting aoc2021&#10;&#10;The 2021 edition will have its own module" />
+    <MESSAGE value="Add 2021 - day 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
