@@ -3,12 +3,11 @@ package day01
 fun main() {
     val input = readInput()
 
-    println(listOf(-4) + listOf(1, 2, 3) + 5)
-
     part1Procedural(input)
     part1Functional(input)
 
     part2Procedural(input)
+    part2ProceduralClever(input)
     part2Functional(input)
 }
 
@@ -27,6 +26,17 @@ fun part1Functional(input: List<Int>) {
 fun part2Procedural(input: List<Int>) {
     val trioSequence = createTrioSums(input)
     val result = sumIncrements(trioSequence)
+    println(result)
+}
+
+fun part2ProceduralClever(input: List<Int>) {
+    var trioSum = input[0] + input[1] + input[2]
+    var result = 0
+    for (i in 0 until input.size - 3) {
+        val newTrioSum = trioSum - input[i] + input[i + 3]
+        if (newTrioSum > trioSum) result++
+        trioSum = newTrioSum
+    }
     println(result)
 }
 
