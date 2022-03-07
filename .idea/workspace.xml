@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aoc2021/src/day02/Movement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day02/Movement.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aoc2021/src/day02/Position.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day02/Position.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aoc2021/src/day02/day02.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day02/day02.kt" afterDir="false" />
-    </list>
+    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -265,7 +260,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.2021 - Day 02">
+  <component name="RunManager" selected="Kotlin.2021 - Day 03">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -349,6 +344,15 @@
       <module name="aoc2021" />
       <shortenClasspath name="NONE" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day02" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="2021 - Day 03" type="JetRunConfigurationType">
+      <option name="MAIN_CLASS_NAME" value="day03.Day03Kt" />
+      <module name="aoc2021" />
+      <shortenClasspath name="NONE" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day03" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -515,6 +519,7 @@
       <item itemvalue="Kotlin.2019 - Day 2" />
       <item itemvalue="Kotlin.2021 - Day 01" />
       <item itemvalue="Kotlin.2021 - Day 02" />
+      <item itemvalue="Kotlin.2021 - Day 03" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -676,7 +681,28 @@
       <option name="project" value="LOCAL" />
       <updated>1646601161226</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add 2021 - day 2 - part 2">
+      <created>1646601969305</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1646601969305</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add clever procedural solution for 2021 - day 1 - part 2">
+      <created>1646686082324</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1646686082324</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Add config for 2021 - day 3">
+      <created>1646686360192</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1646686360192</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -738,7 +764,10 @@
     <MESSAGE value="Add 2021 - day 1" />
     <MESSAGE value="Magic refactor and add 2021 - day 2 - part 1" />
     <MESSAGE value="Refactor for part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor for part 2" />
+    <MESSAGE value="Add 2021 - day 2 - part 2" />
+    <MESSAGE value="Add clever procedural solution for 2021 - day 1 - part 2" />
+    <MESSAGE value="Add config for 2021 - day 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add config for 2021 - day 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
