@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="" />
+    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aoc2021/src/day03/day03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day03/day03.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Worksheet" />
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -702,7 +705,28 @@
       <option name="project" value="LOCAL" />
       <updated>1646686360192</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Add config for 2021 - day 3">
+      <created>1646686718191</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1646686718191</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Add 2021 - day 3 - part 1">
+      <created>1646690790751</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1646690790751</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Add 2021 - day 3 - part 1">
+      <created>1646862994318</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1646862994318</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -767,7 +791,8 @@
     <MESSAGE value="Add 2021 - day 2 - part 2" />
     <MESSAGE value="Add clever procedural solution for 2021 - day 1 - part 2" />
     <MESSAGE value="Add config for 2021 - day 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add config for 2021 - day 3" />
+    <MESSAGE value="Add 2021 - day 3 - part 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 3 - part 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
