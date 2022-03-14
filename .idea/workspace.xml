@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/aoc2021/src/day04/day04.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aoc2021/src/day04/input.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day04/BingoBoard.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day04/InputCollection.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aoc2021/src/day04/day04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day04/day04.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aoc2021/src/day04/input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day04/input.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aoc2021/src/day04/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day04/input.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,6 +245,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -249,7 +253,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="CodeWithMe" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -257,11 +261,11 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="day04" />
       <recent name="day02" />
       <recent name="aoc2018.day03" />
       <recent name="aoc2017.day16" />
       <recent name="common" />
-      <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.2021 - Day 04">
@@ -365,6 +369,7 @@
       <option name="MAIN_CLASS_NAME" value="day04.Day04Kt" />
       <module name="aoc2021" />
       <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day04" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -749,7 +754,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647086096405</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Setup for 2021 - day 4">
+      <created>1647164625869</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1647164625869</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -816,7 +828,8 @@
     <MESSAGE value="Add config for 2021 - day 3" />
     <MESSAGE value="Add 2021 - day 3 - part 1" />
     <MESSAGE value="Add 2021 - day 3 - part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 3 - part 2" />
+    <MESSAGE value="Setup for 2021 - day 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setup for 2021 - day 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -825,6 +838,11 @@
           <url>file://$PROJECT_DIR$/src/aoc2017/day12/day12.kt</url>
           <line>50</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/aoc2021/src/day04/BingoBoard.kt</url>
+          <line>51</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
