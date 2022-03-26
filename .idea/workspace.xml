@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day05/Line.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day05/day05.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day05/input.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day05/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aoc2021/src/day04/day04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day04/day04.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,6 +248,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last.edited.regexp" value="455,552 -&gt; 289,718" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/aoc2021" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -257,14 +261,14 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="day05" />
       <recent name="day04" />
       <recent name="day02" />
       <recent name="aoc2018.day03" />
       <recent name="aoc2017.day16" />
-      <recent name="common" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.2021 - Day 04">
+  <component name="RunManager" selected="Kotlin.2021 - Day 05">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -361,12 +365,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="2021 - Day 04" type="JetRunConfigurationType" temporary="true">
+    <configuration name="2021 - Day 04" type="JetRunConfigurationType">
       <option name="MAIN_CLASS_NAME" value="day04.Day04Kt" />
       <module name="aoc2021" />
       <shortenClasspath name="NONE" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day04" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="2021 - Day 05" type="JetRunConfigurationType">
+      <option name="MAIN_CLASS_NAME" value="day05.Day05Kt" />
+      <module name="aoc2021" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day05" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -472,7 +486,7 @@
     </configuration>
     <configuration name="Day1" type="JetRunConfigurationType" folderName="2017">
       <option name="MAIN_CLASS_NAME" value="Day1Kt" />
-      <module name="advent_of_code_2017-2019" />
+      <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -535,12 +549,8 @@
       <item itemvalue="Kotlin.2021 - Day 02" />
       <item itemvalue="Kotlin.2021 - Day 03" />
       <item itemvalue="Kotlin.2021 - Day 04" />
+      <item itemvalue="Kotlin.2021 - Day 05" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Kotlin.2021 - Day 04" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -764,7 +774,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647290134785</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Add 2021 - day 4 - part 2">
+      <created>1647291257612</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1647291257612</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -807,7 +824,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2018-day02 input and its preprocessing" />
     <MESSAGE value="2018-day02 part 1" />
     <MESSAGE value="2018-day02 part 2" />
     <MESSAGE value="2018-day03 input" />
@@ -832,7 +848,8 @@
     <MESSAGE value="Add 2021 - day 3 - part 2" />
     <MESSAGE value="Setup for 2021 - day 4" />
     <MESSAGE value="Add 2021 - day 4 - part 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 4 - part 1" />
+    <MESSAGE value="Add 2021 - day 4 - part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 4 - part 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
