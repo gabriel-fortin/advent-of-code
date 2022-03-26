@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/aoc2021/src/day05/Line.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aoc2021/src/day05/day05.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aoc2021/src/day05/input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aoc2021/src/day05/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aoc2021/src/day05/Line.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day05/Line.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aoc2021/src/day05/day05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day05/day05.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aoc2021/src/day05/input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day05/input.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -781,7 +780,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647291257612</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Setup for 2021 - day 5">
+      <created>1648315927666</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1648315927667</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -824,7 +830,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2018-day02 part 1" />
     <MESSAGE value="2018-day02 part 2" />
     <MESSAGE value="2018-day03 input" />
     <MESSAGE value="2018-day03 part 1" />
@@ -849,7 +854,8 @@
     <MESSAGE value="Setup for 2021 - day 4" />
     <MESSAGE value="Add 2021 - day 4 - part 1" />
     <MESSAGE value="Add 2021 - day 4 - part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 4 - part 2" />
+    <MESSAGE value="Setup for 2021 - day 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setup for 2021 - day 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -858,6 +864,11 @@
           <url>file://$PROJECT_DIR$/src/aoc2017/day12/day12.kt</url>
           <line>50</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/aoc2021/src/day05/day05.kt</url>
+          <line>22</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
