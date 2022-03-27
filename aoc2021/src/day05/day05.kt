@@ -1,6 +1,6 @@
 package day05
 
-import kotlin.math.min
+import kotlin.math.abs
 import kotlin.math.max
 
 const val DEBUG = false
@@ -10,6 +10,9 @@ fun main() {
 
     val part1 = part1(input)
     println("part1: $part1")
+
+    val part2 = part2(input)
+    println("part2: $part2")
 }
 
 fun part1(input: List<Line>): Int {
@@ -24,6 +27,15 @@ fun part1(input: List<Line>): Int {
     return matrix.flatten().count { it > 1 }
 }
 
+fun part2(inputLines: List<Line>): Int {
+    val (maxX, maxY) = getMaxCoordinateValues(inputLines)
+    val matrix: List<MutableList<Int>> = List(maxY + 1) { MutableList(maxX + 1) { 0 } }
+
+    inputLines.forEach { matrix.updateWith(it) }
+
+    return matrix.flatten().count { it > 1 }
+}
+
 fun getMaxCoordinateValues(input: List<Line>): Pair<Int, Int> {
     val maxX = input.map { max(it.x1, it.x2) }.reduce(::max)
     val maxY = input.map { max(it.y1, it.y2) }.reduce(::max)
@@ -31,33 +43,23 @@ fun getMaxCoordinateValues(input: List<Line>): Pair<Int, Int> {
 }
 
 fun generateLinePoints(line: Line): List<Pair<Int, Int>> {
-    val x1 = min(line.x1, line.x2)
-    val x2 = max(line.x1, line.x2)
-    val y1 = min(line.y1, line.y2)
-    val y2 = max(line.y1, line.y2)
-
-    val xStep = if (x1==x2) 0 else 1
-    val yStep = if (y1==y2) 0 else 1
-
-    val pointCount = max(x2 - x1, y2 - y1) + 1
-    return List(pointCount) { i -> Pair(x1 + i * xStep, y1 + i * yStep) }
+    val xStep = when {
+        line.x1 > line.x2 -> -1
+        line.x1 < line.x2 -> 1
+        else -> 0
+    }
+    val yStep = when {
+        line.y1 > line.y2 -> -1
+        line.y1 < line.y2 -> 1
+        else -> 0
+    }
+    val pointCount = max(abs(line.x2 - line.x1), abs(line.y2 - line.y1)) + 1
+    return List(pointCount) { i -> Pair(line.x1 + i * xStep, line.y1 + i * yStep) }
 }
 
 fun List<MutableList<Int>>.updateWith(line: Line) {
     generateLinePoints(line)
         .forEach { (x, y) -> this[y][x]++ }
-//    if (line.x1 == line.x2) {
-//        val x = line.x1
-//        // y1 could be either greater or smaller than y2, so we try both ways
-//        (line.y1..line.y2).forEach { y -> this[y][x]++ }
-//        (line.y2..line.y1).forEach { y -> this[y][x]++ }
-//    }
-//    if (line.y1 == line.y2) {
-//        val y = line.y1
-//        // x1 could be either greater or smaller than x2, so we try both ways
-//        (line.x1..line.x2).forEach { x -> this[y][x]++ }
-//        (line.x2..line.x1).forEach { x -> this[y][x]++ }
-//    }
 
     if (DEBUG) {
         println("$line")
