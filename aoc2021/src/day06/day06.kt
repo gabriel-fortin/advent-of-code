@@ -1,21 +1,28 @@
 package day06
 
+const val DEBUG = true
+
 fun main() {
     val input = getInput()
 
     val part1 = part1(input)
     println("part1: $part1")
 
-//    val part2 = part2(input)
-//    println("part2: $part2")
+    val part2 = part2(input)
+    println("part2: $part2")
 }
 
-const val SIMULATION_LENGTH = 80
-fun part1(input: List<Int>): Int {
+fun part1(input: List<Int>): Int = simulateGrowthOfSchoolOfFish(input, 80)
+
+fun part2(input: List<Int>): Int = simulateGrowthOfSchoolOfFish(input, 256)
+
+private fun simulateGrowthOfSchoolOfFish(input: List<Int>, simulationLength: Int): Int {
     val currentFish = input.toMutableList()
-    repeat(SIMULATION_LENGTH) {
+    repeat(simulationLength) {
+        if (DEBUG && it % 10 == 0) print(".")
         currentFish.indices.forEach { i -> currentFish.updateFish(i) }
     }
+    if (DEBUG) println()
     return currentFish.count()
 }
 
