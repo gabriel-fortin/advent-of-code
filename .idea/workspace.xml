@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aoc2021/src/day05/Line.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day05/Line.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aoc2021/src/day05/day05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day05/day05.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aoc2021/src/day05/input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day05/input.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +264,7 @@
       <recent name="aoc2017.day16" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.2021 - Day 05">
+  <component name="RunManager" selected="Kotlin.2021 - Day 06">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -380,6 +377,16 @@
       <shortenClasspath name="NONE" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day05" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="2021 - Day 06" type="JetRunConfigurationType">
+      <option name="MAIN_CLASS_NAME" value="day06.Day06Kt" />
+      <module name="aoc2021" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day06" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -549,6 +556,7 @@
       <item itemvalue="Kotlin.2021 - Day 03" />
       <item itemvalue="Kotlin.2021 - Day 04" />
       <item itemvalue="Kotlin.2021 - Day 05" />
+      <item itemvalue="Kotlin.2021 - Day 06" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -787,7 +795,28 @@
       <option name="project" value="LOCAL" />
       <updated>1648315927667</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Add 2021 - day 5 - part 1">
+      <created>1648330306668</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1648330306668</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Change 2021 - day 5 - part 1&#10;&#10;as a preparation for part 2">
+      <created>1648336364582</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1648336364582</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Change 2021 - day 5 - part 2">
+      <created>1648391554814</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1648391554814</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -830,9 +859,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2018-day02 part 2" />
-    <MESSAGE value="2018-day03 input" />
-    <MESSAGE value="2018-day03 part 1" />
     <MESSAGE value="2018-day03 preprocess input" />
     <MESSAGE value="2018-day03 refactor for part 2" />
     <MESSAGE value="2018-day03 make some code easier to understand" />
@@ -855,7 +881,10 @@
     <MESSAGE value="Add 2021 - day 4 - part 1" />
     <MESSAGE value="Add 2021 - day 4 - part 2" />
     <MESSAGE value="Setup for 2021 - day 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup for 2021 - day 5" />
+    <MESSAGE value="Add 2021 - day 5 - part 1" />
+    <MESSAGE value="Change 2021 - day 5 - part 1&#10;&#10;as a preparation for part 2" />
+    <MESSAGE value="Change 2021 - day 5 - part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change 2021 - day 5 - part 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -864,11 +893,6 @@
           <url>file://$PROJECT_DIR$/src/aoc2017/day12/day12.kt</url>
           <line>50</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/aoc2021/src/day05/day05.kt</url>
-          <line>22</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
