@@ -11,8 +11,8 @@ fun main() {
     val part1 = part1ButClever(input)
     println("part1: $part1")
 
-//    val part2 = part2(input)
-//    println("part2: $part2")
+    val part2 = part2(input)
+    println("part2: $part2")
 }
 
 @Suppress("unused")
@@ -70,4 +70,20 @@ fun part1ButClever(input: List<Int>): Int {
         }
     }
     return sortedCrabsPositions.sumOf { abs(it - alignPos) }
+}
+
+// part 1 could have looked like this (if it wasn't optimised)
+fun part2(crabPositions: List<Int>): Int {
+    val minPosition = crabPositions.minOrNull()!!
+    val maxPosition = crabPositions.maxOrNull()!!
+    return (minPosition..maxPosition).minOf { alignmentCost(crabPositions, it) }
+}
+
+fun alignmentCost(crabPositions: List<Int>, alignmentPosition: Int): Int {
+    return crabPositions.sumOf { movementCost(it, alignmentPosition) }
+}
+
+fun movementCost(crabPosition: Int, alignmentPosition: Int): Int {
+    val distance = abs(crabPosition - alignmentPosition)
+    return (1+distance) * distance / 2
 }
