@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="Setup for 2021 - day 7">
+    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="Add 2021 - day 7 - part 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aoc2021/src/day07/day07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day07/day07.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +259,7 @@
       <recent name="aoc2018.day03" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.2021 - Day 07">
+  <component name="RunManager" selected="Kotlin.2021 - Day 08">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -393,6 +392,16 @@
       <shortenClasspath name="NONE" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day07" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="2021 - Day 08" type="JetRunConfigurationType">
+      <option name="MAIN_CLASS_NAME" value="day08.Day08Kt" />
+      <module name="aoc2021" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day08" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -564,6 +573,7 @@
       <item itemvalue="Kotlin.2021 - Day 05" />
       <item itemvalue="Kotlin.2021 - Day 06" />
       <item itemvalue="Kotlin.2021 - Day 07" />
+      <item itemvalue="Kotlin.2021 - Day 08" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -858,7 +868,28 @@
       <option name="project" value="LOCAL" />
       <updated>1648926627270</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Add 2021 - day 7 - part 1">
+      <created>1648936289586</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1648936289586</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Add 2021 - day 7 - part 2">
+      <created>1649021503124</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1649021503124</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Add 2021 - day 7 - part 2">
+      <created>1649021564301</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1649021564301</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -901,8 +932,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Start AOC 2019" />
-    <MESSAGE value="2019-day01 part 1" />
     <MESSAGE value="2019-day01 refactor for next part" />
     <MESSAGE value="2019-day01 part 2" />
     <MESSAGE value="reorganise the whole project before starting aoc2021&#10;&#10;The 2021 edition will have its own module" />
@@ -926,7 +955,9 @@
     <MESSAGE value="Add 2021 - day 6 - part 2: exponential growth causes OOMException&#10;&#10;Using the same technique as for part 1 will not work for 256 iterations. It &#10;fails before reaching 200 iterations." />
     <MESSAGE value="Add 2021 - day 6 - part 2: group fish having same timer&#10;&#10;Fish having the same timer value are represented together (as a group)" />
     <MESSAGE value="Setup for 2021 - day 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup for 2021 - day 7" />
+    <MESSAGE value="Add 2021 - day 7 - part 1" />
+    <MESSAGE value="Add 2021 - day 7 - part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 7 - part 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
