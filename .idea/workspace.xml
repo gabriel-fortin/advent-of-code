@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="Add 2021 - day 7 - part 2">
+    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="Add 2021 - day 8 - part 2">
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day09/day09.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day09/input.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -252,14 +254,14 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="day08" />
       <recent name="day06" />
       <recent name="day05" />
       <recent name="day04" />
       <recent name="day02" />
-      <recent name="aoc2018.day03" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.2021 - Day 08">
+  <component name="RunManager" selected="Kotlin.2021 - Day 09">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -402,6 +404,16 @@
       <shortenClasspath name="NONE" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day08" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="2021 - Day 09" type="JetRunConfigurationType">
+      <option name="MAIN_CLASS_NAME" value="day09.Day09Kt" />
+      <module name="aoc2021" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day09" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -574,6 +586,7 @@
       <item itemvalue="Kotlin.2021 - Day 06" />
       <item itemvalue="Kotlin.2021 - Day 07" />
       <item itemvalue="Kotlin.2021 - Day 08" />
+      <item itemvalue="Kotlin.2021 - Day 09" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -889,7 +902,35 @@
       <option name="project" value="LOCAL" />
       <updated>1649021564301</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Setup for 2021 - day 8">
+      <created>1649100101042</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1649100101042</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Add 2021 - day 8 - read, parse input">
+      <created>1649616062104</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1649616062104</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Add 2021 - day 8 - part 1">
+      <created>1649616818815</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1649616818815</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Add 2021 - day 8 - part 2">
+      <created>1649624628492</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1649624628492</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -932,10 +973,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2019-day01 refactor for next part" />
-    <MESSAGE value="2019-day01 part 2" />
-    <MESSAGE value="reorganise the whole project before starting aoc2021&#10;&#10;The 2021 edition will have its own module" />
-    <MESSAGE value="Add 2021 - day 1" />
     <MESSAGE value="Magic refactor and add 2021 - day 2 - part 1" />
     <MESSAGE value="Refactor for part 2" />
     <MESSAGE value="Add 2021 - day 2 - part 2" />
@@ -957,7 +994,11 @@
     <MESSAGE value="Setup for 2021 - day 7" />
     <MESSAGE value="Add 2021 - day 7 - part 1" />
     <MESSAGE value="Add 2021 - day 7 - part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 7 - part 2" />
+    <MESSAGE value="Setup for 2021 - day 8" />
+    <MESSAGE value="Add 2021 - day 8 - read, parse input" />
+    <MESSAGE value="Add 2021 - day 8 - part 1" />
+    <MESSAGE value="Add 2021 - day 8 - part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 8 - part 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
