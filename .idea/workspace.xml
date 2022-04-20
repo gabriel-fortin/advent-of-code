@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="Add 2021 - day 9 - part 1">
+    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="Add 2021 - day 9 - part 2">
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day10/day10.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day10/input.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aoc2021/src/day09/day09.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day09/day09.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aoc2021/src/day09/input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc2021/src/day09/input.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +262,7 @@
       <recent name="day02" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.2021 - Day 09">
+  <component name="RunManager" selected="Kotlin.2021 - Day 10">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -414,6 +415,16 @@
       <shortenClasspath name="NONE" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day09" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="2021 - Day 10" type="JetRunConfigurationType">
+      <option name="MAIN_CLASS_NAME" value="day10.Day10Kt" />
+      <module name="aoc2021" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day10" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -587,6 +598,7 @@
       <item itemvalue="Kotlin.2021 - Day 07" />
       <item itemvalue="Kotlin.2021 - Day 08" />
       <item itemvalue="Kotlin.2021 - Day 09" />
+      <item itemvalue="Kotlin.2021 - Day 10" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -600,13 +612,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512164190981</updated>
-    </task>
-    <task id="LOCAL-00001" summary="2018-day01 part 2">
-      <created>1543958662956</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1543958662956</updated>
     </task>
     <task id="LOCAL-00002" summary="2018-day02 input and its preprocessing">
       <created>1543996847988</created>
@@ -944,7 +949,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650392302394</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Add 2021 - day 9 - part 2">
+      <created>1650396797288</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1650396797288</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -987,7 +999,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add 2021 - day 2 - part 2" />
     <MESSAGE value="Add clever procedural solution for 2021 - day 1 - part 2" />
     <MESSAGE value="Add config for 2021 - day 3" />
     <MESSAGE value="Add 2021 - day 3 - part 1" />
@@ -1012,7 +1023,8 @@
     <MESSAGE value="Add 2021 - day 8 - part 2" />
     <MESSAGE value="Setup for 2021 - day 9" />
     <MESSAGE value="Add 2021 - day 9 - part 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 9 - part 1" />
+    <MESSAGE value="Add 2021 - day 9 - part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 9 - part 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
