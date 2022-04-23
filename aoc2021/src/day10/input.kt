@@ -2,8 +2,8 @@ package day10
 
 import java.io.File
 
-fun getInput() = getTestInput()
-//fun getInput() = getRealInput()
+//fun getInput() = getTestInput()
+fun getInput() = getRealInput()
 
 @Suppress("unused")
 fun getTestInput() = listOf(
