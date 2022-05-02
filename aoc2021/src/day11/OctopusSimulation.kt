@@ -3,6 +3,8 @@ package day11
 import shared.Grid
 
 class OctopusSimulation(private val octopusGrid: Grid<Octopus>) {
+    var flashesInStep = 0
+        private set
     var totalFlashes = 0
         private set
 
@@ -10,11 +12,8 @@ class OctopusSimulation(private val octopusGrid: Grid<Octopus>) {
         octopusGrid.forEachCell(::setTriggeringOfAdjacentOctopuses)
     }
 
-    fun simulate(numberOfStepsToSimulate: Int) {
-        repeat(numberOfStepsToSimulate) { simulateStep() }
-    }
-
-    private fun simulateStep() {
+    fun simulateStep() {
+        flashesInStep = 0
         octopusGrid.forEachCellItem { octopus ->
             octopus.increaseEnergyLevel()
         }
@@ -25,12 +24,13 @@ class OctopusSimulation(private val octopusGrid: Grid<Octopus>) {
             if (octopus.hasFlashed)
                 octopus.resetEnergyLevel()
         }
+        totalFlashes += flashesInStep
     }
 
     private fun setTriggeringOfAdjacentOctopuses(cell: Grid.Cell<Octopus>) {
         val octopus = cell.data
         octopus.onFlash = {
-            totalFlashes++
+            flashesInStep++
             adjacentOctopuses(cell)
                 .forEach(Octopus::increaseEnergyLevel)
         }

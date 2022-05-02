@@ -1,10 +1,10 @@
 package day11
 
-import shared.Grid
 import java.io.File
 
-fun getInput() = getTestInput()
-//fun getInput() = getRealInput()
+fun getInput() =
+//    getTestInput()
+    getRealInput()
 
 @Suppress("unused")
 fun getTestInput() =
@@ -21,17 +21,13 @@ fun getTestInput() =
         "5283751526",
     )
         .map(splitStringIntoIntegers)
-        .map { it.map(Octopus::fromEnergyLevel) }
-        .let(::Grid)
 
 val splitStringIntoIntegers = fun(s: String): List<Int> {
     return s.toList().map { it - '0' }
 }
 
-fun getRealInput(): Grid<Octopus> {
+fun getRealInput(): List<List<Int>> {
     return File("input.txt")
         .readLines()
         .map(splitStringIntoIntegers)
-        .map { it.map(Octopus::fromEnergyLevel) }
-        .let(::Grid)
 }
