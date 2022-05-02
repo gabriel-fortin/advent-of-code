@@ -19,6 +19,18 @@ class Grid<TCellData>(data: List<List<TCellData>>) {
         return data[row][col]
     }
 
+    /** Execute an action on each cell in the grid */
+    fun forEachCell(action: (Cell<TCellData>) -> Unit): Grid<TCellData> {
+        data.forEach {
+            it.forEach(action)
+        }
+        return this
+    }
+
+    /** Execute an action on the content of each cell in the grid */
+    fun forEachCellItem(action: (TCellData) -> Unit): Grid<TCellData> =
+        forEachCell { cell -> action(cell.data) }
+
     override fun toString(): String {
         return data.joinToString("") { rowList ->
             rowList.joinToString("") { cell ->

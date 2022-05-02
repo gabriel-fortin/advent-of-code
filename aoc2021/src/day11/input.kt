@@ -21,15 +21,17 @@ fun getTestInput() =
         "5283751526",
     )
         .map(splitStringIntoIntegers)
-        .let { Grid(it) }
+        .map { it.map(Octopus::fromEnergyLevel) }
+        .let(::Grid)
 
 val splitStringIntoIntegers = fun(s: String): List<Int> {
     return s.toList().map { it - '0' }
 }
 
-fun getRealInput(): Grid<Int> {
+fun getRealInput(): Grid<Octopus> {
     return File("input.txt")
         .readLines()
         .map(splitStringIntoIntegers)
-        .let { Grid(it) }
+        .map { it.map(Octopus::fromEnergyLevel) }
+        .let(::Grid)
 }
