@@ -16,29 +16,36 @@ class PathsVisitingSmallCavesAtMostOnce(edgesList: List<Pair<String, String>>) :
 
     private val validPaths = mutableListOf<Path<Cave>>()
 
-    fun findPaths(): List<Path<Cave>> {
+    fun findPaths(canVisitOneAdditionalSmallCave: Boolean): List<Path<Cave>> {
         if (validPaths.isNotEmpty()) throw IllegalStateException("This method is not meant to be run multiple times")
 
         val startNode = nodes["start"] ?: throw NoSuchElementException("Cannot find start node")
-        findRecursively(Path(startNode))
+        findRecursively(Path(startNode), canVisitOneAdditionalSmallCave)
 
         return validPaths
     }
 
     // DFS on the graph
-    private fun findRecursively(pathSoFar: Path<Cave>) {
+    private fun findRecursively(pathSoFar: Path<Cave>, canVisitOneAdditionalSmallCave: Boolean) {
         val lastNodeOnPath = pathSoFar.nodes.last()
         lastNodeOnPath.neighbours.forEach tryNode@{ newNode ->
             val extendedPath = pathSoFar + newNode
+            if (newNode.name == "start") {
+                return@tryNode
+            }
             if (newNode.name == "end") {
                 validPaths += extendedPath
                 return@tryNode
             }
             if (newNode.isSmallCave && pathSoFar.nodes.contains(newNode)) {
-                // small caves are allowed to be visited only once
+                // normally, small caves are allowed to be visited only once
+                // however, we might have the exception to do it once more
+                if (canVisitOneAdditionalSmallCave) {
+                    findRecursively(extendedPath, canVisitOneAdditionalSmallCave = false)
+                }
                 return@tryNode
             }
-            findRecursively(extendedPath)
+            findRecursively(extendedPath, canVisitOneAdditionalSmallCave)
         }
     }
 }

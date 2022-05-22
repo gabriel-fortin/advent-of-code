@@ -7,13 +7,19 @@ fun main() {
     val part1 = part1(input)
     println("part 1: $part1")
 
-//    val part2 = part2(input)
-//    println("part 2: $part2")
+    val part2 = part2(input)
+    println("part 2: $part2")
 }
 
 fun part1(pairs: List<Pair<String, String>>): Int {
     val pathFindingGraph = PathsVisitingSmallCavesAtMostOnce(pairs)
-    val paths = pathFindingGraph.findPaths()
+    val paths = pathFindingGraph.findPaths(canVisitOneAdditionalSmallCave = false)
+    return paths.count()
+}
+
+fun part2(pairs: List<Pair<String, String>>): Int {
+    val pathFindingGraph = PathsVisitingSmallCavesAtMostOnce(pairs)
+    val paths = pathFindingGraph.findPaths(canVisitOneAdditionalSmallCave = true)
     return paths.count()
 }
 

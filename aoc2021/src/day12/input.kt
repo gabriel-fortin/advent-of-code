@@ -3,9 +3,9 @@ package day12
 import java.io.File
 
 fun getInput(): List<Pair<String, String>> =
-    getTestInput1()
+//    getTestInput1()
 //    getTestInput2()
-//    getRealInput()
+    getRealInput()
 
 fun getRealInput(): List<Pair<String, String>> {
     val lineRegex = Regex("""(\w+)-(\w+)""")
