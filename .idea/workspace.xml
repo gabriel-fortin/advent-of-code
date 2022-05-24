@@ -8,10 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="Setup for 2021 - day 12">
-      <change afterPath="$PROJECT_DIR$/aoc2021/src/day12/day12.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aoc2021/src/day12/input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aoc2021/src/day12/input.txt" afterDir="false" />
+    <list default="true" id="c88f7c36-7867-4ef4-b88f-b0cdf2720472" name="Default" comment="Add 2021 - day 12 - part 2">
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day13/day13.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day13/input.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc2021/src/day13/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -254,7 +254,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -262,14 +262,14 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="day12" />
       <recent name="day11" />
       <recent name="day10" />
       <recent name="day08" />
       <recent name="day06" />
-      <recent name="day05" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.2021 - Day 12">
+  <component name="RunManager" selected="Kotlin.2021 - Day 13">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -456,6 +456,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="2021 - Day 13" type="JetRunConfigurationType">
+      <option name="MAIN_CLASS_NAME" value="day13.Day13Kt" />
+      <module name="aoc2021" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2021/src/day13" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Day 10 part 1" type="JetRunConfigurationType" folderName="2017">
       <option name="MAIN_CLASS_NAME" value="aoc2017.day10.Day10_part1Kt" />
       <module name="advent_of_code_2017-2019" />
@@ -628,6 +638,7 @@
       <item itemvalue="Kotlin.2021 - Day 10" />
       <item itemvalue="Kotlin.2021 - Day 11" />
       <item itemvalue="Kotlin.2021 - Day 12" />
+      <item itemvalue="Kotlin.2021 - Day 13" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -641,41 +652,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512164190981</updated>
-    </task>
-    <task id="LOCAL-00009" summary="2018-day03 preprocess input">
-      <created>1544997083834</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1544997083834</updated>
-    </task>
-    <task id="LOCAL-00010" summary="2018-day03 refactor for part 2">
-      <created>1547070838811</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1547070838811</updated>
-    </task>
-    <task id="LOCAL-00011" summary="2018-day03 make some code easier to understand">
-      <created>1561222240681</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1561222240682</updated>
-    </task>
-    <task id="LOCAL-00012" summary="2018-day03 part 2">
-      <created>1563131496273</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1563131496273</updated>
-    </task>
-    <task id="LOCAL-00013" summary="left overs from AOC 2018">
-      <created>1575492721847</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1575492721847</updated>
     </task>
     <task id="LOCAL-00014" summary="Start AOC 2019">
       <created>1575492739145</created>
@@ -985,7 +961,42 @@
       <option name="project" value="LOCAL" />
       <updated>1651529731870</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Setup for 2021 - day 12">
+      <created>1652214526006</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1652214526006</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Add 2021 - day 12 - part 1">
+      <created>1653233306220</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1653233306220</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Make Graph and Node classes unspecific to the task at hand">
+      <created>1653245255084</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1653245255084</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Move new classes to own files">
+      <created>1653245674997</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1653245674997</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Add 2021 - day 12 - part 2">
+      <created>1653255424757</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1653255424757</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1028,10 +1039,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add 2021 - day 5 - part 1" />
-    <MESSAGE value="Change 2021 - day 5 - part 1&#10;&#10;as a preparation for part 2" />
-    <MESSAGE value="Change 2021 - day 5 - part 2" />
-    <MESSAGE value="Setup for 2021 - day 6" />
     <MESSAGE value="Add 2021 - day 6 - part 1" />
     <MESSAGE value="Add 2021 - day 6 - part 2: exponential growth causes OOMException&#10;&#10;Using the same technique as for part 1 will not work for 256 iterations. It &#10;fails before reaching 200 iterations." />
     <MESSAGE value="Add 2021 - day 6 - part 2: group fish having same timer&#10;&#10;Fish having the same timer value are represented together (as a group)" />
@@ -1053,7 +1060,11 @@
     <MESSAGE value="Add 2021 - day 11 - refactor part 1 into Octopus Simulation class" />
     <MESSAGE value="Add 2021 - day 11 - part 2" />
     <MESSAGE value="Setup for 2021 - day 12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup for 2021 - day 12" />
+    <MESSAGE value="Add 2021 - day 12 - part 1" />
+    <MESSAGE value="Make Graph and Node classes unspecific to the task at hand" />
+    <MESSAGE value="Move new classes to own files" />
+    <MESSAGE value="Add 2021 - day 12 - part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add 2021 - day 12 - part 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1070,6 +1081,18 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="day12.PathsVisitingSmallCavesAtMostOnce" memberName="edges" />
+        <PinnedItemInfo parentTag="day12.PathsVisitingSmallCavesAtMostOnce" memberName="nodes" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="JetRunConfigurationType">
+        <watch expression="((PathsVisitingSmallCavesAtMostOnce)this).validPaths" custom="day12.PathsVisitingSmallCavesAtMostOnce" />
+        <watch expression="pathEnd.neighbours.joinToString(&quot; &quot;)" language="kotlin" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/aoc2017/day4/day4.kt">

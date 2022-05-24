@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="method" FQNAME="day11.Day11Kt void main()" />
+      <entry_point TYPE="method" FQNAME="day10.Day10Kt void main()" />
+      <entry_point TYPE="method" FQNAME="day09.Day09Kt void main()" />
+      <entry_point TYPE="method" FQNAME="day08.Day08Kt void main()" />
+      <entry_point TYPE="method" FQNAME="day07.Day07Kt void main()" />
+      <entry_point TYPE="method" FQNAME="day06.Day06Kt void main()" />
+    </entry_points>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="corretto-1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
