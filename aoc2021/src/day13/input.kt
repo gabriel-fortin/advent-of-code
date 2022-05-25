@@ -8,8 +8,8 @@ val INSTRUCTION_REGEX = Regex("""fold along (\w)=(\d+)""")
 
 fun getInput(): Input {
     val lines =
-        getTestInput()
-//        getRealInput()
+//        getTestInput()
+        getRealInput()
 
     val dots = lines.takeWhile { it.isNotEmpty() }.map(::parseDot)
     val instructions = lines.drop(dots.size + 1).map(::parseInstruction)
