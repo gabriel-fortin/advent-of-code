@@ -70,4 +70,21 @@ public partial class Day01
             list1: numberPairs.Select(x => x[0]).ToList(),
             list2: numberPairs.Select(x => x[1]).ToList());
     }
+
+    public string Part2(bool useExampleData)
+    {
+        string rawInput = Input.GetInput(useExampleData);
+        var (list1, list2) = ParseLocationLists(rawInput);
+
+        return list1
+            .Select(x => SimilarityScore(x, list2))
+            .Sum()
+            .ToString();
+    }
+
+    private int SimilarityScore(int number, List<int> list2)
+    {
+        int occurrencesOnList2 = list2.Count(x => x == number);
+        return number * occurrencesOnList2;
+    }
 }
