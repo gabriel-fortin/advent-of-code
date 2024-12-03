@@ -13,3 +13,6 @@ Console.WriteLine("");
 
 Console.WriteLine("Day 02, part 1, example: " + new Day02().Part1(useExampleData: true));
 Console.WriteLine("Day 02, part 1, actual: " + new Day02().Part1(useExampleData: false));
+
+Console.WriteLine("Day 02, part 2, example: " + new Day02().Part2(useExampleData: true));
+Console.WriteLine("Day 02, part 2, actual: " + new Day02().Part2(useExampleData: false));
