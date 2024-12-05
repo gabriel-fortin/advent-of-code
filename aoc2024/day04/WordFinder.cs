@@ -28,8 +28,45 @@ public class WordFinder(Matrix matrix)
         return sum;
     }
 
-    // TODO: use more LINQ?
-    private long FindAndCountAt(Pos pos, char[] word)
+    private int FindAndCountAt(Pos pos, char[] word)
+    {
+        int count = 0;
+        foreach (var move in MovementDirections)
+        {
+            if (IsAMatchAtPosInDirection(pos, word, move))
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    private bool IsAMatchAtPosInDirection(Pos pos, char[] word, Move move)
+    {
+        var currPos = pos;
+        foreach (char letter in word)
+        {
+            if (matrix.Get(currPos) != letter)
+            {
+                return false;
+            }
+
+            currPos = currPos.MoveBy(move);
+        }
+
+        return true;
+    }
+
+    // LINQ version of FindAndCountAt
+    private int FindAndCountAtUsingLinq(Pos pos, char[] word)
+    {
+        return MovementDirections
+            .Count(move => IsAMatchAtPosInDirection(pos, word, move));
+    }
+
+    // version of FindAndCountAt using goto and a label
+    private int FindAndCountAtUsingGotoAndLabel(Pos pos, char[] word)
     {
         int count = 0;
         foreach (var move in MovementDirections)
@@ -51,4 +88,5 @@ public class WordFinder(Matrix matrix)
 
         return count;
     }
+    
 }
