@@ -16,4 +16,21 @@ public class AdvancedWordFinder(Matrix matrix)
 
         return sum;
     }
+    
+    // alternative version using LINQ
+    public int FindAndCountUsingLinq(Pattern pattern)
+    {
+        return Enumerable
+            .Range(0, matrix.MaxRow)
+            .Sum(row => Enumerable
+                .Range(0, matrix.MaxColumn)
+                .Count(column => pattern.IsMatchAtPosition(row, column, matrix)));
+    }
+    
+    // simple LINQ version which required adding AllPositions method to Matrix
+    public int FindAndCountUsingLinqAndAllPositionsFromMatrix(Pattern pattern)
+    {
+        return matrix.AllPositions()
+            .Count(x => pattern.IsMatchAtPosition(x.position, matrix));
+    }
 }

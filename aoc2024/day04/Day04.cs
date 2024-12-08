@@ -18,39 +18,51 @@ public static partial class Day04
         var matrix = new Matrix(rawInput.Split("\n"));
 
         var finder = new AdvancedWordFinder(matrix);
-        return AllPatterns
+        return AllXMasPatterns
             .Select(pattern => finder.FindAndCount(pattern))
             .Sum()
             .ToString();
     }
 
-    private static readonly Pattern[] AllPatterns =
-        new (char letter, (int, int) relativePosition)[][]
-            {
-                // @formatter:off
-                [
-                    ('M', (0, 0)),                 ('M', (2, 0)),
-                                    ('A', (1, 1)),
-                    ('S', (0, 2)),                 ('S', (2, 2)),
-                ],
-                [
-                    ('M', (0, 0)),                 ('S', (2, 0)),
-                                    ('A', (1, 1)),
-                    ('M', (0, 2)),                 ('S', (2, 2)),
-                ],
-                [
-                    ('S', (0, 0)),                 ('M', (2, 0)),
-                                    ('A', (1, 1)),
-                    ('S', (0, 2)),                 ('M', (2, 2)),
-                ],
-                [
-                    ('S', (0, 0)),                 ('S', (2, 0)),
-                                    ('A', (1, 1)),
-                    ('M', (0, 2)),                 ('M', (2, 2)),
-                ],
-                // @formatter:on
-            }
-            .Select(list => list.Select(x => (x.letter, new Move(x.relativePosition))).ToList())
-            .Select(moveList => new Pattern(moveList))
-            .ToArray();
+    private static readonly Pattern[] AllXMasPatterns = new char[][]
+        {
+            // @formatter:off
+            [
+                'M',    'M',
+                    'A',
+                'S',    'S',
+            ],
+            [
+                'M',    'S',
+                    'A',
+                'M',    'S',
+            ],
+            [
+                'S',    'M',
+                    'A',
+                'S',    'M',
+            ],
+            [
+                'S',    'S',
+                    'A',
+                'M',    'M',
+            ],
+            // @formatter:on
+        }
+        .Select(AttachRelativePositions)
+        .Select(Pattern.FromEnumerableOfLettersAndPositions)
+        .ToArray();
+
+    private static IEnumerable<(char, (int, int))> AttachRelativePositions(char[] letters)
+    {
+        (int, int)[] relativePositions =
+            // @formatter:off
+            [
+                (0, 0),         (2, 0),
+                        (1, 1),
+                (0, 2),         (2, 2),
+            ];
+        // @formatter:on
+        return letters.Zip(relativePositions);
+    }
 }

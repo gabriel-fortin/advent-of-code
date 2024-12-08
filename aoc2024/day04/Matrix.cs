@@ -32,4 +32,19 @@ public class Matrix
 
         return _data[row][column];
     }
+
+    /// <summary>
+    /// Returns all positions existing in the matrix
+    /// together with the letters present at each of those positions.
+    /// </summary>
+    public IEnumerable<(Pos position, char letter)> AllPositions()
+    {
+        for (var i = 0; i < _data.Length; i++)
+        {
+            for (var j = 0; j < _data[i].Length; j++)
+            {
+                yield return (new Pos(i, j), _data[i][j]);
+            }
+        }
+    }
 }
