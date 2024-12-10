@@ -6,7 +6,7 @@ public static partial class Day05
     public static string Part1(bool useExampleData)
     {
         string rawInput = Input.GetInput(useExampleData);
-        (PageOrderingRule[] orderingRules, SafetyManualUpdate[] updates) = Parsing.ParseInput(rawInput);
+        (PageOrderingRule[] orderingRules, PageSet[] updates) = Parsing.ParseInput(rawInput);
 
         return updates
             .Where(x => IsUpdateRightlyOrdered(orderingRules, x))
@@ -20,7 +20,7 @@ public static partial class Day05
         return "NOT IMPLEMENTED";
     }
 
-    private static bool IsUpdateRightlyOrdered(PageOrderingRule[] orderingRules, SafetyManualUpdate update)
+    private static bool IsUpdateRightlyOrdered(PageOrderingRule[] orderingRules, PageSet update)
     {
         for (var i = 0; i < update.Pages.Length; i++)
         {
@@ -45,7 +45,7 @@ public record PageOrderingRule(Page Predecessor, Page Successor)
     }
 }
 
-public record SafetyManualUpdate(Page[] Pages)
+public record PageSet(Page[] Pages)
 {
     public Page MiddlePage => Pages[Pages.Length / 2];
 }

@@ -4,7 +4,7 @@ public static partial class Day05
 {
     public static class Parsing
     {
-        public static (PageOrderingRule[] orderingRules, SafetyManualUpdate[] updates) ParseInput(string rawInput)
+        public static (PageOrderingRule[] orderingRules, PageSet[] updates) ParseInput(string rawInput)
         {
             string[] inputLines = rawInput.Split('\n');
 
@@ -13,7 +13,7 @@ public static partial class Day05
                 .Select(ParsePageOrderingRule)
                 .ToArray();
 
-            SafetyManualUpdate[] updates = inputLines
+            PageSet[] updates = inputLines
                 .SkipWhile(x => !string.IsNullOrWhiteSpace(x))
                 .Skip(1)
                 .Select(ParseSafetyManualUpdate)
@@ -32,13 +32,13 @@ public static partial class Day05
             return new PageOrderingRule(pages[0], pages[1]);
         }
 
-        private static SafetyManualUpdate ParseSafetyManualUpdate(string inputLine)
+        private static PageSet ParseSafetyManualUpdate(string inputLine)
         {
             Page[] pages = inputLine
                 .Split(',')
                 .Select(x => new Page(int.Parse(x)))
                 .ToArray();
-            return new SafetyManualUpdate(pages);
+            return new PageSet(pages);
         }
     }
 }
