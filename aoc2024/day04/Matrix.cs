@@ -33,6 +33,12 @@ public class Matrix
         return _data[row][column];
     }
 
+    public void Set(Pos position, char value)
+    {
+        (int row, int column) = position;
+        _data[row][column] = value;
+    }
+
     /// <summary>
     /// Returns all positions existing in the matrix
     /// together with the letters present at each of those positions.
