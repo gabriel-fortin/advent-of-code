@@ -8,6 +8,11 @@ public static partial class Day07
     {
         string rawInput = Input.GetInput(useExampleData);
         Equation[] equations = ParseEquations(rawInput);
+        
+        foreach (Equation equation in equations)
+        {
+            equation.AttemptComputingExpectedValue(Operation.Add, Operation.Multiply);
+        }
 
         return equations
             .Where(x => x.IsDoable)
@@ -17,7 +22,18 @@ public static partial class Day07
 
     public static string Part2(bool useExampleData)
     {
-        return "NOT IMPLEMENTED";
+        string rawInput = Input.GetInput(useExampleData);
+        Equation[] equations = ParseEquations(rawInput);
+        
+        foreach (Equation equation in equations)
+        {
+            equation.AttemptComputingExpectedValue(Operation.Add, Operation.Multiply, Operation.Concatenate);
+        }
+
+        return equations
+            .Where(x => x.IsDoable)
+            .Sum(x => x.ExpectedValue)
+            .ToString();
     }
 
     private static Equation[] ParseEquations(string rawInput)
@@ -49,12 +65,15 @@ public record Equation
     {
         this.ExpectedValue = ExpectedValue;
         this.Numbers = Numbers;
-        AttemptComputingExpectedValue();
+        // AttemptComputingExpectedValue();
     }
 
-    private void AttemptComputingExpectedValue()
+    public void AttemptComputingExpectedValue(params Operation[] operations)
     {
-        foreach (IList<Operation> operationSequence in Operation.GetAllOperationSequencesOfSize(Numbers.Length - 1))
+        if (operations.Length == 0) throw new ArgumentException();
+
+        IEnumerable<IList<Operation>> permutations = GetAllOperationPermutations(Numbers.Length - 1, operations);
+        foreach (var operationSequence in permutations)
         {
             if (ComputeValue(operationSequence) == ExpectedValue)
             {
@@ -66,10 +85,9 @@ public record Equation
         IsDoable = false;
     }
 
-    private void AttemptSolvingEquationUsingLinq()
+    private void AttemptComputingExpectedValueUsingLinq(params Operation[] operations)
     {
-        IsDoable = Operation
-            .GetAllOperationSequencesOfSize(Numbers.Length - 1)
+        IsDoable = GetAllOperationPermutations(Numbers.Length - 1, operations)
             .Any(operationSequence => ComputeValue(operationSequence) == ExpectedValue);
     }
 
@@ -91,23 +109,9 @@ public record Equation
             .Aggregate(Numbers[0],
                 (long acc, (int n, Operation op) tuple) => tuple.op.Apply(acc, tuple.n));
     }
-}
 
-public class Operation
-{
-    public string Name { get; }
-
-    public Func<long, int, long> Apply { get; }
-
-    private Operation(string name, Func<long, int, long> apply)
-    {
-        Name = name;
-        Apply = apply;
-    }
-
-    public override string ToString() => Name;
-
-    public static IEnumerable<ImmutableList<Operation>> GetAllOperationSequencesOfSize(int size)
+    public static IEnumerable<ImmutableList<Operation>> GetAllOperationPermutations(int size,
+        params Operation[] operations)
     {
         if (size == 0)
         {
@@ -115,13 +119,28 @@ public class Operation
             yield break;
         }
 
-        foreach (var shorterSequence in GetAllOperationSequencesOfSize(size - 1))
+        foreach (var shorterSequence in GetAllOperationPermutations(size - 1, operations))
         {
-            yield return shorterSequence.Add(Add);
-            yield return shorterSequence.Add(Multiply);
+            foreach (var op in operations)
+            {
+                // shorterSequence is immutable, calling .Add creates a new list
+                yield return shorterSequence.Add(op);
+            }
         }
     }
+}
 
-    public static readonly Operation Add = new Operation("Add", (x, y) => x + y);
-    public static readonly Operation Multiply = new Operation("Multiply", (x, y) => x * y);
+public class Operation
+{
+    public Func<long, int, long> Apply { get; }
+
+    private Operation(Func<long, int, long> apply)
+    {
+        Apply = apply;
+    }
+
+    public static readonly Operation Add = new Operation((x, y) => x + y);
+    public static readonly Operation Multiply = new Operation((x, y) => x * y);
+    public static readonly Operation Concatenate =
+        new Operation((x, y) => long.Parse(string.Concat(x,y)));
 }
