@@ -7,6 +7,7 @@ using Advent_of_Code_2024.day06;
 using Advent_of_Code_2024.day07;
 using Advent_of_Code_2024.day08;
 using Advent_of_Code_2024.day09;
+using Advent_of_Code_2024.day7again;
 
 Console.WriteLine("== Day 01 ==");
 Console.WriteLine("Day 01, part 1, example: " + new Day01().Part1(useExampleData: true));
@@ -62,3 +63,9 @@ Console.WriteLine("Day 09, part 1, example: " + Day09.Part1(useExampleData: true
 Console.WriteLine("Day 09, part 1, actual: " + Day09.Part1(useExampleData: false));
 Console.WriteLine("Day 09, part 2, example: " + Day09.Part2(useExampleData: true));
 Console.WriteLine("Day 09, part 2, actual: " + Day09.Part2(useExampleData: false));
+
+Console.WriteLine("== Day 07 again ==");
+Console.WriteLine("Day 07 again, part 1, example: " + Day07Again.Part1(useExampleData: true));
+Console.WriteLine("Day 07 again, part 1, actual: " + Day07Again.Part1(useExampleData: false));
+Console.WriteLine("Day 07 again, part 2, example: " + Day07Again.Part2(useExampleData: true));
+Console.WriteLine("Day 07 again, part 2, actual: " + Day07Again.Part2(useExampleData: false));
