@@ -8,6 +8,8 @@ public class DataPoint(int height = 0)
 
     // using a set which has elements of a record type allows to avoid duplicates
     public HashSet<Pos> Destinations { get; } = new();
+
+    public int Rating { get; set; } = -1;
     
     public int GetScore()
     {

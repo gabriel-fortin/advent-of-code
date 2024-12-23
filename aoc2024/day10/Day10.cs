@@ -15,8 +15,7 @@ public static partial class Day10
 
     public static string Part1(bool useExampleData)
     {
-        string rawInput = Input.GetInput(useExampleData);
-        Matrix<DataPoint> matrix = ParseTopographicMap(rawInput);
+        Matrix<DataPoint> matrix = ParseTopographicMap(Input.GetInput(useExampleData));
 
         var dataPointsByHeight = ProcessData(matrix);
 
@@ -28,7 +27,13 @@ public static partial class Day10
 
     public static string Part2(bool useExampleData)
     {
-        return "NOT IMPLEMENTED";
+        Matrix<DataPoint> matrix = ParseTopographicMap(Input.GetInput(useExampleData));
+
+        var dataPointsByHeight = ProcessData(matrix);
+
+        return dataPointsByHeight[0]
+            .Sum(x => x.element.Rating)
+            .ToString();
     }
 
     private static IGrouping<int, (Pos position, DataPoint element)>[] ProcessData(Matrix<DataPoint> matrix)
@@ -48,27 +53,34 @@ public static partial class Day10
         foreach ((Pos ownPosition, DataPoint element) in byHeight[9])
         {
             element.Destinations.Add(ownPosition);
+            element.Rating = 1;
         }
         // Visualise(matrix, 9);
 
         // for each lower position's destination use destinations of neighbouring next level positions
         for (int currentHeight = 8; currentHeight >= 0; currentHeight--)
         {
-            foreach (var (position, element) in byHeight[currentHeight])
+            foreach (var (position, dataPoint) in byHeight[currentHeight])
             {
-                IEnumerable<Pos> destinationsOfNextHeightNeighbours = NeighbourMoves
+                DataPoint[] nextHeightNeighbours = NeighbourMoves
                     // compute neighbouring positions
-                    .Select(move => position.MoveBy(move))
+                    .Select(moveToNeighbour => position.MoveBy(moveToNeighbour))
                     // for each position, get the data for that position
-                    .Select(pos => matrix.Get(pos))
+                    .Select(neighbourPos => matrix.Get(neighbourPos))
                     // only consider neighbours withing bounds and of the next height
-                    .Where(data => data != null && data.Height == currentHeight + 1)
-                    // get all destinations from those neighbours
+                    .Where(neighbourData => neighbourData != null && neighbourData.Height == currentHeight + 1)
                     // (we know data is not null because we excluded nulls in the line above)
-                    .SelectMany(data => data!.Destinations);
-                foreach (Pos destination in destinationsOfNextHeightNeighbours)
+                    .ToArray()!;
+                
+                IEnumerable<Pos> nextHeightNeighbourDestinations = nextHeightNeighbours
+                    // get all destinations from those neighbours
+                    .SelectMany(neighbourData => neighbourData.Destinations);
+                
+                dataPoint.Rating = nextHeightNeighbours.Sum(neighbourData => neighbourData.Rating);
+                foreach (Pos neighbourDestination in nextHeightNeighbourDestinations)
                 {
-                    element.Destinations.Add(destination);
+                    // 'Destinations' is a set so we'll not have duplicates
+                    dataPoint.Destinations.Add(neighbourDestination);
                 }
             }
             // Visualise(matrix, i);
