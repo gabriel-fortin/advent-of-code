@@ -4,29 +4,42 @@ namespace Advent_of_Code_2024.day11;
 
 public static partial class Day11
 {
-    private const int BlinkCount = 25;
-
     public static string Part1(bool useExampleData)
     {
         string rawInput = Input.GetInput(useExampleData);
-        Stone[] stones = rawInput
-            .Split(' ')
-            .Select(Stone.Create)
-            .ToArray();
-
-        for (int i = 0; i < BlinkCount; i++)
-        {
-            stones = stones
-                .SelectMany(stone => stone.Blink())
-                .ToArray();
-        }
-
-        return stones.Length.ToString();
+        return ParseStones(rawInput)
+            .LookAtThemAndBlink(25)
+            .Length.ToString();
     }
 
     public static string Part2(bool useExampleData)
     {
-        return "NOT IMPLEMENTED";
+        string rawInput = Input.GetInput(useExampleData);
+        return ParseStones(rawInput)
+            .LookAtThemAndBlink(75)
+            .Length.ToString();
+    }
+
+    private static Stone[] ParseStones(string rawInput)
+    {
+        return rawInput
+            .Split(' ')
+            .Select(Stone.Create)
+            .ToArray();
+    }
+
+    private static Stone[] LookAtThemAndBlink(this Stone[] stones, int blinkCount)
+    {
+        for (int i = 0; i < blinkCount; i++)
+        {
+            Console.Write($" [{i}: {stones.Length}] ");
+            stones = stones
+                .SelectMany(stone => stone.Blink())
+                .ToArray();
+        }
+        Console.WriteLine();
+
+        return stones;
     }
 }
 
