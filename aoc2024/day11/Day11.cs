@@ -4,20 +4,26 @@ namespace Advent_of_Code_2024.day11;
 
 public static partial class Day11
 {
+    // a shared cache of known computations
+    private static StoneCounter _stoneCounter = new StoneCounter();
+    
     public static string Part1(bool useExampleData)
     {
         string rawInput = Input.GetInput(useExampleData);
         return ParseStones(rawInput)
-            .LookAtThemAndBlink(25)
+            .LookAtThemAndBlink(blinkCount: 25)
             .Length.ToString();
     }
 
     public static string Part2(bool useExampleData)
     {
         string rawInput = Input.GetInput(useExampleData);
+        
         return ParseStones(rawInput)
-            .LookAtThemAndBlink(75)
-            .Length.ToString();
+            // we're not really interested in the actual values on stones
+            // so instead of blinking, we care only about the counts, and we cache them where possible
+            .Select(stone => _stoneCounter.StoneCount(stone.Number, 75))
+            .Sum().ToString();
     }
 
     private static Stone[] ParseStones(string rawInput)
@@ -32,12 +38,10 @@ public static partial class Day11
     {
         for (int i = 0; i < blinkCount; i++)
         {
-            Console.Write($" [{i}: {stones.Length}] ");
             stones = stones
                 .SelectMany(stone => stone.Blink())
                 .ToArray();
         }
-        Console.WriteLine();
 
         return stones;
     }
@@ -45,7 +49,7 @@ public static partial class Day11
 
 public class Stone
 {
-    private readonly string _textNumber;
+    public readonly string Number;
 
     public Stone(string number)
     {
@@ -58,36 +62,74 @@ public class Stone
         // remove leading zeroes
         if (firstMeaningfulDigitIndex >= number.Length)
         {
-            _textNumber = "0";
+            Number = "0";
         }
         else if (firstMeaningfulDigitIndex > 0)
         {
-            _textNumber = number[firstMeaningfulDigitIndex..];
+            Number = number[firstMeaningfulDigitIndex..];
         }
         else
         {
-            _textNumber = number;
+            Number = number;
         }
     }
 
     public IEnumerable<Stone> Blink()
     {
-        if (_textNumber == "0") yield return new("1");
-        else if (_textNumber.Length % 2 == 0)
+        if (Number == "0") yield return new("1");
+        else if (Number.Length % 2 == 0)
         {
-            string next1 = _textNumber.Substring(0, _textNumber.Length / 2);
-            string next2 = _textNumber.Substring(_textNumber.Length / 2);
+            string next1 = Number.Substring(0, Number.Length / 2);
+            string next2 = Number.Substring(Number.Length / 2);
             yield return new(next1);
             yield return new(next2);
         }
         else
         {
-            decimal newNumber = 2024 * decimal.Parse(_textNumber);
+            decimal newNumber = 2024 * decimal.Parse(Number);
             yield return new(newNumber.ToString(CultureInfo.InvariantCulture));
         }
     }
 
-    public override string ToString() => _textNumber;
+    public override string ToString() => Number;
 
     public static Stone Create(string number) => new Stone(number);
+}
+
+public class StoneCounter
+{
+    private readonly Dictionary<string, long> _stoneCountCache = new();
+
+    /// <summary>
+    /// Returns the number of stones the given stone will transform into after the given number of blinks
+    /// </summary>
+    public long StoneCount(string stoneValue, int blinkCount)
+    {
+        if (blinkCount == 0)
+        {
+            AddCacheCount(stoneValue, blinkCount, 1);
+            return 1;
+        }
+
+        if (TryGetCachedCount(stoneValue, blinkCount, out var cachedStoneCount))
+        {
+            return cachedStoneCount;
+        }
+
+        IEnumerable<Stone> stonesAfterBlink = new Stone(stoneValue).Blink();
+        // recursive call
+        var stoneCount =  stonesAfterBlink.Sum(stone => StoneCount(stone.Number, blinkCount - 1));
+        AddCacheCount(stoneValue, blinkCount, stoneCount);
+        return stoneCount;
+    }
+
+    private bool TryGetCachedCount(string stoneValue, int blinkCount, out long cachedStoneCount)
+    {
+        return _stoneCountCache.TryGetValue($"{stoneValue}_{blinkCount}", out cachedStoneCount);
+    }
+
+    private void AddCacheCount(string stoneValue, int blinkCount, long stoneCount)
+    {
+        _stoneCountCache[$"{stoneValue}_{blinkCount}"] = stoneCount;
+    }
 }
