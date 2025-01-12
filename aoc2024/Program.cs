@@ -10,6 +10,8 @@ using Advent_of_Code_2024.day09;
 using Advent_of_Code_2024.day7again;
 using Advent_of_Code_2024.day10;
 using Advent_of_Code_2024.day11;
+using Advent_of_Code_2024.day12;
+using static Advent_of_Code_2024.InputSelector;
 
 Console.WriteLine("== Day 01 ==");
 Console.WriteLine("Day 01, part 1, example: " + new Day01().Part1(useExampleData: true));
@@ -83,3 +85,13 @@ Console.WriteLine("Day 11, part 1, example: " + Day11.Part1(useExampleData: true
 Console.WriteLine("Day 11, part 1, actual: " + Day11.Part1(useExampleData: false));
 Console.WriteLine("Day 11, part 2, example: " + Day11.Part2(useExampleData: true));
 Console.WriteLine("Day 11, part 2, actual: " + Day11.Part2(useExampleData: false));
+
+Console.WriteLine("== Day 12 ==");
+Console.WriteLine("Day 12, part 1, example 1: " + Day12.Part1(Example1) + " (expected 140)");
+Console.WriteLine("Day 12, part 1, example 2: " + Day12.Part1(Example2) + " (expected 772)");
+Console.WriteLine("Day 12, part 1, example 3: " + Day12.Part1(Example3) + " (expected 1930)");
+Console.WriteLine("Day 12, part 1, actual: " + Day12.Part1(Actual));
+Console.WriteLine($"Day 12, part 1, example 1: {Day12.Part1(Example1)} (expected 140)");
+Console.WriteLine($"Day 12, part 1, example 2: {Day12.Part1(Example2)} (expected 772)");
+Console.WriteLine($"Day 12, part 1, example 3: {Day12.Part1(Example3)} (expected 1930)");
+Console.WriteLine("Day 12, part 1, my input: " + Day12.Part1(MyInput));
