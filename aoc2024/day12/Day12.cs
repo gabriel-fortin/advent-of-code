@@ -199,93 +199,10 @@ public static partial class Day12
                 // positions of all potential neighbours
                 .Select(dir => currentPosition.MoveBy(dir))
                 // get neighbours at those positions (some might be a miss)
-                .Select(neighbourPosition => matrix.Get(neighbourPosition))
+                .Select(matrix.Get)
                 // ignore results that were a miss
                 .Where(neighbourPlot => neighbourPlot != null)!
                 .ToArray<GardenPlot>();
         }
-    }
-}
-
-public class GardenPlot(char plantType)
-{
-    public char PlantType { get; init; } = plantType;
-
-    public bool HasBeenProcessed => Region != null;
-
-    public Region? Region { get; set; }
-
-    public GardenPlot[]? Neighbours { get; set; }
-
-    public Region BuildRegion()
-    {
-        var newRegion = new Region(PlantType);
-        // the region will be built using a DFS graph-exploration strategy
-        AttemptAttachToRegionAndRequestNeighboursDoingLikewise(newRegion);
-        return newRegion;
-    }
-
-    private void AttemptAttachToRegionAndRequestNeighboursDoingLikewise(Region regionToGrow)
-    {
-        // if we've been processed as part of a Region already, we politely decline
-        if (Region != null) return;
-        // same if the plot cannot be part of that Region
-        if (!regionToGrow.WillAccept(this)) return;
-
-        Region = regionToGrow;
-        regionToGrow.Add(this);
-
-        foreach (GardenPlot neighbour in Neighbours)
-        {
-            neighbour.AttemptAttachToRegionAndRequestNeighboursDoingLikewise(regionToGrow);
-        }
-    }
-
-    public override string ToString()
-    {
-        return $"{PlantType} -> [{string.Join(", ", Neighbours.Select(x => x.PlantType))}]";
-    }
-}
-
-public class Region(
-    char plantType
-)
-{
-    public int Area { get; private set; }
-
-    public int Perimeter { get; private set; }
-
-    public int Sides { get; set; }
-
-    public bool WillAccept(GardenPlot plot)
-    {
-        return plot.PlantType == plantType;
-    }
-
-    public void Add(GardenPlot plot)
-    {
-        if (plot.PlantType != plantType)
-        {
-            throw new ArgumentException(
-                $"Region has plan type '{plantType}' and won't accept a plot having plant type '{plot.PlantType}'");
-        }
-
-        Area++;
-        Perimeter += 4; // one for each side of the added plot
-
-        // remove 2 sides from Perimeter for each pair of adjacent plots that are already in the Region
-        int neighboursAlreadyInRegion = plot.Neighbours
-            .Count(neighbour => neighbour.Region == this);
-        Perimeter -= 2 * neighboursAlreadyInRegion;
-    }
-
-    public long RegularFencePrice()
-    {
-        return (long)Area * Perimeter;
-    }
-
-    public long BulkDiscountFencePrice()
-    {
-        return (long)Area * Sides;
     }
 }
