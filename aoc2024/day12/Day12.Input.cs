@@ -11,7 +11,8 @@ public static partial class Day12
                 InputSelector.Example1 => GetExample1Input(),
                 InputSelector.Example2 => GetExample2Input(),
                 InputSelector.Example3 => GetExample3Input(),
-                InputSelector.Actual => GetMyPuzzleInput(),
+                InputSelector.Example4 => GetExample4Input(),
+                InputSelector.Example5 => GetExample5Input(),
                 InputSelector.MyInput => GetMyPuzzleInput(),
                 _ => throw new ArgumentOutOfRangeException(nameof(inputSelector), inputSelector, null)
             };
@@ -46,6 +47,25 @@ public static partial class Day12
             MIIIIIJJEE
             MIIISIJEEE
             MMMISSJEEE
+            """;
+        
+        private static string GetExample4Input() =>
+            """
+            EEEEE
+            EXXXX
+            EEEEE
+            EXXXX
+            EEEEE
+            """;
+        
+        private static string GetExample5Input() =>
+            """
+            AAAAAA
+            AAABBA
+            AAABBA
+            ABBAAA
+            ABBAAA
+            AAAAAA
             """;
 
         private static string GetMyPuzzleInput() =>

@@ -21,16 +21,21 @@ public class Matrix<TElement> where TElement : class
     /// Returns the element at the given position.
     /// If either of the arguments is out of range, null is returned.
     /// </summary>
-    public TElement? Get(Pos position)
+    public TElement? Get(int row, int column)
     {
-        (int row, int column) = position;
-
         if (row < 0 || row >= _data.Length || column < 0 || column >= _data[row].Length)
         {
             return null;
         }
 
         return _data[row][column];
+    }
+
+    /// <inheritdoc cref="Get(int,int)"/>
+    public TElement? Get(Pos position)
+    {
+        (int row, int column) = position;
+        return Get(row, column);
     }
 
     public void Set(Pos position, TElement element)

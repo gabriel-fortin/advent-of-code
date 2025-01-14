@@ -87,11 +87,14 @@ Console.WriteLine("Day 11, part 2, example: " + Day11.Part2(useExampleData: true
 Console.WriteLine("Day 11, part 2, actual: " + Day11.Part2(useExampleData: false));
 
 Console.WriteLine("== Day 12 ==");
-Console.WriteLine("Day 12, part 1, example 1: " + Day12.Part1(Example1) + " (expected 140)");
-Console.WriteLine("Day 12, part 1, example 2: " + Day12.Part1(Example2) + " (expected 772)");
-Console.WriteLine("Day 12, part 1, example 3: " + Day12.Part1(Example3) + " (expected 1930)");
-Console.WriteLine("Day 12, part 1, actual: " + Day12.Part1(Actual));
 Console.WriteLine($"Day 12, part 1, example 1: {Day12.Part1(Example1)} (expected 140)");
 Console.WriteLine($"Day 12, part 1, example 2: {Day12.Part1(Example2)} (expected 772)");
 Console.WriteLine($"Day 12, part 1, example 3: {Day12.Part1(Example3)} (expected 1930)");
 Console.WriteLine("Day 12, part 1, my input: " + Day12.Part1(MyInput));
+Console.WriteLine($"Day 12, part 2, example 1: {Day12.Part2(Example1)} (expected 80)");
+Console.WriteLine($"Day 12, part 2, example 2: {Day12.Part2(Example2)} (expected 436)");
+Console.WriteLine($"Day 12, part 2, example 3: {Day12.Part2(Example3)} (expected 1206)");
+Console.WriteLine($"Day 12, part 2, example 4: {Day12.Part2(Example4)} (expected 236)");
+Console.WriteLine($"Day 12, part 2, example 5: {Day12.Part2(Example5)} (expected 368)");
+Console.WriteLine("Day 12, part 2, actual: " + Day12.Part2(MyInput));
+
