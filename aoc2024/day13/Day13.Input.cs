@@ -9,6 +9,7 @@ public static partial class Day13
             return inputSelector switch
             {
                 InputSelector.Example1 => GetExample1Input(),
+                InputSelector.Example2 => GetExample2Input(),
                 InputSelector.MyInput => GetMyPuzzleInput(),
                 _ => throw new ArgumentOutOfRangeException(nameof(inputSelector), inputSelector, null)
             };
@@ -31,6 +32,17 @@ public static partial class Day13
             Button A: X+69, Y+23
             Button B: X+27, Y+71
             Prize: X=18641, Y=10279
+            """;
+
+        private static string GetExample2Input() =>
+            """
+            Button A: X+17, Y+86
+            Button B: X+84, Y+37
+            Prize: X=7870, Y=6450
+            
+            Button A: X+86, Y+44
+            Button B: X+11, Y+49
+            Prize: X=18047, Y=17733
             """;
 
         private static string GetMyPuzzleInput() =>
