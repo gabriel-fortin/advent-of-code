@@ -10,6 +10,8 @@ public static partial class Day13
             {
                 InputSelector.Example1 => GetExample1Input(),
                 InputSelector.Example2 => GetExample2Input(),
+                InputSelector.Example3 => GetExample3Input(),
+                InputSelector.Example4 => GetExample4Input(),
                 InputSelector.MyInput => GetMyPuzzleInput(),
                 _ => throw new ArgumentOutOfRangeException(nameof(inputSelector), inputSelector, null)
             };
@@ -36,13 +38,47 @@ public static partial class Day13
 
         private static string GetExample2Input() =>
             """
-            Button A: X+17, Y+86
-            Button B: X+84, Y+37
-            Prize: X=7870, Y=6450
+            Button A: X+14, Y+73
+            Button B: X+81, Y+20
+            Prize: X=7349, Y=2510
             
-            Button A: X+86, Y+44
-            Button B: X+11, Y+49
-            Prize: X=18047, Y=17733
+            Button A: X+28, Y+87
+            Button B: X+84, Y+13
+            Prize: X=6020, Y=2585
+            
+            Button A: X+11, Y+41
+            Button B: X+62, Y+17
+            Prize: X=6413, Y=5063
+            
+            Button A: X+16, Y+82
+            Button B: X+90, Y+22
+            Prize: X=8376, Y=6030
+            
+            Button A: X+65, Y+96
+            Button B: X+86, Y+11
+            Prize: X=7587, Y=8073
+            
+            Button A: X+51, Y+83
+            Button B: X+96, Y+11
+            Prize: X=3612, Y=1957
+            
+            Button A: X+21, Y+69
+            Button B: X+90, Y+16
+            Prize: X=5028, Y=3374
+            """;
+
+        private static string GetExample3Input() =>
+            """
+            Button A: X+28, Y+90
+            Button B: X+69, Y+42
+            Prize: X=5075, Y=4986
+            """;
+
+        private static string GetExample4Input() =>
+            """
+            Button A: X+28, Y+80
+            Button B: X+99, Y+45
+            Prize: X=9426, Y=9330
             """;
 
         private static string GetMyPuzzleInput() =>

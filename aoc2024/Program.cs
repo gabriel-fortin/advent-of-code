@@ -101,6 +101,11 @@ Console.WriteLine("Day 12, part 2, actual: " + Day12.Part2(MyInput));
 
 
 Console.WriteLine("== Day 13 ==");
-// Console.WriteLine($"Day 13, part 1, example 1: {Day13.Part1(Example1)} (expected 480)");
-Console.WriteLine($"Day 13, part 1, example 2: {Day13.Part1(Example2)}");
-// Console.WriteLine("Day 13, part 1, my input: " + Day13.Part1(MyInput));
+Console.WriteLine($"Day 13, part 1, example 1: {Day13.Part1(Example1)} (expected 480)");
+Console.WriteLine($"Day 13, part 1, example 2: {Day13.Part1(Example2)} (expected 119 + 125 + 349 + 237+ 270 + 87 + 161 = 1348)");
+Console.WriteLine($"Day 13, part 1, example 3: {Day13.Part1(Example3)} (expected 141)");
+Console.WriteLine($"Day 13, part 1, example 4: {Day13.Part1(Example4)} (expected 299)");
+Console.WriteLine("Day 13, part 1, my input: " + Day13.Part1(MyInput));
+Console.WriteLine("Day 13, part 2, example 1: " + Day13.Part2(Example1));
+Console.WriteLine("Day 13, part 2, my input: " + Day13.Part2(MyInput));
+
