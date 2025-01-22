@@ -11,4 +11,9 @@ public record Vector(long X, long Y)
     {
         return new Vector(m.X * scalar, m.Y * scalar);
     }
+
+    public Vector Plus(Vector vector)
+    {
+        return new Vector(X+vector.X, Y+vector.Y);
+    }
 }
