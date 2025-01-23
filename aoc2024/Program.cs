@@ -112,4 +112,5 @@ Console.WriteLine("Day 13, part 2, my input: " + Day13.Part2(MyInput));
 Console.WriteLine("== Day 14 ==");
 Console.WriteLine($"Day 14, part 1, example 1: {Day14.Part1(Example1)} (expected 12)");
 Console.WriteLine($"Day 14, part 1, my input: " + Day14.Part1(MyInput));
+Console.WriteLine($"Day 14, part 2, my input: " + Day14.Part2(MyInput));
 
