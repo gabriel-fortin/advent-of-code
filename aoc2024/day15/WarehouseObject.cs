@@ -1,3 +1,5 @@
+using System.Collections.Immutable;
+
 namespace Advent_of_Code_2024.day15;
 
 public class WarehouseObject
@@ -10,11 +12,11 @@ public class WarehouseObject
         }
 
         Type = type;
-        Positions = positions;
+        Positions = positions.ToImmutableSortedSet();
     }
 
     public TileType Type { get; }
-    public Pos[] Positions { get; private set; }
+    public ImmutableSortedSet<Pos> Positions { get; private set; }
 
     public bool OccupiesAnyOf(IEnumerable<Pos> positions)
     {
@@ -48,7 +50,15 @@ public class WarehouseObject
 
         Positions = Positions
             .Select(x => x.After(move))
-            .ToArray();
+            .ToImmutableSortedSet();
+    }
+
+    // GPS = Goods Positioning System
+    public int CalculateGpsCoordinate()
+    {
+        var minX = Positions.Min(p => p.X);
+        var minY = Positions.Min(p => p.Y);
+        return minY * 100 + minX;
     }
 
     public override string ToString()

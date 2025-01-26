@@ -26,43 +26,46 @@ public static partial class Day15
                 Pos[] positionsThatWillBeNeeded = obj.NewPositionsAfter(move).ToArray();
                 IEnumerable<WarehouseObject> objectsThatNeedToMove = warehouse
                     .Where(x => x.OccupiesAnyOf(positionsThatWillBeNeeded));
-                objectsToMove.AddRange(objectsThatNeedToMove);
+                
+                // add newly found positions to objectsToMove but making sure we're not adding duplicates
+                foreach (WarehouseObject objToMove in objectsThatNeedToMove)
+                {
+                    if (!objectsToMove.Contains(objToMove))
+                    {
+                        objectsToMove.Add(objToMove);
+                    }
+                }
+                // objectsToMove.AddRange(objectsThatNeedToMove);
             }
 
             foreach (WarehouseObject obj in objectsToMove)
             {
                 obj.MoveBy(move);
             }
-            
+
             // Console.WriteLine($"\n  == Move: {move.X}, {move.Y}");
             // DebugPrint(warehouse);
         }
-        
+
         return warehouse
             .Where(x => x.Type == Box)
-            .Select(x => CalculateGpsCoordinate(x.Positions.First()))
+            .Select(x => x.CalculateGpsCoordinate())
             .Sum()
             .ToString();
     }
 
-    // GPS = Goods Positioning System
-    private static int CalculateGpsCoordinate(Pos pos)
-    {
-        return pos.Y * 100 + pos.X;
-    }
-
     private static void DebugPrint(List<WarehouseObject> warehouse)
     {
-        int xSize = 1+warehouse.Max(x => x.Positions.Max(y => y.X));
-        int ySize = 1+warehouse.Max(x => x.Positions.Max(y => y.Y));
-        
+        int xSize = 1 + warehouse.Max(x => x.Positions.Max(y => y.X));
+        int ySize = 1 + warehouse.Max(x => x.Positions.Max(y => y.Y));
+
         char[][] warehouseMap = new char[ySize][];
         for (int i = 0; i < ySize; i++)
         {
             warehouseMap[i] = new char[xSize];
             Array.Fill(warehouseMap[i], '.');
         }
-        
+
         foreach (WarehouseObject obj in warehouse)
         {
             foreach (var (x, y) in obj.Positions)
@@ -70,7 +73,7 @@ public static partial class Day15
                 warehouseMap[y][x] = obj.Type.Character;
             }
         }
-        
+
         foreach (char[] line in warehouseMap)
         {
             Console.WriteLine(line);
