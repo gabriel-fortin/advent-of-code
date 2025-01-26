@@ -25,7 +25,8 @@ public static partial class Day15
 
                 Pos[] positionsThatWillBeNeeded = obj.NewPositionsAfter(move).ToArray();
                 IEnumerable<WarehouseObject> objectsThatNeedToMove = warehouse
-                    .Where(x => x.OccupiesAnyOf(positionsThatWillBeNeeded));
+                    .Where(x => x.OccupiesAnyOf(positionsThatWillBeNeeded))
+                    .ToArray();
                 
                 // add newly found positions to objectsToMove but making sure we're not adding duplicates
                 foreach (WarehouseObject objToMove in objectsThatNeedToMove)
