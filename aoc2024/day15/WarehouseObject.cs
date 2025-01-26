@@ -20,6 +20,14 @@ public class WarehouseObject
 
     public bool OccupiesAnyOf(IEnumerable<Pos> positions)
     {
+        foreach (Pos otherPosition in positions)
+        {
+            if (Positions.Contains(otherPosition)) return true;
+        }
+        return false;
+
+
+        // TODO: replace with binary search? probably not because it's about 2 positions in both collections
         return Positions.Intersect(positions).Any();
     }
 
