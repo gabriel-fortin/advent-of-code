@@ -7,7 +7,7 @@ public static partial class Day15
     public static string Part1(InputSelector inputSelector)
     {
         string rawInput = Input.GetInput(inputSelector);
-        (List<WarehouseObject> warehouse, IEnumerable<Move> moves) = ParseInput(rawInput);
+        (SortedSet<WarehouseObject> warehouse, IEnumerable<Move> moves) = ParseInput(rawInput);
         WarehouseObject robot = warehouse.Single(x => x.Type == Robot);
 
         foreach (Move move in moves)
@@ -24,7 +24,12 @@ public static partial class Day15
                 }
 
                 Pos[] positionsThatWillBeNeeded = obj.NewPositionsAfter(move).ToArray();
+                int minY = positionsThatWillBeNeeded.Min(x => x.Y);
+                int maxY = positionsThatWillBeNeeded.Max(x => x.Y);
                 IEnumerable<WarehouseObject> objectsThatNeedToMove = warehouse
+                    // use the fact that warehouse is sorted by Y
+                    .SkipWhile(x => x.Positions.First().Y < minY)
+                    .TakeWhile(x => x.Positions.First().Y <= maxY)
                     .Where(x => x.OccupiesAnyOf(positionsThatWillBeNeeded))
                     .ToArray();
                 
@@ -34,6 +39,9 @@ public static partial class Day15
                     if (!objectsToMove.Contains(objToMove))
                     {
                         objectsToMove.Add(objToMove);
+                        // update the position of the object in the sorted set
+                        warehouse.Remove(objToMove);
+                        warehouse.Add(objToMove);
                     }
                 }
                 // objectsToMove.AddRange(objectsThatNeedToMove);

@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 
 namespace Advent_of_Code_2024.day15;
 
-public class WarehouseObject
+public class WarehouseObject : IComparable<WarehouseObject>
 {
     public WarehouseObject(TileType type, Pos[] positions)
     {
@@ -67,6 +67,13 @@ public class WarehouseObject
         var minX = Positions.Min(p => p.X);
         var minY = Positions.Min(p => p.Y);
         return minY * 100 + minX;
+    }
+
+    public int CompareTo(WarehouseObject? other)
+    {
+        var byY = Positions.First().Y.CompareTo(other.Positions.First().Y);
+        if (byY != 0) return byY;
+        return Positions.First().X.CompareTo(other.Positions.First().X);
     }
 
     public override string ToString()

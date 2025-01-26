@@ -2,11 +2,11 @@ namespace Advent_of_Code_2024.day15;
 
 public static partial class Day15
 {
-    private static (List<WarehouseObject> warehouse, IEnumerable<Move> moves) ParseInput(string rawInput)
+    private static (SortedSet<WarehouseObject> warehouse, IEnumerable<Move> moves) ParseInput(string rawInput)
     {
         string[] rawWarehouseAndMovesData = rawInput.Split(Environment.NewLine + Environment.NewLine);
         return (
-            warehouse: ParseWarehouse(rawWarehouseAndMovesData[0]).ToList(),
+            warehouse: new SortedSet<WarehouseObject>(ParseWarehouse(rawWarehouseAndMovesData[0])),
             moves: ParseMoves(rawWarehouseAndMovesData[1])
         );
     }
