@@ -1,7 +1,7 @@
 namespace Advent_of_Code_2024.day15;
 
 
-public record Pos(int X, int Y)
+public readonly record struct Pos(int X, int Y)
 {
     public Pos After(Move move)
     {
