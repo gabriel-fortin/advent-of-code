@@ -7,4 +7,9 @@ public record Pos(int X, int Y)
     {
         return new (X+move.X, Y+move.Y);
     }
+
+    public override string ToString()
+    {
+        return $"({X}, {Y})";
+    }
 }
