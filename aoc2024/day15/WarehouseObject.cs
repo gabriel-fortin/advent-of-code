@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 
 namespace Advent_of_Code_2024.day15;
 
-public class WarehouseObject : IComparable<WarehouseObject>
+public struct WarehouseObject : IComparable<WarehouseObject>, IEquatable<WarehouseObject>
 {
     public WarehouseObject(TileType type, Pos[] positions)
     {
@@ -25,10 +25,6 @@ public class WarehouseObject : IComparable<WarehouseObject>
             if (Positions.Contains(otherPosition)) return true;
         }
         return false;
-
-
-        // TODO: replace with binary search? probably not because it's about 2 positions in both collections
-        return Positions.Intersect(positions).Any();
     }
 
     public bool CanBeMoved() => Type.CanBeMoved();
@@ -69,16 +65,31 @@ public class WarehouseObject : IComparable<WarehouseObject>
         return minY * 100 + minX;
     }
 
-    public int CompareTo(WarehouseObject? other)
+    public override string ToString()
+    {
+        var stringifiedPositions = string.Join(", ", Positions.Select(x => x.ToString()));
+        return $"{Type} @ [{stringifiedPositions}]";
+    }
+
+    public int CompareTo(WarehouseObject other)
     {
         var byY = Positions.First().Y.CompareTo(other.Positions.First().Y);
         if (byY != 0) return byY;
         return Positions.First().X.CompareTo(other.Positions.First().X);
     }
 
-    public override string ToString()
+    public bool Equals(WarehouseObject other)
     {
-        var stringifiedPositions = string.Join(", ", Positions.Select(x => x.ToString()));
-        return $"{Type} @ [{stringifiedPositions}]";
+        return Type.Equals(other.Type) && Positions.Equals(other.Positions);
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return obj is WarehouseObject other && Equals(other);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Type, Positions);
     }
 }
