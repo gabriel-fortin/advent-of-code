@@ -2,8 +2,21 @@ using System.Collections.Immutable;
 
 namespace Advent_of_Code_2024.day15;
 
-public struct WarehouseObject : IComparable<WarehouseObject>, IEquatable<WarehouseObject>
+public class WarehouseObject : IComparable<WarehouseObject>, IEquatable<WarehouseObject>
 {
+    public TileType Type { get; }
+
+    public ImmutableSortedSet<Pos> Positions { get; private set; }
+
+    public Matrix<WarehouseObject?> WarehouseMatrix
+    {
+        get => _warehouse ?? throw new InvalidOperationException("Warehouse property is null");
+        set => _warehouse = value;
+    }
+
+    private bool _wasVisited;
+    private Matrix<WarehouseObject?>? _warehouse;
+
     public WarehouseObject(TileType type, Pos[] positions)
     {
         if (type == TileType.Empty)
@@ -15,35 +28,64 @@ public struct WarehouseObject : IComparable<WarehouseObject>, IEquatable<Warehou
         Positions = positions.ToImmutableSortedSet();
     }
 
-    public TileType Type { get; }
-    public ImmutableSortedSet<Pos> Positions { get; private set; }
-
-    public bool OccupiesAnyOf(IEnumerable<Pos> positions)
+    public void TryPush(Move move)
     {
-        foreach (Pos otherPosition in positions)
+        var objectsMovingTogether = new List<WarehouseObject>();
+        CollectObjectsMovingTogether(move, objectsMovingTogether);
+        try
         {
-            if (Positions.Contains(otherPosition)) return true;
+            if (objectsMovingTogether.Any(x => !x.CanBeMoved())) return;
+
+            // remove all from warehouse
+            foreach (Pos pos in objectsMovingTogether.SelectMany(x => x.Positions))
+            {
+                WarehouseMatrix.Set(pos, null);
+            }
+
+            // move
+            foreach (WarehouseObject obj in objectsMovingTogether)
+            {
+                obj.MoveBy(move);
+            }
+            
+            // re-add to warehouse
+            foreach (WarehouseObject obj in objectsMovingTogether)
+            {
+                foreach (Pos pos in obj.Positions)
+                {
+                    WarehouseMatrix.Set(pos, obj);
+                }
+            }
         }
-        return false;
+        finally
+        {
+            // clear flag set by CollectObjectsMovingTogether
+            foreach (WarehouseObject obj in objectsMovingTogether)
+            {
+                obj._wasVisited = false;
+            }
+        }
+    }
+
+    private void CollectObjectsMovingTogether(Move move, List<WarehouseObject> result)
+    {
+        if (_wasVisited) return;
+        _wasVisited = true;
+
+        result.Add(this);
+
+        IEnumerable<WarehouseObject> objectsToVisit = Positions
+            .Select(x => x.After(move))
+            .Select(x => WarehouseMatrix.Get(x))
+            .Where(x => x != null)!;
+        // we're not worried about visiting duplicates because of _wasVisited flag
+        foreach (WarehouseObject obj in objectsToVisit)
+        {
+            obj.CollectObjectsMovingTogether(move, result);
+        }
     }
 
     public bool CanBeMoved() => Type.CanBeMoved();
-
-    /// <summary>
-    /// Returns positions that were previously not occupied
-    /// but which would be occupied after performing the given <paramref name="move"/>.
-    /// </summary>
-    public IEnumerable<Pos> NewPositionsAfter(Move move)
-    {
-        if (Type == TileType.Wall)
-        {
-            throw new InvalidOperationException("Cannot move walls");
-        }
-
-        return Positions
-            .Select(p => p.After(move))
-            .Except(Positions);
-    }
 
     public void MoveBy(Move move)
     {

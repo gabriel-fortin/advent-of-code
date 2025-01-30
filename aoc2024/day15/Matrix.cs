@@ -1,6 +1,6 @@
 namespace Advent_of_Code_2024.day15;
 
-public class Matrix<TElement> where TElement : class
+public class Matrix<TElement>
 {
     private readonly TElement[][] _data;
 
@@ -23,7 +23,7 @@ public class Matrix<TElement> where TElement : class
     {
         if (row < 0 || row >= RowCount || column < 0 || column >= ColumnCount)
         {
-            return null;
+            return default;
         }
 
         return _data[row][column];

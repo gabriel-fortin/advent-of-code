@@ -2,13 +2,39 @@ namespace Advent_of_Code_2024.day15;
 
 public static partial class Day15
 {
-    private static (SortedSet<WarehouseObject> warehouse, IEnumerable<Move> moves) ParseInput(string rawInput)
+    private static (WarehouseObject[] warehouse, IEnumerable<Move> moves) ParseInput(string rawInput)
     {
         string[] rawWarehouseAndMovesData = rawInput.Split(Environment.NewLine + Environment.NewLine);
+        WarehouseObject[] warehouseObjects = ParseWarehouse(rawWarehouseAndMovesData[0]).ToArray();
+        BuildAndPopulateMatrix(warehouseObjects);
+
         return (
-            warehouse: new SortedSet<WarehouseObject>(ParseWarehouse(rawWarehouseAndMovesData[0])),
+            warehouse: warehouseObjects,
             moves: ParseMoves(rawWarehouseAndMovesData[1])
         );
+    }
+
+    private static void BuildAndPopulateMatrix(WarehouseObject[] warehouseObjects)
+    {
+        int ySize = 1 + warehouseObjects.Max(obj => obj.Positions.Max(pos => pos.Y));
+        int xSize = 1 + warehouseObjects.Max(obj => obj.Positions.Max(pos => pos.X));
+
+        WarehouseObject?[][] warehouseArrays = new WarehouseObject[ySize][];
+        for (int row = 0; row < ySize; row++)
+        {
+            warehouseArrays[row] = new WarehouseObject[xSize];
+        }
+
+        var warehouseMatrix = new Matrix<WarehouseObject?>(warehouseArrays);
+
+        foreach (WarehouseObject obj in warehouseObjects)
+        {
+            obj.WarehouseMatrix = warehouseMatrix;
+            foreach (Pos objPosition in obj.Positions)
+            {
+                warehouseMatrix.Set(objPosition, obj);
+            }
+        }
     }
 
     private static IEnumerable<WarehouseObject> ParseWarehouse(string warehouseLines)
