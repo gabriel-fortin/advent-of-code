@@ -118,4 +118,7 @@ Console.WriteLine("== Day 15 ==");
 Console.WriteLine($"Day 15, part 1, example 1: {Day15.Part1(Example1)} (expected 2028)");
 Console.WriteLine($"Day 15, part 1, example 2: {Day15.Part1(Example2)} (expected 10092)");
 Console.WriteLine($"Day 15, part 1, my input: {Day15.Part1(MyInput)}");
+Console.WriteLine($"Day 15, part 2, example 2: {Day15.Part2(Example2)} (expected 9021)");
+Console.WriteLine($"Day 15, part 2, example 3: {Day15.Part2(Example3)}");
+Console.WriteLine($"Day 15, part 2, my input: {Day15.Part2(MyInput)}");
 

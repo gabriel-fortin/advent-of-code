@@ -10,6 +10,7 @@ public static partial class Day15
             {
                 InputSelector.Example1 => GetExample1Input(),
                 InputSelector.Example2 => GetExample2Input(),
+                InputSelector.Example3 => GetExample3Input(),
                 InputSelector.MyInput => GetMyPuzzleInput(),
                 _ => throw new ArgumentOutOfRangeException(nameof(inputSelector), inputSelector, null)
             };
@@ -53,6 +54,19 @@ public static partial class Day15
             <><^^>^^^<><vvvvv^v<v<<>^v<v>v<<^><<><<><<<^^<<<^<<>><<><^^^>^^<>^>v<>
             ^^>vv<^v^v<vv>^<><v<^v>^^^>>>^^vvv^>vvv<>>>^<^>>>>>^<<^v>^vvv<>^<><<v>
             v^^>>><<^^<>>^v^<v^vv<>v^<<>^<^v^v><^<<<><<^<v><v<>vv>>v><v^<vv<>v^<<^
+            """;
+
+        private static string GetExample3Input() =>
+            """
+            #######
+            #...#.#
+            #.....#
+            #..OO@#
+            #..O..#
+            #.....#
+            #######
+
+            <vv<<^^<<^^
             """;
 
         private static string GetMyPuzzleInput() =>
