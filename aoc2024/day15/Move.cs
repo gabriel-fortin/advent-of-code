@@ -9,7 +9,7 @@ public class Move
     public int X { get; set; }
     public int Y { get; set; }
 
-    private Move(int x, int y)
+    public Move(int x, int y)
     {
         X = x;
         Y = y;

@@ -14,6 +14,7 @@ using Advent_of_Code_2024.day12;
 using Advent_of_Code_2024.day13;
 using Advent_of_Code_2024.day14;
 using Advent_of_Code_2024.day15;
+using Advent_of_Code_2024.day16;
 using static Advent_of_Code_2024.InputSelector;
 
 Console.WriteLine("== Day 01 ==");
@@ -121,4 +122,8 @@ Console.WriteLine($"Day 15, part 1, my input: {Day15.Part1(MyInput)}");
 Console.WriteLine($"Day 15, part 2, example 2: {Day15.Part2(Example2)} (expected 9021)");
 Console.WriteLine($"Day 15, part 2, example 3: {Day15.Part2(Example3)}");
 Console.WriteLine($"Day 15, part 2, my input: {Day15.Part2(MyInput)}");
+Console.WriteLine("== Day 16 ==");
+Console.WriteLine($"Day 16, part 1, example 1: {Day16.Part1(Example1)} (expected 7036)");
+Console.WriteLine($"Day 16, part 1, example 2: {Day16.Part1(Example2)} (expected 11048)");
+Console.WriteLine($"Day 16, part 1, my input: {Day16.Part1(MyInput)}");
 
