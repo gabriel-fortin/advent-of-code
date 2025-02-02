@@ -7,14 +7,7 @@ public static partial class Day16
 {
     private static class Parsing
     {
-        public static (Tile[] tiles, Matrix<Tile?> matrix) Parse(string rawInput)
-        {
-            Tile[] tiles = ParseNonWallTiles(rawInput).ToArray();
-            Matrix<Tile?> matrix = BuildMatrix(tiles);
-            return (tiles, matrix);
-        }
-
-        private static IEnumerable<Tile> ParseNonWallTiles(string rawInput)
+        public static IEnumerable<Tile> ParseNonWallTiles(string rawInput)
         {
             int x = 0;
             int y = 0;
@@ -31,7 +24,7 @@ public static partial class Day16
                 }
 
                 Tile.TileType tileType = ParseTileType(character);
-                if (tileType is Empty or Start or End)
+                if (tileType is not Wall)
                 {
                     var tile = new Tile(new Pos(x, y), tileType);
                     tile.CreateInternalNodes();
@@ -54,7 +47,7 @@ public static partial class Day16
             };
         }
 
-        private static Matrix<Tile?> BuildMatrix(Tile[] tiles)
+        public static Matrix<Tile?> BuildMatrix(Tile[] tiles)
         {
             int ySize = 1 + tiles.Max(tile => tile.Position.Y);
             int xSize = 1 + tiles.Max(tile => tile.Position.X);

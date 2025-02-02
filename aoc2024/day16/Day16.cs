@@ -28,8 +28,9 @@ public static partial class Day16
         // return lowest scores among nodes of the end tile
 
         string rawInput = Input.GetInput(inputSelector);
-        (Tile[] tiles, Matrix<Tile?> matrix) = Parsing.Parse(rawInput);
-
+        Tile[] tiles = Parsing.ParseNonWallTiles(rawInput).ToArray();
+        Matrix<Tile?> matrix = Parsing.BuildMatrix(tiles);
+            
         BuildGraph(tiles, matrix);
 
         Node startingNode = tiles
