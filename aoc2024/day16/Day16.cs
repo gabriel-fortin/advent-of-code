@@ -30,12 +30,10 @@ public static partial class Day16
         string rawInput = Input.GetInput(inputSelector);
         Tile[] tiles = Parsing.ParseNonWallTiles(rawInput).ToArray();
         Matrix<Tile?> matrix = Parsing.BuildMatrix(tiles);
-            
-        BuildGraph(tiles, matrix);
 
-        Node startingNode = tiles
-            .Single(x => x.Type == Start)
-            .Nodes[Direction.East];
+        BuildGraphFromTileNodes(tiles, matrix);
+
+        Node startingNode = tiles.Single(x => x.Type == Start).Nodes[Direction.East];
         Dijkstra(tiles, startingNode);
 
         return tiles
@@ -43,7 +41,21 @@ public static partial class Day16
             .Score.ToString();
     }
 
-    private static void BuildGraph(Tile[] tiles, Matrix<Tile?> matrix)
+    public static string Part2(InputSelector inputSelector)
+    {
+        string rawInput = Input.GetInput(inputSelector);
+        Tile[] tiles = Parsing.ParseNonWallTiles(rawInput).ToArray();
+        Matrix<Tile?> matrix = Parsing.BuildMatrix(tiles);
+
+        BuildGraphFromTileNodes(tiles, matrix);
+
+        Node startingNode = tiles.Single(x => x.Type == Start).Nodes[Direction.East];
+        Dijkstra(tiles, startingNode);
+
+        return CountBestPathTiles(tiles).ToString();
+    }
+
+    private static void BuildGraphFromTileNodes(Tile[] tiles, Matrix<Tile?> matrix)
     {
         foreach (Tile tile in tiles)
         {
@@ -85,9 +97,16 @@ public static partial class Day16
             foreach (Node neighbourNode in node.Edges.Keys)
             {
                 // try to improve neighbour's score
+                // and keep track of how to get to the node in a lowest-score manner
                 long alternativeScore = node.Score + node.Edges[neighbourNode];
-                if (alternativeScore < neighbourNode.Score)
+                if (alternativeScore == neighbourNode.Score)
                 {
+                    neighbourNode.PrevNodesForBestPath.Add(node);
+                }
+                else if (alternativeScore < neighbourNode.Score)
+                {
+                    neighbourNode.PrevNodesForBestPath.Clear();
+                    neighbourNode.PrevNodesForBestPath.Add(node);
                     UpdateScore(neighbourNode, alternativeScore);
                 }
             }
@@ -100,6 +119,29 @@ public static partial class Day16
             processingQueue.Remove(n);
             n.Score = score;
             processingQueue.Add(n);
+        }
+    }
+
+    /// Counts tiles that are part of a best path
+    private static int CountBestPathTiles(Tile[] allTiles)
+    {
+        var bestPathNodes = new HashSet<Node>();
+        IEnumerable<Node> endTileNodes = allTiles.Single(x => x.Type == End).Nodes.Values;
+        foreach (Node node in endTileNodes.Where(x => x.Score == x.Tile.Score))
+        {
+            Visit(node);
+        }
+        return bestPathNodes.Select(x => x.Tile).Distinct().Count();
+
+        void Visit(Node node)
+        {
+            bool nodeWasAlreadyVisited = !bestPathNodes.Add(node);
+            if (nodeWasAlreadyVisited) return;
+            
+            foreach (Node bestPathNeighbour in node.PrevNodesForBestPath)
+            {
+                Visit(bestPathNeighbour);
+            }
         }
     }
 }

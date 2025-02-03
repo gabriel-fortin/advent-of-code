@@ -10,6 +10,8 @@ public class Node(Direction direction, Tile parentTile)
 
     public Dictionary<Node, long> Edges { get; } = new();
 
+    public ISet<Node> PrevNodesForBestPath { get; } = new HashSet<Node>();
+
     /// <exception cref="ArgumentException"> if connection already exists and is different </exception>
     public void ConnectTo(Node otherNode, long cost)
     {
