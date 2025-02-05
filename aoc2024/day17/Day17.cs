@@ -4,13 +4,27 @@ public static partial class Day17
 {
     public static string Part1(InputSelector inputSelector)
     {
-        throw new NotImplementedException();
+        (Registers registers, string programText) = Input.GetInput(inputSelector);
+        var program = new Program(programText);
+        List<int> outputList = new();
+        
+        try
+        {
+            while (true)
+            {
+                (int opcode, int operand) = program.At(registers.InstructionPointer);
+                IInstruction instruction = Instruction.FromOpcode(opcode);
+                instruction.Execute(operand, registers, outputList.Add);
+            }
+        }
+        catch(HaltException haltException)
+        {
+            // the halt exception is the signal to stop the execution
+        }
+
+        return string.Join(',', outputList);
     }
 }
-
-public delegate void WriteOutput(int dataToWrite);
-
-public delegate (int opcode, int operand) ProgramCodeAt(int position);
 
 public class HaltException : Exception
 {

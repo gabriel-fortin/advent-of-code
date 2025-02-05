@@ -2,12 +2,12 @@ namespace Advent_of_Code_2024.day17;
 
 public interface IInstruction
 {
-    void Execute(int operand, Registers registers, WriteOutput writeOutput);
+    void Execute(int operand, Registers registers, Action<int> writeOutput);
 }
 
 public partial class Instruction : IInstruction
 {
-    private delegate void InstructionImplementation(int operand, Registers registers, WriteOutput writeOutput);
+    private delegate void InstructionImplementation(int operand, Registers registers, Action<int> writeOutput);
 
     private readonly InstructionImplementation _instructionImplementation;
 
@@ -16,7 +16,7 @@ public partial class Instruction : IInstruction
         _instructionImplementation = instructionImplementation;
     }
 
-    public void Execute(int operand, Registers registers, WriteOutput writeOutput) =>
+    public void Execute(int operand, Registers registers, Action<int> writeOutput) =>
         _instructionImplementation(operand, registers, writeOutput);
 
     public static IInstruction FromOpcode(int opcode)
