@@ -8,19 +8,7 @@ public static partial class Day17
         var program = new Program(programText);
         List<int> outputList = new();
 
-        try
-        {
-            while (true)
-            {
-                (int opcode, int operand) = program.At(registers.InstructionPointer);
-                IInstruction instruction = Instruction.FromOpcode(opcode);
-                instruction.Execute(operand, registers, outputList.Add);
-            }
-        }
-        catch (HaltException)
-        {
-            // the halt exception is the signal to stop the execution
-        }
+        RunProgram(program, registers, outputList.Add);
 
         return string.Join(',', outputList);
     }
@@ -38,32 +26,41 @@ public static partial class Day17
             searchedRegisterValue++;
             Registers registers = inputRegisters with { A = searchedRegisterValue };
 
-            while (true)
-            {
-                if (!program.TryReadPairAt(registers.InstructionPointer, out int opcode, out int operand))
-                {
-                    // halt - reading past end of program
-                    // the program halted but did it generate all the numbers we expect?
-                    isMatchFound = comparer.IsFullMatch();
-                    break;
-                }
-
-                // (int opcode, int operand) = program.At(registers.InstructionPointer);
-                IInstruction instruction = Instruction.FromOpcode(opcode);
-                instruction.Execute(operand, registers, comparer.Feed);
-
-                if (!comparer.IsPartialMatch())
-                {
-                    // the output program differs from the original
-                    break;
-                }
-            }
+            isMatchFound = RunProgram(program, registers, comparer.Feed, comparer);
 
             comparer.Debug(searchedRegisterValue);
             comparer.Reset();
         }
 
         return searchedRegisterValue.ToString();
+    }
+
+    private static bool RunProgram(Program program, Registers registers, Action<int> outputCollector,
+        ProgramComparer? comparer = null)
+    {
+        comparer ??= new ProgramComparer(program);
+        
+        while (true)
+        {
+            if (!program.TryReadPairAt(registers.InstructionPointer, out int opcode, out int operand))
+            {
+                // halt - reading past end of program
+                // the program halted but did it generate all the numbers we expect?
+                return comparer.IsFullMatch();
+            }
+
+            // (int opcode, int operand) = program.At(registers.InstructionPointer);
+            IInstruction instruction = Instruction.FromOpcode(opcode);
+            instruction.Execute(operand, registers, outputCollector);
+
+            if (!comparer.IsPartialMatch())
+            {
+                // the output program differs from the original
+                break;
+            }
+        }
+
+        return false;
     }
 }
 
