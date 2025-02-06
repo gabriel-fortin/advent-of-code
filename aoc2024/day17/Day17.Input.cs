@@ -10,6 +10,7 @@ public static partial class Day17
             {
                 InputSelector.Example1 => (GetExample1Registers(), GetExample1Input()),
                 InputSelector.Example2 => (GetExample2Registers(), GetExample2Input()),
+                InputSelector.Example3 => (GetExample3Registers(), GetExample3Input()),
                 InputSelector.MyInput => (GetMyPuzzleRegisters(), GetMyPuzzleInput()),
                 _ => throw new ArgumentOutOfRangeException(nameof(inputSelector), inputSelector, null)
             };
@@ -27,6 +28,14 @@ public static partial class Day17
             "0,1,5,4,3,0";
 
         private static Registers GetExample2Registers() => new Registers()
+        {
+            A = 2024,
+        };
+
+        private static string GetExample3Input() =>
+            "0,3,5,4,3,0";
+
+        private static Registers GetExample3Registers() => new Registers()
         {
             A = 2024,
         };

@@ -134,4 +134,8 @@ Console.WriteLine("== Day 17 ==");
 Console.WriteLine($"Day 17, part 1, example 1: {Day17.Part1(Example1)} (expected 0,1,2)");
 Console.WriteLine($"Day 17, part 1, example 2: {Day17.Part1(Example2)} (expected 4,2,5,6,7,7,7,7,3,1,0 and 0 in register A)");
 Console.WriteLine($"Day 17, part 1, my input: {Day17.Part1(MyInput)}");
+Console.WriteLine($"Day 17, part 2, example 3: {Day17.Part2(Example3)} (expected 0,3,5,4,3,0)");
+// Console.WriteLine($"Day 17, part 2, example 1: {Day17.Part2(Example1)} (expected 5,0,5,1,5,4)");
+// Console.WriteLine($"Day 17, part 2, example 2: {Day17.Part2(Example2)} (expected 0,1,5,4,3,0)");
+Console.WriteLine($"Day 17, part 2, my input: {Day17.Part2(MyInput)}");
 
