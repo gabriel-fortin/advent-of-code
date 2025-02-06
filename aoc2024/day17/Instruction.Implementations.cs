@@ -5,7 +5,7 @@ public partial class Instruction
     private static readonly IInstruction Adv = new Instruction((operand, registers, writeOutput) =>
     {
         var numerator = registers.A;
-        var denominator = 1 << ComboOperand(operand, registers);
+        var denominator = 1 << (int)ComboOperand(operand, registers);
         registers.A = numerator / denominator;
         registers.InstructionPointer += 2;
     });
@@ -13,7 +13,7 @@ public partial class Instruction
     private static readonly IInstruction Bdv = new Instruction((operand, registers, writeOutput) =>
     {
         var numerator = registers.A;
-        var denominator = 1 << ComboOperand(operand, registers);
+        var denominator = 1 << (int)ComboOperand(operand, registers);
         registers.B = numerator / denominator;
         registers.InstructionPointer += 2;
     });
@@ -21,7 +21,7 @@ public partial class Instruction
     private static readonly IInstruction Cdv = new Instruction((operand, registers, writeOutput) =>
     {
         var numerator = registers.A;
-        var denominator = 1 << ComboOperand(operand, registers);
+        var denominator = 1 << (int)ComboOperand(operand, registers);
         registers.C = numerator / denominator;
         registers.InstructionPointer += 2;
     });

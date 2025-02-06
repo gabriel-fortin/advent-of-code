@@ -11,7 +11,9 @@ public class ProgramComparer(Program originalProgram)
     private int _bestPosition = 0;
     private Stopwatch _stopwatch = Stopwatch.StartNew();
 
-    public void Feed(int number)
+    public int PartialMatchLength => _position;
+
+    public void Feed(long number)
     {
         if (!originalProgram.TryReadAt(_position, out var originalNumber))
         {
@@ -27,7 +29,7 @@ public class ProgramComparer(Program originalProgram)
 
         _position++;
     }
-    
+
     public bool IsPartialMatch() => _isPartialMatch;
 
     public bool IsFullMatch() =>
@@ -39,7 +41,7 @@ public class ProgramComparer(Program originalProgram)
         _isPartialMatch = true;
     }
 
-    public void Debug(int regA)
+    public void Debug(long regA)
     {
         if (_position > _bestPosition)
         {
