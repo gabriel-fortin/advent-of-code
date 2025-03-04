@@ -14,23 +14,4 @@ public class Tile
     {
         return $"{Pos} {(IsCorrupted ? "CORRUPTED" : "")}  dist {DistanceFromExit}";
     }
-
-    public class DistanceComparer : IComparer<Tile>
-    {
-        public int Compare(Tile? x, Tile? y)
-        {
-            if (ReferenceEquals(x, y)) return 0;
-            if (y is null) return 1;
-            if (x is null) return -1;
-            var distanceCmp = x.DistanceFromExit.CompareTo(y.DistanceFromExit);
-            
-            // never return 0 to not overwrite elements in a SortedSet
-            if (distanceCmp == 0)
-            {
-                return x.Pos.CompareTo(y.Pos);
-            }
-            
-            return distanceCmp;
-        }
-    }
 }

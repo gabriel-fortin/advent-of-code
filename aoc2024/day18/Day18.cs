@@ -50,19 +50,17 @@ public static partial class Day18
         Tile endTile = memory.Get(endPos)!;
         endTile.DistanceFromExit = 0;
 
-        SortedSet<Tile> queue = new(new Tile.DistanceComparer());
-        queue.Add(endTile);
+        PriorityQueue<Tile, int> queue = new();
+        queue.Enqueue(endTile, endTile.DistanceFromExit);
 
         while (queue.Count > 0)
         {
-            Tile currentTile = queue.Min!;
-            queue.Remove(currentTile);
+            Tile currentTile = queue.Dequeue();
 
             IEnumerable<Tile> neighbours = Direction.All
                 .Select(move => currentTile.Pos.After(move))
                 .Select(memory.Get)
-                .Where(tile => tile != null)!
-                .ToArray()!;
+                .Where(tile => tile != null)!;
             
             int potentialNewDistance = currentTile.DistanceFromExit + 1;
             
@@ -72,8 +70,8 @@ public static partial class Day18
                 if (potentialNewDistance < neighbour.DistanceFromExit)
                 {
                     neighbour.DistanceFromExit = potentialNewDistance;
-                    if (queue.Contains(neighbour)) queue.Remove(neighbour);
-                    queue.Add(neighbour);
+                    queue.Remove(neighbour, out _, out _);
+                    queue.Enqueue(neighbour, neighbour.DistanceFromExit);
                 }
             }
         }
