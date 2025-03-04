@@ -26,7 +26,24 @@ public static partial class Day18
 
     public static string Part2(InputSelector inputSelector)
     {
-        throw new NotImplementedException();
+        (int memorySize, _, string rawInput) = Input.GetInput(inputSelector);
+        Pos[] fallingBytes = rawInput
+            .Split(Environment.NewLine)
+            .Select(Pos.Parse)
+            .ToArray();
+
+        var memory = CreateMemory(memorySize);
+        foreach (Pos fallingBytePos in fallingBytes)
+        {
+            memory.Get(fallingBytePos).IsCorrupted = true;
+            ResetAllDistances(memory);
+            ComputeShortestDistances(memory);
+            if (memory.Get(0, 0).DistanceFromExit == int.MaxValue)
+            {
+                return $"{fallingBytePos.X},{fallingBytePos.Y}";
+            }
+        }
+        throw new Exception("Failed to find the first byte that makes the exit unreachable");
     }
 
     private static Matrix<Tile> CreateMemory(int memorySize)
@@ -64,7 +81,7 @@ public static partial class Day18
             
             int potentialNewDistance = currentTile.DistanceFromExit + 1;
             
-            foreach (var neighbour in neighbours)
+            foreach (Tile neighbour in neighbours)
             {
                 if (neighbour.IsCorrupted) continue;
                 if (potentialNewDistance < neighbour.DistanceFromExit)
@@ -74,6 +91,14 @@ public static partial class Day18
                     queue.Enqueue(neighbour, neighbour.DistanceFromExit);
                 }
             }
+        }
+    }
+
+    private static void ResetAllDistances(Matrix<Tile> memory)
+    {
+        foreach (var (_, tile) in memory.AllPositions())
+        {
+            tile.DistanceFromExit = int.MaxValue;
         }
     }
 }
