@@ -17,6 +17,7 @@ using Advent_of_Code_2024.day15;
 using Advent_of_Code_2024.day16;
 using Advent_of_Code_2024.day17;
 using Advent_of_Code_2024.day18;
+using Advent_of_Code_2024.day19;
 using static Advent_of_Code_2024.InputSelector;
 
 Console.WriteLine("== Day 01 ==");
@@ -104,7 +105,6 @@ Console.WriteLine($"Day 12, part 2, example 4: {Day12.Part2(Example4)} (expected
 Console.WriteLine($"Day 12, part 2, example 5: {Day12.Part2(Example5)} (expected 368)");
 Console.WriteLine("Day 12, part 2, actual: " + Day12.Part2(MyInput));
 
-
 Console.WriteLine("== Day 13 ==");
 Console.WriteLine($"Day 13, part 1, example 1: {Day13.Part1(Example1)} (expected 480)");
 Console.WriteLine($"Day 13, part 1, example 2: {Day13.Part1(Example2)} (expected 119 + 125 + 349 + 237+ 270 + 87 + 161 = 1348)");
@@ -113,10 +113,12 @@ Console.WriteLine($"Day 13, part 1, example 4: {Day13.Part1(Example4)} (expected
 Console.WriteLine("Day 13, part 1, my input: " + Day13.Part1(MyInput));
 Console.WriteLine("Day 13, part 2, example 1: " + Day13.Part2(Example1));
 Console.WriteLine("Day 13, part 2, my input: " + Day13.Part2(MyInput));
+
 Console.WriteLine("== Day 14 ==");
 Console.WriteLine($"Day 14, part 1, example 1: {Day14.Part1(Example1)} (expected 12)");
 Console.WriteLine($"Day 14, part 1, my input: " + Day14.Part1(MyInput));
 Console.WriteLine($"Day 14, part 2, my input: " + Day14.Part2(MyInput));
+
 Console.WriteLine("== Day 15 ==");
 Console.WriteLine($"Day 15, part 1, example 1: {Day15.Part1(Example1)} (expected 2028)");
 Console.WriteLine($"Day 15, part 1, example 2: {Day15.Part1(Example2)} (expected 10092)");
@@ -124,6 +126,7 @@ Console.WriteLine($"Day 15, part 1, my input: {Day15.Part1(MyInput)}");
 Console.WriteLine($"Day 15, part 2, example 2: {Day15.Part2(Example2)} (expected 9021)");
 Console.WriteLine($"Day 15, part 2, example 3: {Day15.Part2(Example3)}");
 Console.WriteLine($"Day 15, part 2, my input: {Day15.Part2(MyInput)}");
+
 Console.WriteLine("== Day 16 ==");
 Console.WriteLine($"Day 16, part 1, example 1: {Day16.Part1(Example1)} (expected 7036)");
 Console.WriteLine($"Day 16, part 1, example 2: {Day16.Part1(Example2)} (expected 11048)");
@@ -131,15 +134,21 @@ Console.WriteLine($"Day 16, part 1, my input: {Day16.Part1(MyInput)}");
 Console.WriteLine($"Day 16, part 2, example 1: {Day16.Part2(Example1)} (expected 45)");
 Console.WriteLine($"Day 16, part 2, example 2: {Day16.Part2(Example2)} (expected 64)");
 Console.WriteLine($"Day 16, part 2, my input: {Day16.Part2(MyInput)}");
+
 Console.WriteLine("== Day 17 ==");
 Console.WriteLine($"Day 17, part 1, example 1: {Day17.Part1(Example1)} (expected 0,1,2)");
 Console.WriteLine($"Day 17, part 1, example 2: {Day17.Part1(Example2)} (expected 4,2,5,6,7,7,7,7,3,1,0)");
 Console.WriteLine($"Day 17, part 1, my input: {Day17.Part1(MyInput)}");
 Console.WriteLine($"Day 17, part 2, example 3: {Day17.Part2(Example3)} (expected 117440)");
 Console.WriteLine($"Day 17, part 2, my input: {Day17.Part2(MyInput)}");
+
 Console.WriteLine("== Day 18 ==");
 Console.WriteLine($"Day 18, part 1, example 1: {Day18.Part1(Example1)}");
 Console.WriteLine($"Day 18, part 1, my input: {Day18.Part1(MyInput)}");
 Console.WriteLine($"Day 18, part 2, example 3: {Day18.Part2(Example1)}");
 Console.WriteLine($"Day 18, part 2, my input: {Day18.Part2(MyInput)}");
+
+Console.WriteLine("== Day 19 ==");
+Console.WriteLine($"Day 19, part 1, example 1: {Day19.Part1(Example1)}");
+Console.WriteLine($"Day 19, part 1, my input: {Day19.Part1(MyInput)}");
 
