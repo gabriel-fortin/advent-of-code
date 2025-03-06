@@ -21,39 +21,42 @@ public static partial class Day19
 
     private static bool IsPatternPossible(string pattern, string[] availableTowels)
     {
-        for (int patternPos = 0; patternPos < pattern.Length;)
+        if (pattern.Length == 0) return true;
+
+        return availableTowels.Any(towel =>
+            TowelFitsIntoPattern(towel, pattern) &&
+            IsPatternPossible(pattern.Substring(towel.Length), availableTowels));
+    }
+
+    private static bool IsPatternPossible__withoutLinq__withSpan(ReadOnlySpan<char> pattern, string[] availableTowels)
+    {
+        foreach (string towel in availableTowels)
         {
-            string? matchingTowel = null;
-            foreach (var towel in availableTowels)
+            if (TowelFitsIntoPattern(towel, pattern))
             {
-                if (patternPos + towel.Length > pattern.Length) continue;
-
-                for (int towelPos = 0; towelPos < towel.Length; towelPos++)
+                ReadOnlySpan<char> remainingPattern = pattern.Slice(towel.Length);
+                if (IsPatternPossible__withoutLinq__withSpan(remainingPattern, availableTowels))
                 {
-                    if (pattern[patternPos + towelPos] != towel[towelPos])
-                    {
-                        goto not_this_towel;
-                    }
+                    return true;
                 }
-
-                matchingTowel = towel;
-
-                not_this_towel: ;
-            }
-
-            if (matchingTowel == null)
-            {
-                return false;
-            }
-
-            patternPos += matchingTowel.Length;
-
-            if (patternPos == pattern.Length)
-            {
-                return true;
             }
         }
 
         return false;
+    }
+
+    private static bool TowelFitsIntoPattern(string towel, ReadOnlySpan<char> pattern)
+    {
+        if (towel.Length > pattern.Length) return false;
+
+        for (int i = 0; i < towel.Length; i++)
+        {
+            if (pattern[i] != towel[i])
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
