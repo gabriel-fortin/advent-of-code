@@ -16,7 +16,14 @@ public static partial class Day19
 
     public static string Part2(InputSelector inputSelector)
     {
-        throw new NotImplementedException();
+        string[] rawLines = Input.GetInput(inputSelector).Split(Environment.NewLine);
+        string[] expectedPatterns = rawLines.Skip(2).ToArray();
+        string[] availableTowels = rawLines[0].Split(", ").OrderBy(x => x.Length).ToArray();
+
+        return expectedPatterns
+            .Select(pattern => new PatternCounter(pattern, availableTowels).Count())
+            .Sum()
+            .ToString();
     }
 
     private static bool IsPatternPossible(string pattern, string[] availableTowels)

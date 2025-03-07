@@ -151,4 +151,6 @@ Console.WriteLine($"Day 18, part 2, my input: {Day18.Part2(MyInput)}");
 Console.WriteLine("== Day 19 ==");
 Console.WriteLine($"Day 19, part 1, example 1: {Day19.Part1(Example1)}");
 Console.WriteLine($"Day 19, part 1, my input: {Day19.Part1(MyInput)}");
+Console.WriteLine($"Day 19, part 2, example 3: {Day19.Part2(Example1)}");
+Console.WriteLine($"Day 19, part 2, my input: {Day19.Part2(MyInput)}");
 
