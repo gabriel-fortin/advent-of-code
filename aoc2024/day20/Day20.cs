@@ -7,7 +7,13 @@ public static partial class Day20
 {
     public static string Part1(InputSelector inputSelector)
     {
-        (int qualityThreshold, string rawInput) = Input.GetInput(inputSelector);
+        int qualityThreshold = inputSelector switch
+        {
+            InputSelector.MyInput => 100,
+            InputSelector.Example1 => 0,
+            _ => throw new ArgumentOutOfRangeException(nameof(inputSelector), inputSelector, null)
+        };
+        string rawInput = Input.GetInput(inputSelector);
         Matrix<Tile> raceTrackMap = Parsing
             .ParseRaceTrackMap(rawInput)
             .ForEach((pos, tile) => tile.Pos = pos);
