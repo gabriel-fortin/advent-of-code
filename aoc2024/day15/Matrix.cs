@@ -59,6 +59,16 @@ public class Matrix<TElement>
         }
     }
 
+    public Matrix<TElement> ForEach(Action<Pos, TElement> action)
+    {
+        foreach (var (position, element) in AllPositions())
+        {
+            action(position, element);
+        }
+
+        return this;
+    }
+
     public Pos? FindPositionOfFirst(Func<TElement, bool> predicate)
     {
         for (var row = 0; row < RowCount; row++)
