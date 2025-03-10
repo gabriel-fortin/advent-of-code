@@ -21,7 +21,8 @@ public static partial class Day20
         Tile startTile = FindStartTile(raceTrackMap);
         LinkTrackTiles(raceTrackMap, startTile);
         ComputeDistancesOnTrack(startTile);
-        IEnumerable<Shortcut> shortcuts = FindAllShortcutSavings(raceTrackMap, startTile);
+        // IEnumerable<Shortcut> shortcuts = FindShortcutsOfSize2(raceTrackMap, startTile);
+        IEnumerable<Shortcut> shortcuts = FindShortcuts(raceTrackMap, startTile, 2);
 
         return shortcuts
             .Order(new Shortcut.HavingHighestSaving())
@@ -74,7 +75,7 @@ public static partial class Day20
         }
     }
 
-    private static IEnumerable<Shortcut> FindAllShortcutSavings(Matrix<Tile> raceTrackMap, Tile startTile)
+    private static IEnumerable<Shortcut> FindShortcutsOfSize2(Matrix<Tile> raceTrackMap, Tile startTile)
     {
         for (Tile? currentTile = startTile; currentTile is not null; currentTile = currentTile.NextOnTrack)
         {
@@ -93,5 +94,55 @@ public static partial class Day20
                 }
             }
         }
+    }
+
+    private static IEnumerable<Shortcut> FindShortcuts(Matrix<Tile> raceTrackMap, Tile startTile,
+        int maxShortcutLen)
+    {
+        for (Tile? currentTile = startTile; currentTile is not null; currentTile = currentTile.NextOnTrack)
+        {
+            List<Pos> neighbourPositions = NeighboursOf(currentTile.Pos, withinDistance: maxShortcutLen);
+            IEnumerable<Shortcut> shortcuts = neighbourPositions
+                .Select(raceTrackMap.Get)
+                .Where(tile => tile?.Type is Track or End)
+                .Select(neighbourTile =>
+                {
+                    int saving = neighbourTile!.DistanceFromStart - currentTile.DistanceFromStart
+                        - Distance(neighbourTile.Pos, currentTile.Pos);
+                    return saving > 0
+                        ? new Shortcut(saving, currentTile, neighbourTile)
+                        : null;
+                })
+                .Where(x => x is not null);
+            foreach (Shortcut shortcut in shortcuts)
+            {
+                yield return shortcut;
+            }
+        }
+    }
+
+    private static List<Pos> NeighboursOf(Pos source, int withinDistance)
+    {
+        List<Pos> neighbours = new List<Pos>(3 * withinDistance);
+
+        int yMin = source.Y - withinDistance;
+        int yMax = source.Y + withinDistance;
+        for (int y = yMin; y <= yMax; y++)
+        {
+            int remainingDistance = withinDistance - Math.Abs(source.Y - y);
+            int xMin = source.X - remainingDistance;
+            int xMax = source.X + remainingDistance;
+            for (int x = xMin; x <= xMax; x++)
+            {
+                neighbours.Add(new Pos(x, y));
+            }
+        }
+
+        return neighbours;
+    }
+
+    private static int Distance(Pos pos1, Pos pos2)
+    {
+        return Math.Abs(pos2.X - pos1.X) + Math.Abs(pos2.Y - pos1.Y);
     }
 }
