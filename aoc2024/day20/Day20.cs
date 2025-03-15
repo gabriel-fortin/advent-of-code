@@ -64,14 +64,12 @@ public static partial class Day20
     {
         startTile.DistanceFromStart = 0;
 
-        for (Tile currentTile = startTile; currentTile.Type != End;)
+        // iterate over tiles on the track
+        for (Tile? previousTile = startTile, currentTile = startTile.NextOnTrack;
+             currentTile is not null;
+             previousTile = currentTile, currentTile = currentTile.NextOnTrack)
         {
-            Tile? nextTile = currentTile.NextOnTrack;
-            if (nextTile == null) break;
-
-            nextTile.DistanceFromStart = currentTile.DistanceFromStart + 1;
-
-            currentTile = nextTile;
+            currentTile.DistanceFromStart = previousTile.DistanceFromStart + 1;
         }
     }
 
@@ -99,6 +97,7 @@ public static partial class Day20
     private static IEnumerable<Shortcut> FindShortcuts(Matrix<Tile> raceTrackMap, Tile startTile,
         int maxShortcutLen)
     {
+        // iterate over tiles on the track
         for (Tile? currentTile = startTile; currentTile is not null; currentTile = currentTile.NextOnTrack)
         {
             List<Pos> neighbourPositions = NeighboursOf(currentTile.Pos, withinDistance: maxShortcutLen);
@@ -121,6 +120,9 @@ public static partial class Day20
         }
     }
 
+    /// <summary>
+    /// Returns all positions within the given distance from the source
+    /// </summary>
     private static List<Pos> NeighboursOf(Pos source, int withinDistance)
     {
         List<Pos> neighbours = new List<Pos>(3 * withinDistance);
@@ -141,6 +143,7 @@ public static partial class Day20
         return neighbours;
     }
 
+    // taxicab distance
     private static int Distance(Pos pos1, Pos pos2)
     {
         return Math.Abs(pos2.X - pos1.X) + Math.Abs(pos2.Y - pos1.Y);
