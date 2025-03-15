@@ -33,7 +33,29 @@ public static partial class Day20
 
     public static string Part2(InputSelector inputSelector)
     {
-        throw new NotImplementedException();
+        int qualityThreshold = inputSelector switch
+        {
+            InputSelector.MyInput => 100,
+            InputSelector.Example1 => 50,
+            _ => throw new ArgumentOutOfRangeException(nameof(inputSelector), inputSelector, null)
+        };
+        string rawInput = Input.GetInput(inputSelector);
+        Matrix<Tile> raceTrackMap = Parsing
+            .ParseRaceTrackMap(rawInput)
+            .ForEach((pos, tile) => tile.Pos = pos);
+
+        Tile startTile = FindStartTile(raceTrackMap);
+        LinkTrackTiles(raceTrackMap, startTile);
+        ComputeDistancesOnTrack(startTile);
+
+
+        HashSet<Shortcut> shortcutsSet = new(
+            collection: FindShortcuts(raceTrackMap, startTile, 20),
+            comparer: new Shortcut.SameStartAndEndPositions());
+
+        return shortcutsSet
+            .Count(x => x.Saving >= qualityThreshold)
+            .ToString();
     }
 
     private static Tile FindStartTile(Matrix<Tile> raceTrackMap)
