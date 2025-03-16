@@ -6,8 +6,13 @@ public static partial class Day21
     {
         string[] doorCodes = Input.GetInput(inputSelector).Split(Environment.NewLine);
 
+        var triRemoteKeypad = new ComposedRemoteKeypad(
+            new RemoteNumericalKeypad(debugPrintKeys: false),
+            new RemoteDirectionalKeypad(debugPrintKeys: false),
+            new RemoteDirectionalKeypad(debugPrintKeys: false));
+
         return doorCodes
-            .Select(code => ComputeComplexity(code, TripleRemote(code)))
+            .Select(code => ComputeComplexity(code, triRemoteKeypad.KeysToRemotelyType(code)))
             .Sum()
             .ToString();
     }
@@ -15,20 +20,6 @@ public static partial class Day21
     public static string Part2(InputSelector inputSelector)
     {
         throw new NotImplementedException();
-    }
-
-    private static IEnumerable<char> TripleRemote(string code)
-    {
-        var numPad = new RemoteNumericalKeypad(debugPrintKeys: false);
-        var dirPad = new RemoteDirectionalKeypad(debugPrintKeys: false);
-
-        return new IRemoteKeypad[]
-            {
-                numPad, dirPad, dirPad
-            }
-            .Aggregate(
-                seed: code.AsEnumerable(),
-                func: (remotedCode, keyPad) => keyPad.KeysToRemotelyType(remotedCode));
     }
 
     private static int ComputeComplexity(string code, IEnumerable<char> remoteSequence)
