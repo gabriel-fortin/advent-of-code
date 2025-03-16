@@ -22,7 +22,7 @@ public static partial class Day21
         var numPad = new RemoteNumericalKeypad(debugPrintKeys: false);
         var dirPad = new RemoteDirectionalKeypad(debugPrintKeys: false);
 
-        return new RemoteKeypad[]
+        return new IRemoteKeypad[]
             {
                 numPad, dirPad, dirPad
             }

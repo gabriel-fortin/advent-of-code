@@ -22,6 +22,9 @@
       <Compile Update="day21\Day21.Input.cs">
         <DependentUpon>Day21.cs</DependentUpon>
       </Compile>
+      <Compile Update="day21\RemoteKeypad.cs">
+        <DependentUpon>IRemoteKeypad.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
