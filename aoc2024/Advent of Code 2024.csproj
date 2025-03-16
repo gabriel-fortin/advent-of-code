@@ -12,4 +12,16 @@
       <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="2.1.5" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="day21\RemoteDirectionalKeypad.cs">
+        <DependentUpon>RemoteKeypad.cs</DependentUpon>
+      </Compile>
+      <Compile Update="day21\RemoteNumericalKeypad.cs">
+        <DependentUpon>RemoteKeypad.cs</DependentUpon>
+      </Compile>
+      <Compile Update="day21\Day21.Input.cs">
+        <DependentUpon>Day21.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>
