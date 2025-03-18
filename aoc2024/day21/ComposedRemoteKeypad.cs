@@ -5,7 +5,7 @@ public class ComposedRemoteKeypad(IEnumerable<IRemoteKeypad> remoteKeypads) : IR
     public ComposedRemoteKeypad(params IRemoteKeypad[] remoteKeypads):this(remoteKeypads.AsEnumerable())
     {
     }
-    
+
     public IEnumerable<char> KeysToRemotelyType(IEnumerable<char> remoteKeys)
     {
         return remoteKeypads

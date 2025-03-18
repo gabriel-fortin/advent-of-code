@@ -7,9 +7,9 @@ public static partial class Day21
         string[] doorCodes = Input.GetInput(inputSelector).Split(Environment.NewLine);
 
         var triRemoteKeypad = new ComposedRemoteKeypad(
-            new RemoteNumericalKeypad(debugPrintKeys: false),
-            new RemoteDirectionalKeypad(debugPrintKeys: false),
-            new RemoteDirectionalKeypad(debugPrintKeys: false));
+            new RemoteNumericalKeypad(),
+            new RemoteDirectionalKeypad(),
+            new RemoteDirectionalKeypad());
 
         return doorCodes
             .Select(code => ComputeComplexity(code, triRemoteKeypad.KeysToRemotelyType(code)))

@@ -4,7 +4,7 @@ namespace Advent_of_Code_2024.day21;
 /// Helper to compute controller keypresses for a robot entering a key sequence
 /// on a remote keypad of the directional type
 /// </summary>
-public class RemoteDirectionalKeypad(bool debugPrintKeys = false) : RemoteKeypad(debugPrintKeys)
+public class RemoteDirectionalKeypad : RemoteKeypad
 {
     // The remote keypad looks as follows:
     //        +---+---+
