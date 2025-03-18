@@ -19,11 +19,21 @@ public static partial class Day21
 
     public static string Part2(InputSelector inputSelector)
     {
-        throw new NotImplementedException();
+        string[] doorCodes = Input.GetInput(inputSelector).Split(Environment.NewLine);
+
+        var multiRemoteKeypad = new ComposedRemoteKeypad(
+            Enumerable.Repeat<IRemoteKeypad>(new RemoteDirectionalKeypad(), 15)
+                .Prepend(new RemoteNumericalKeypad())
+        );
+
+        return doorCodes
+            .Select(code => ComputeComplexity(code, multiRemoteKeypad.KeysToRemotelyType(code)))
+            .Sum()
+            .ToString();
     }
 
-    private static int ComputeComplexity(string code, IEnumerable<char> remoteSequence)
+    private static long ComputeComplexity(string code, IEnumerable<char> remoteSequence)
     {
-        return remoteSequence.Count() * int.Parse(code.AsSpan(0, 3));
+        return remoteSequence.Count() * long.Parse(code.AsSpan(0, 3));
     }
 }
