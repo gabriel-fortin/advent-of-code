@@ -1,3 +1,6 @@
+using System.Collections.Concurrent;
+using System.Globalization;
+
 namespace Advent_of_Code_2024.day21;
 
 public static partial class Day21
@@ -14,7 +17,7 @@ public static partial class Day21
         return doorCodes
             .Select(code => ComputeComplexity(code, triRemoteKeypad.KeysToRemotelyType(code)))
             .Sum()
-            .ToString();
+            .ToString(CultureInfo.InvariantCulture);
     }
 
     public static string Part2(InputSelector inputSelector)
@@ -22,18 +25,25 @@ public static partial class Day21
         string[] doorCodes = Input.GetInput(inputSelector).Split(Environment.NewLine);
 
         var multiRemoteKeypad = new ComposedRemoteKeypad(
-            Enumerable.Repeat<IRemoteKeypad>(new RemoteDirectionalKeypad(), 15)
+            Enumerable.Repeat<IRemoteKeypad>(new RemoteDirectionalKeypad(), 25)
                 .Prepend(new RemoteNumericalKeypad())
         );
 
-        return doorCodes
-            .Select(code => ComputeComplexity(code, multiRemoteKeypad.KeysToRemotelyType(code)))
+        ConcurrentQueue<decimal> complexities = new ConcurrentQueue<decimal>();
+        await Parallel.ForEachAsync(doorCodes, (doorCode, _) =>
+        {
+            IEnumerable<char> remoteSequence = multiRemoteKeypad.KeysToRemotelyType(doorCode);
+            complexities.Enqueue(ComputeComplexity(doorCode, remoteSequence));
+            return ValueTask.CompletedTask;
+        });
+
+        return complexities
             .Sum()
-            .ToString();
+            .ToString(CultureInfo.InvariantCulture);
     }
 
-    private static long ComputeComplexity(string code, IEnumerable<char> remoteSequence)
+    private static decimal ComputeComplexity(string code, IEnumerable<char> remoteSequence)
     {
-        return remoteSequence.Count() * long.Parse(code.AsSpan(0, 3));
+        return remoteSequence.LongCount() * decimal.Parse(code.AsSpan(0, 3));
     }
 }
