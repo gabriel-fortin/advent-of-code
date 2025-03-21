@@ -16,8 +16,8 @@ public class RemoteNumericalKeypad : RemoteKeypad
     //    +---+---+---+
     //        | 0 | A |
     //        +---+---+
-    
-    protected override IEnumerable<char> MoveBetweenKeys(char start, char end)
+
+    public override IEnumerable<char> MoveBetweenKeys(char start, char end)
     {
         return start switch
         {

@@ -25,5 +25,10 @@ public abstract class RemoteKeypad : IRemoteKeypad
     /// <summary>
     /// Computes controller keys to press to move between two keys of the remote keypad
     /// </summary>
-    protected abstract IEnumerable<char> MoveBetweenKeys(char start, char end);
+    public abstract IEnumerable<char> MoveBetweenKeys(char start, char end);
+
+    public IEnumerable<RemoteKeypad> AsEnumerable()
+    {
+        return [this];
+    }
 }

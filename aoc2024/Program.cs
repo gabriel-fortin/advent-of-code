@@ -167,6 +167,6 @@ Console.WriteLine($"Day 21, part 1, example 1: {Day21.Part1(Example1)} (expected
 Console.WriteLine($"Day 21, part 1, my input: {Day21.Part1(MyInput)}");
 // Console.WriteLine($"Day 21, part 2, example 1: {Day21.Part2(Example1)}");
 var stopwatch = Stopwatch.StartNew();
-Console.WriteLine($"Day 21, part 2, my input: {await Day21.Part2(MyInput)}");
+Console.WriteLine($"Day 21, part 2, my input: {Day21.Part2(MyInput)}");
 Console.WriteLine($"   Elapsed {stopwatch.Elapsed.TotalSeconds}s");
 

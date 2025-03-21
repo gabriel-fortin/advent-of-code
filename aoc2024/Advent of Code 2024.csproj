@@ -25,6 +25,18 @@
       <Compile Update="day21\RemoteKeypad.cs">
         <DependentUpon>IRemoteKeypad.cs</DependentUpon>
       </Compile>
+      <Compile Update="day21\ComposedRemoteKeypad.cs">
+        <DependentUpon>IRemoteKeypad.cs</DependentUpon>
+      </Compile>
+      <Compile Update="day21\CachingCounter.cs">
+        <DependentUpon>IKeyPressCounter.cs</DependentUpon>
+      </Compile>
+      <Compile Update="day21\RemotingKeyPressCounter.cs">
+        <DependentUpon>IKeyPressCounter.cs</DependentUpon>
+      </Compile>
+      <Compile Update="day21\TerminalKeyPressCounter.cs">
+        <DependentUpon>IKeyPressCounter.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

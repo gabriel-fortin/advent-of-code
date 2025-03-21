@@ -9,13 +9,14 @@ public static partial class Day21
     {
         string[] doorCodes = Input.GetInput(inputSelector).Split(Environment.NewLine);
 
-        var triRemoteKeypad = new ComposedRemoteKeypad(
-            new RemoteNumericalKeypad(),
+        IKeyPressCounter pressCounter = CreatePressCounterFrom([
             new RemoteDirectionalKeypad(),
-            new RemoteDirectionalKeypad());
+            new RemoteDirectionalKeypad(),
+            new RemoteNumericalKeypad(),
+        ]);
 
         return doorCodes
-            .Select(code => ComputeComplexity(code, triRemoteKeypad.KeysToRemotelyType(code)))
+            .Select(code => ComputeComplexity(code, pressCounter.CountPresses(code)))
             .Sum()
             .ToString(CultureInfo.InvariantCulture);
     }
@@ -24,26 +25,50 @@ public static partial class Day21
     {
         string[] doorCodes = Input.GetInput(inputSelector).Split(Environment.NewLine);
 
-        var multiRemoteKeypad = new ComposedRemoteKeypad(
-            Enumerable.Repeat<IRemoteKeypad>(new RemoteDirectionalKeypad(), 25)
-                .Prepend(new RemoteNumericalKeypad())
-        );
-
-        ConcurrentQueue<decimal> complexities = new ConcurrentQueue<decimal>();
-        await Parallel.ForEachAsync(doorCodes, (doorCode, _) =>
-        {
-            IEnumerable<char> remoteSequence = multiRemoteKeypad.KeysToRemotelyType(doorCode);
-            complexities.Enqueue(ComputeComplexity(doorCode, remoteSequence));
-            return ValueTask.CompletedTask;
-        });
-
-        return complexities
+        IKeyPressCounter pressCounter = CreateCachingPressCounterFrom([
+            Enumerable.Repeat(new RemoteDirectionalKeypad(), 5),
+            Enumerable.Repeat(new RemoteDirectionalKeypad(), 5),
+            Enumerable.Repeat(new RemoteDirectionalKeypad(), 5),
+            Enumerable.Repeat(new RemoteDirectionalKeypad(), 5),
+            Enumerable.Repeat(new RemoteDirectionalKeypad(), 5),
+            new RemoteNumericalKeypad().AsEnumerable(),
+        ]);
+        
+        return doorCodes
+            .Select(code => ComputeComplexity(code, pressCounter.CountPresses(code)))
             .Sum()
             .ToString(CultureInfo.InvariantCulture);
     }
 
-    private static decimal ComputeComplexity(string code, IEnumerable<char> remoteSequence)
+    private static IKeyPressCounter CreatePressCounterFrom(IEnumerable<RemoteKeypad> remoteKeypads,
+        IKeyPressCounter? startingCounter = null)
     {
-        return remoteSequence.LongCount() * decimal.Parse(code.AsSpan(0, 3));
+        IKeyPressCounter result = startingCounter ?? new TerminalKeyPressCounter();
+        foreach (var keypad in remoteKeypads)
+        {
+            result = new RemotingKeyPressCounter(keypad, result);
+        }
+
+        return result;
     }
+
+    private static IKeyPressCounter CreateCachingPressCounterFrom(
+        IEnumerable<IEnumerable<RemoteKeypad>> remoteKeypadsCollection)
+    {
+        IKeyPressCounter result = new TerminalKeyPressCounter();
+        foreach (var keypads in remoteKeypadsCollection)
+        {
+            var resultWithCaching = new CachingCounter(result);
+            // var resultWithCaching = result;
+            result = CreatePressCounterFrom(keypads, startingCounter: resultWithCaching);
+        }
+
+        return result;
+    }
+
+    private static decimal ComputeComplexity(string code, decimal remoteSequenceLength)
+    {
+        return remoteSequenceLength * decimal.Parse(code.AsSpan(0, 3));
+    }
+
 }
