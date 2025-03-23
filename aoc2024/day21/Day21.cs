@@ -28,6 +28,7 @@ public static partial class Day21
     {
         string[] doorCodes = Input.GetInput(inputSelector).Split(Environment.NewLine);
 
+        // there will be a caching layer in between every 5 layers of keypads
         IKeyPressCounter pressCounter = CreateCachingPressCounterFrom([
             Enumerable.Repeat(new RemoteDirectionalKeypad(), 5),
             Enumerable.Repeat(new RemoteDirectionalKeypad(), 5),
@@ -61,9 +62,8 @@ public static partial class Day21
         IKeyPressCounter result = new TerminalKeyPressCounter();
         foreach (var keypads in remoteKeypadsCollection)
         {
-            var resultWithCaching = new CachingCounter(result);
-            // var resultWithCaching = result;
-            result = CreatePressCounterFrom(keypads, startingCounter: resultWithCaching);
+            // insert a caching layer between sets of IEnumerable<RemoteKeypad>
+            result = CreatePressCounterFrom(keypads, new CachingCounter(result));
         }
 
         return result;
