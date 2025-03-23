@@ -19,7 +19,7 @@ public class RemoteDirectionalKeypad : RemoteKeypad
         {
             ['A'] = "A",
             ['^'] = "<A",
-            ['<'] = "<<vA",
+            ['<'] = "v<<A",
             ['v'] = "<vA",
             ['>'] = "vA",
         },
