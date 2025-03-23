@@ -19,8 +19,8 @@ public class RemoteDirectionalKeypad : RemoteKeypad
         {
             ['A'] = "A",
             ['^'] = "<A",
-            ['<'] = "v<<A",
-            ['v'] = "v<A",
+            ['<'] = "<<vA",
+            ['v'] = "<vA",
             ['>'] = "vA",
         },
         ['^'] = new()
@@ -41,7 +41,7 @@ public class RemoteDirectionalKeypad : RemoteKeypad
         },
         ['v'] = new()
         {
-            ['A'] = ">^A",
+            ['A'] = "^>A",
             ['^'] = "^A",
             ['<'] = "<A",
             ['v'] = "A",
@@ -50,7 +50,7 @@ public class RemoteDirectionalKeypad : RemoteKeypad
         ['>'] = new()
         {
             ['A'] = "^A",
-            ['^'] = "^<A",
+            ['^'] = "<^A",
             ['<'] = "<<A",
             ['v'] = "<A",
             ['>'] = "A",

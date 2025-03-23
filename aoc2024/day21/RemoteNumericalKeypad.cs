@@ -63,7 +63,7 @@ public class RemoteNumericalKeypad : RemoteKeypad
         },
         ['2'] = new()
         {
-            ['A'] = ">vA",
+            ['A'] = "v>A",
             ['0'] = "vA",
             ['1'] = "<A",
             ['2'] = "A",
@@ -71,7 +71,7 @@ public class RemoteNumericalKeypad : RemoteKeypad
             ['4'] = "<^A",
             ['5'] = "^A",
             ['6'] = "^>A",
-            ['7'] = "^^<A",
+            ['7'] = "<^^A",
             ['8'] = "^^A",
             ['9'] = "^^>A",
         },
@@ -107,13 +107,13 @@ public class RemoteNumericalKeypad : RemoteKeypad
         {
             ['A'] = "vv>A",
             ['0'] = "vvA",
-            ['1'] = "v<A",
+            ['1'] = "<vA",
             ['2'] = "vA",
             ['3'] = "v>A",
             ['4'] = "<A",
             ['5'] = "A",
             ['6'] = ">A",
-            ['7'] = "^<A",
+            ['7'] = "<^A",
             ['8'] = "^A",
             ['9'] = "^>A",
         },
@@ -149,7 +149,7 @@ public class RemoteNumericalKeypad : RemoteKeypad
         {
             ['A'] = ">vvvA",
             ['0'] = "vvvA",
-            ['1'] = "vv<A",
+            ['1'] = "<vvA",
             ['2'] = "vvA",
             ['3'] = "vv>A",
             ['4'] = "v<A",
