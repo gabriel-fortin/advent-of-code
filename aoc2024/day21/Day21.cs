@@ -8,14 +8,18 @@ public static partial class Day21
     {
         string[] doorCodes = Input.GetInput(inputSelector).Split(Environment.NewLine);
 
-        IKeyPressCounter pressCounter = CreatePressCounterFrom([
-            new RemoteDirectionalKeypad(),
-            new RemoteDirectionalKeypad(),
-            new RemoteNumericalKeypad(),
-        ]);
+        var numKeypad = new RemoteNumericalKeypad();
+        var dirKeypad = new RemoteDirectionalKeypad();
 
-        return doorCodes
-            .Select(code => ComputeComplexity(code, pressCounter.CountPresses(code)))
+        IEnumerable<string> remoteDoorSequences = doorCodes
+            .Select(seq => numKeypad.KeysToRemotelyType(seq))
+            .Select(seq => dirKeypad.KeysToRemotelyType(seq))
+            .Select(seq => dirKeypad.KeysToRemotelyType(seq))
+            .Select(x => new string(x.ToArray()));
+
+        return remoteDoorSequences
+            .Zip(doorCodes, (sequence, code) => (sequence, code))
+            .Select(x => ComputeComplexity(x.code, x.sequence.Length))
             .Sum()
             .ToString(CultureInfo.InvariantCulture);
     }
