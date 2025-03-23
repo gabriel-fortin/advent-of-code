@@ -17,176 +17,166 @@ public class RemoteNumericalKeypad : RemoteKeypad
     //        | 0 | A |
     //        +---+---+
 
+    private readonly Dictionary<char, Dictionary<char, string>> _moves = new()
+    {
+        ['A'] = new()
+        {
+            ['A'] = "A",
+            ['0'] = "<A",
+            ['1'] = "^<<A",
+            ['2'] = "^<A",
+            ['3'] = "^A",
+            ['4'] = "^^<<A",
+            ['5'] = "^^<A",
+            ['6'] = "^^A",
+            ['7'] = "^^^<<A",
+            ['8'] = "^^^<A",
+            ['9'] = "^^^A",
+        },
+        ['0'] = new()
+        {
+            ['A'] = ">A",
+            ['0'] = "A",
+            ['1'] = "^<A",
+            ['2'] = "^A",
+            ['3'] = "^>A",
+            ['4'] = "^^<A",
+            ['5'] = "^^A",
+            ['6'] = "^^>A",
+            ['7'] = "^^^<A",
+            ['8'] = "^^^A",
+            ['9'] = "^^^>A",
+        },
+        ['1'] = new()
+        {
+            ['A'] = ">>vA",
+            ['0'] = ">vA",
+            ['1'] = "A",
+            ['2'] = ">A",
+            ['3'] = ">>A",
+            ['4'] = "^A",
+            ['5'] = "^>A",
+            ['6'] = "^>>A",
+            ['7'] = "^^A",
+            ['8'] = "^^>A",
+            ['9'] = "^^>>A",
+        },
+        ['2'] = new()
+        {
+            ['A'] = ">vA",
+            ['0'] = "vA",
+            ['1'] = "<A",
+            ['2'] = "A",
+            ['3'] = ">A",
+            ['4'] = "<^A",
+            ['5'] = "^A",
+            ['6'] = "^>A",
+            ['7'] = "^^<A",
+            ['8'] = "^^A",
+            ['9'] = "^^>A",
+        },
+        ['3'] = new()
+        {
+            ['A'] = "vA",
+            ['0'] = "<vA",
+            ['1'] = "<<A",
+            ['2'] = "<A",
+            ['3'] = "A",
+            ['4'] = "<<^A",
+            ['5'] = "<^A",
+            ['6'] = "^A",
+            ['7'] = "<<^^A",
+            ['8'] = "<^^A",
+            ['9'] = "^^A",
+        },
+        ['4'] = new()
+        {
+            ['A'] = ">>vvA",
+            ['0'] = ">vvA",
+            ['1'] = "vA",
+            ['2'] = "v>A",
+            ['3'] = "v>>A",
+            ['4'] = "A",
+            ['5'] = ">A",
+            ['6'] = ">>A",
+            ['7'] = "^A",
+            ['8'] = "^>A",
+            ['9'] = "^>>A",
+        },
+        ['5'] = new()
+        {
+            ['A'] = "vv>A",
+            ['0'] = "vvA",
+            ['1'] = "v<A",
+            ['2'] = "vA",
+            ['3'] = "v>A",
+            ['4'] = "<A",
+            ['5'] = "A",
+            ['6'] = ">A",
+            ['7'] = "^<A",
+            ['8'] = "^A",
+            ['9'] = "^>A",
+        },
+        ['6'] = new()
+        {
+            ['A'] = "vvA",
+            ['0'] = "<vvA",
+            ['1'] = "<<vA",
+            ['2'] = "<vA",
+            ['3'] = "vA",
+            ['4'] = "<<A",
+            ['5'] = "<A",
+            ['6'] = "A",
+            ['7'] = "<<^A",
+            ['8'] = "<^A",
+            ['9'] = "^A",
+        },
+        ['7'] = new()
+        {
+            ['A'] = ">>vvvA",
+            ['0'] = ">vvvA",
+            ['1'] = "vvA",
+            ['2'] = "vv>A",
+            ['3'] = "vv>>A",
+            ['4'] = "vA",
+            ['5'] = "v>A",
+            ['6'] = "v>>A",
+            ['7'] = "A",
+            ['8'] = ">A",
+            ['9'] = ">>A",
+        },
+        ['8'] = new()
+        {
+            ['A'] = ">vvvA",
+            ['0'] = "vvvA",
+            ['1'] = "vv<A",
+            ['2'] = "vvA",
+            ['3'] = "vv>A",
+            ['4'] = "v<A",
+            ['5'] = "vA",
+            ['6'] = "v>A",
+            ['7'] = "<A",
+            ['8'] = "A",
+            ['9'] = ">A",
+        },
+        ['9'] = new()
+        {
+            ['A'] = "vvvA",
+            ['0'] = "<vvvA",
+            ['1'] = "<<vvA",
+            ['2'] = "<vvA",
+            ['3'] = "vvA",
+            ['4'] = "<<vA",
+            ['5'] = "<vA",
+            ['6'] = "vA",
+            ['7'] = "<<A",
+            ['8'] = "<A",
+            ['9'] = "A",
+        },
+    };
+
     public override IEnumerable<char> MoveBetweenKeys(char start, char end)
     {
-        return start switch
-        {
-            'A' => end switch
-            {
-                'A' => "A",
-                '0' => "<A",
-                '1' => "^<<A",
-                '2' => "^<A",
-                '3' => "^A",
-                '4' => "^^<<A",
-                '5' => "^^<A",
-                '6' => "^^A",
-                '7' => "^^^<<A",
-                '8' => "^^^<A",
-                '9' => "^^^A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '0' => end switch
-            {
-                'A' => ">A",
-                '0' => "A",
-                '1' => "^<A",
-                '2' => "^A",
-                '3' => "^>A",
-                '4' => "^^<A",
-                '5' => "^^A",
-                '6' => "^^>A",
-                '7' => "^^^<A",
-                '8' => "^^^A",
-                '9' => "^^^>A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '1' => end switch
-            {
-                'A' => ">>vA",
-                '0' => ">vA",
-                '1' => "A",
-                '2' => ">A",
-                '3' => ">>A",
-                '4' => "^A",
-                '5' => "^>A",
-                '6' => "^>>A",
-                '7' => "^^A",
-                '8' => "^^>A",
-                '9' => "^^>>A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '2' => end switch
-            {
-                'A' => ">vA",
-                '0' => "vA",
-                '1' => "<A",
-                '2' => "A",
-                '3' => ">A",
-                '4' => "<^A",
-                '5' => "^A",
-                '6' => "^>A",
-                '7' => "^^<A",
-                '8' => "^^A",
-                '9' => "^^>A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '3' => end switch
-            {
-                'A' => "vA",
-                '0' => "<vA",
-                '1' => "<<A",
-                '2' => "<A",
-                '3' => "A",
-                '4' => "<<^A",
-                '5' => "<^A",
-                '6' => "^A",
-                '7' => "<<^^A",
-                '8' => "<^^A",
-                '9' => "^^A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '4' => end switch
-            {
-                'A' => ">>vvA",
-                '0' => ">vvA",
-                '1' => "vA",
-                '2' => "v>A",
-                '3' => "v>>A",
-                '4' => "A",
-                '5' => ">A",
-                '6' => ">>A",
-                '7' => "^A",
-                '8' => "^>A",
-                '9' => "^>>A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '5' => end switch
-            {
-                'A' => "vv>A",
-                '0' => "vvA",
-                '1' => "v<A",
-                '2' => "vA",
-                '3' => "v>A",
-                '4' => "<A",
-                '5' => "A",
-                '6' => ">A",
-                '7' => "^<A",
-                '8' => "^A",
-                '9' => "^>A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '6' => end switch
-            {
-                'A' => "vvA",
-                '0' => "<vvA",
-                '1' => "<<vA",
-                '2' => "<vA",
-                '3' => "vA",
-                '4' => "<<A",
-                '5' => "<A",
-                '6' => "A",
-                '7' => "<<^A",
-                '8' => "<^A",
-                '9' => "^A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '7' => end switch
-            {
-                'A' => ">>vvvA",
-                '0' => ">vvvA",
-                '1' => "vvA",
-                '2' => "vv>A",
-                '3' => "vv>>A",
-                '4' => "vA",
-                '5' => "v>A",
-                '6' => "v>>A",
-                '7' => "A",
-                '8' => ">A",
-                '9' => ">>A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '8' => end switch
-            {
-                'A' => ">vvvA",
-                '0' => "vvvA",
-                '1' => "vv<A",
-                '2' => "vvA",
-                '3' => "vv>A",
-                '4' => "v<A",
-                '5' => "vA",
-                '6' => "v>A",
-                '7' => "<A",
-                '8' => "A",
-                '9' => ">A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '9' => end switch
-            {
-                'A' => "vvvA",
-                '0' => "<vvvA",
-                '1' => "<<vvA",
-                '2' => "<vvA",
-                '3' => "vvA",
-                '4' => "<<vA",
-                '5' => "<vA",
-                '6' => "vA",
-                '7' => "<<A",
-                '8' => "<A",
-                '9' => "A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            _ => throw new ArgumentOutOfRangeException(nameof(start), start, null)
-        };
+        return _moves[start][end];
     }
 }

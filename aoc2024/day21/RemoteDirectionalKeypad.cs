@@ -13,56 +13,52 @@ public class RemoteDirectionalKeypad : RemoteKeypad
     //    | < | v | > |
     //    +---+---+---+
 
+    private readonly Dictionary<char, Dictionary<char, string>> _moves = new()
+    {
+        ['A'] = new()
+        {
+            ['A'] = "A",
+            ['^'] = "<A",
+            ['<'] = "v<<A",
+            ['v'] = "v<A",
+            ['>'] = "vA",
+        },
+        ['^'] = new()
+        {
+            ['A'] = ">A",
+            ['^'] = "A",
+            ['<'] = "v<A",
+            ['v'] = "vA",
+            ['>'] = "v>A",
+        },
+        ['<'] = new()
+        {
+            ['A'] = ">>^A",
+            ['^'] = ">^A",
+            ['<'] = "A",
+            ['v'] = ">A",
+            ['>'] = ">>A",
+        },
+        ['v'] = new()
+        {
+            ['A'] = ">^A",
+            ['^'] = "^A",
+            ['<'] = "<A",
+            ['v'] = "A",
+            ['>'] = ">A",
+        },
+        ['>'] = new()
+        {
+            ['A'] = "^A",
+            ['^'] = "^<A",
+            ['<'] = "<<A",
+            ['v'] = "<A",
+            ['>'] = "A",
+        },
+    };
+
     public override IEnumerable<char> MoveBetweenKeys(char start, char end)
     {
-        return start switch
-        {
-            'A' => end switch
-            {
-                'A' => "A",
-                '^' => "<A",
-                '<' => "v<<A",
-                'v' => "v<A",
-                '>' => "vA",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '^' => end switch
-            {
-                'A' => ">A",
-                '^' => "A",
-                '<' => "v<A",
-                'v' => "vA",
-                '>' => "v>A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '<' => end switch
-            {
-                'A' => ">>^A",
-                '^' => ">^A",
-                '<' => "A",
-                'v' => ">A",
-                '>' => ">>A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            'v' => end switch
-            {
-                'A' => ">^A",
-                '^' => "^A",
-                '<' => "<A",
-                'v' => "A",
-                '>' => ">A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            '>' => end switch
-            {
-                'A' => "^A",
-                '^' => "^<A",
-                '<' => "<<A",
-                'v' => "<A",
-                '>' => "A",
-                _ => throw new ArgumentOutOfRangeException(nameof(end), end, null)
-            },
-            _ => throw new ArgumentOutOfRangeException(nameof(start), start, null)
-        };
+        return _moves[start][end];
     }
 }
