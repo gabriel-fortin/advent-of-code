@@ -14,7 +14,6 @@ public class CachingCounter(IKeyPressCounter nextLayer) : IKeyPressCounter
             {
                 count = nextLayer.CountPresses([currentKey], startingKey: previousKey);
                 _cache.Add((previousKey, currentKey), count);
-                Console.WriteLine($"cache {_cache.Count()}");
             }
 
             result += count;

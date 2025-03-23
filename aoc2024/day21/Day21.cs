@@ -1,4 +1,3 @@
-using System.Collections.Concurrent;
 using System.Globalization;
 
 namespace Advent_of_Code_2024.day21;
@@ -33,7 +32,7 @@ public static partial class Day21
             Enumerable.Repeat(new RemoteDirectionalKeypad(), 5),
             new RemoteNumericalKeypad().AsEnumerable(),
         ]);
-        
+
         return doorCodes
             .Select(code => ComputeComplexity(code, pressCounter.CountPresses(code)))
             .Sum()
@@ -70,5 +69,4 @@ public static partial class Day21
     {
         return remoteSequenceLength * decimal.Parse(code.AsSpan(0, 3));
     }
-
 }
