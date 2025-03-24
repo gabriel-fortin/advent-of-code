@@ -31,6 +31,9 @@
       <Compile Update="day21\TerminalKeyPressCounter.cs">
         <DependentUpon>IKeyPressCounter.cs</DependentUpon>
       </Compile>
+      <Compile Update="day22\Day22.Input.cs">
+        <DependentUpon>Day22.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

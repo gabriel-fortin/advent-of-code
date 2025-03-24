@@ -4,7 +4,15 @@ public static partial class Day22
 {
     public static string Part1(InputSelector inputSelector)
     {
-        throw new NotImplementedException();
+        IEnumerable<long> initialSecretsOfBuyers = Input.GetInput(inputSelector)
+            .Split(Environment.NewLine)
+            .Select(long.Parse);
+
+        return initialSecretsOfBuyers
+            .Select(initialSecret => new PseudoRandomGenerator(initialSecret))
+            .Select(generator => generator.GenerateNextValue(repetitions: 2000))
+            .Sum()
+            .ToString();
     }
 
     public static string Part2(InputSelector inputSelector)
