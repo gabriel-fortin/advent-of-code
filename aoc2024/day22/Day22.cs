@@ -9,8 +9,8 @@ public static partial class Day22
             .Select(long.Parse);
 
         return initialSecretsOfBuyers
-            .Select(initialSecret => new PseudoRandomGenerator(initialSecret))
-            .Select(generator => generator.GenerateNextValue(repetitions: 2000))
+            .Select(PseudoRandomGenerator.Create)
+            .Select(Compute2000thValue)
             .Sum()
             .ToString();
     }
@@ -18,5 +18,15 @@ public static partial class Day22
     public static string Part2(InputSelector inputSelector)
     {
         throw new NotImplementedException();
+    }
+
+    private static long Compute2000thValue(PseudoRandomGenerator generator)
+    {
+        for (int i = 0; i < 2000; i++)
+        {
+            generator.GenerateNextValue();
+        }
+
+        return generator.CurrentValue;
     }
 }

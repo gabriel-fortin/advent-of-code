@@ -4,22 +4,14 @@ public class PseudoRandomGenerator(long seed)
 {
     private long _currentValue = seed;
 
-    public long GenerateNextValue(long repetitions)
-    {
-        for (long i = 0; i < repetitions - 1; i++)
-        {
-            GenerateNextValue();
-        }
-
-        return GenerateNextValue();
-    }
+    public long CurrentValue => _currentValue;
 
     public long GenerateNextValue()
     {
         return _currentValue = Mul2048MixPrune(Div32MixPrune(Mul64MixPrune(_currentValue)));
-        
-        // we could see the operation order more clearly if we used Aggregate
-        return _currentValue = new[]
+
+        // we could see the operation order more clearly if we used '.Aggregate'
+        _currentValue = new[]
             {
                 Mul64MixPrune,
                 Div32MixPrune,
@@ -51,4 +43,6 @@ public class PseudoRandomGenerator(long seed)
         // mix & prune
         return (number ^ x) % 16777216;
     }
+    
+    public static PseudoRandomGenerator Create(long seed) => new(seed);
 }
