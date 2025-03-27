@@ -34,6 +34,9 @@
       <Compile Update="day22\Day22.Input.cs">
         <DependentUpon>Day22.cs</DependentUpon>
       </Compile>
+      <Compile Update="day23\Day23.Input.cs">
+        <DependentUpon>Day23.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
