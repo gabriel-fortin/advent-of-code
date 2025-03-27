@@ -28,39 +28,13 @@ public static partial class Day22
             .Select(PseudoRandomGenerator.Create)
             .ToArray();
 
-        Dictionary<EncodedPriceChangeSequence, int> sumsPerSequence = new();
-
+        Dictionary<EncodedPriceChangeSequence, int> summedRewardsPerSequence = new();
         foreach (PseudoRandomGenerator buyer in buyers)
         {
-            int[] prices = new int[2001];
-            int[] priceChanges = new int[2000];
-            HashSet<EncodedPriceChangeSequence> usedSequences = new();
-
-            prices[0] = (int)(buyer.CurrentValue % 10);
-            for (int i = 0; i < 2000; i++)
-            {
-                prices[i + 1] = (int)(buyer.GenerateNextValue() % 10);
-                priceChanges[i] = prices[i + 1] - prices[i];
-
-                // we need at least four price changes
-                if (i < 4) continue;
-
-                EncodedPriceChangeSequence sequence = EncodeSequence(
-                    priceChanges[i - 3],
-                    priceChanges[i - 2],
-                    priceChanges[i - 1],
-                    priceChanges[i]);
-
-                // if this sequence appeared before, it can't be used again
-                if (usedSequences.Contains(sequence)) continue;
-
-                usedSequences.Add(sequence);
-                int currentSum = sumsPerSequence.GetValueOrDefault(sequence);
-                sumsPerSequence[sequence] = currentSum + prices[i + 1];
-            }
+            AccumulateAllPossibleRewards(buyer, summedRewardsPerSequence);
         }
 
-        return sumsPerSequence
+        return summedRewardsPerSequence
             .Max(x => x.Value)
             .ToString();
     }
@@ -73,6 +47,38 @@ public static partial class Day22
         }
 
         return generator.CurrentValue;
+    }
+
+    private static void AccumulateAllPossibleRewards(PseudoRandomGenerator buyer,
+        Dictionary<EncodedPriceChangeSequence, int> summedRewardsPerSequence)
+    {
+        int[] prices = new int[2001];
+        int[] priceChanges = new int[2000];
+        // only the first occurence of a sequence can be used so we keep track of them
+        HashSet<EncodedPriceChangeSequence> usedSequences = new();
+
+        prices[0] = (int)(buyer.CurrentValue % 10);
+        for (int i = 0; i < 2000; i++)
+        {
+            prices[i + 1] = (int)(buyer.GenerateNextValue() % 10);
+            priceChanges[i] = prices[i + 1] - prices[i];
+
+            // we need at least four price changes
+            if (i < 4) continue;
+
+            EncodedPriceChangeSequence sequence = EncodeSequence(
+                priceChanges[i - 3],
+                priceChanges[i - 2],
+                priceChanges[i - 1],
+                priceChanges[i]);
+
+            // if this sequence appeared before, it can't be used again
+            if (usedSequences.Contains(sequence)) continue;
+            usedSequences.Add(sequence);
+
+            int currentSum = summedRewardsPerSequence.GetValueOrDefault(sequence);
+            summedRewardsPerSequence[sequence] = currentSum + prices[i + 1];
+        }
     }
 
     private static EncodedPriceChangeSequence EncodeSequence(int c1, int c2, int c3, int c4)
