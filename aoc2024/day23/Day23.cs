@@ -1,3 +1,5 @@
+using System.Collections.Immutable;
+
 namespace Advent_of_Code_2024.day23;
 
 public static partial class Day23
@@ -19,7 +21,15 @@ public static partial class Day23
 
     public static string Part2(InputSelector inputSelector)
     {
-        throw new NotImplementedException();
+        IEnumerable<(string, string)> connections = Input.GetInput(inputSelector)
+            .Split(Environment.NewLine)
+            .Select(s => (name1: s[..2], name2: s[3..]));
+
+        List<Computer> network = ParseNetwork(connections);
+
+        Computer[] largestClique = FindLargestClique(network);
+        IEnumerable<string> computersInLanParty = largestClique.Select(x => x.Name);
+        return string.Join(',', computersInLanParty);
     }
 
     private static Func<Computer[], bool> SomeNameStartsWith(char letter)
@@ -46,6 +56,11 @@ public static partial class Day23
             computer1.AddConnection(computer2);
             computer2.AddConnection(computer1);
         }
+        
+        foreach (Computer computer in network.Values)
+        {
+            computer.SortConnections();
+        }
 
         return network.Values.OrderBy(x => x.Name).ToList();
     }
@@ -68,6 +83,60 @@ public static partial class Day23
                     yield return clique.ToArray();
                 }
             }
+        }
+    }
+
+    private static Computer[] FindLargestClique(ICollection<Computer> network)
+    {
+        Computer[] largestClique = [];
+        FindCliques(
+            startingClique: ImmutableList<Computer>.Empty,
+            availableNodes: network.ToArray(),
+            onCliqueFound: KeepLargerClique);
+        return largestClique;
+
+        void KeepLargerClique(ImmutableList<Computer> clique)
+        {
+            if (clique.Count > largestClique.Length)
+            {
+                largestClique = clique.ToArray();
+            }
+        }
+
+        void FindCliques(ImmutableList<Computer> startingClique, Span<Computer> availableNodes,
+            Action<ImmutableList<Computer>> onCliqueFound)
+        {
+            onCliqueFound(startingClique);
+            
+            if (availableNodes.Length == 0) return;
+
+            for (int i = 0; i < availableNodes.Length; i++)
+            {
+                Computer c = availableNodes[i];
+                if (IsElementPartOfClique(c, startingClique))
+                {
+                    FindCliques(startingClique.Add(c), availableNodes.Slice(i + 1), onCliqueFound);
+                }
+            }
+        }
+
+        bool IsElementPartOfClique(Computer element, IList<Computer> clique)
+        {
+            for (int i = 0, j = 0; i < clique.Count; i++)
+            {
+                Computer c = clique[i];
+                while (j < element.Connections.Count && element.Connections[j].CompareTo(c) < 0)
+                {
+                    j++;
+                }
+
+                if (j >= element.Connections.Count || element.Connections[j].Name != c.Name)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

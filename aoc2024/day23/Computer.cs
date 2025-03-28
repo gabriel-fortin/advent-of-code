@@ -12,6 +12,11 @@ public class Computer(string name) : IComparer<Computer>, IComparable<Computer>
     {
         _connections.Add(computer);
     }
+    
+    public void SortConnections()
+    {
+        _connections.Sort();
+    }
 
     public int Compare(Computer? x, Computer? y)
     {

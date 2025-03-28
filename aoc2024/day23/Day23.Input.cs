@@ -11,8 +11,6 @@ public static partial class Day23
             return inputSelector switch
             {
                 InputSelector.Example1 => GetExample1Input(),
-                InputSelector.Example2 => GetExample2Input(),
-                InputSelector.Example3 => GetExample3Input(),
                 InputSelector.MyInput => GetMyPuzzleInput(),
                 _ => throw new ArgumentOutOfRangeException(nameof(inputSelector), inputSelector, null)
             };
@@ -52,16 +50,6 @@ public static partial class Day23
             wh-qp
             tb-vc
             td-yn
-            """;
-
-        private static InputSet GetExample2Input() =>
-            """
-            x
-            """;
-
-        private static InputSet GetExample3Input() =>
-            """
-            x
             """;
 
         private static InputSet GetMyPuzzleInput() =>

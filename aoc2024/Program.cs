@@ -176,7 +176,7 @@ Console.WriteLine($"Day 22, part 2, example 2: {Day22.Part2(Example2)} (expected
 Console.WriteLine($"Day 22, part 2, my input: {Day22.Part2(MyInput)}");
 
 Console.WriteLine("== Day 23 ==");
-Console.WriteLine($"Day 23, part 1, example 1: {Day23.Part1(Example1)} (expected ?)");
+Console.WriteLine($"Day 23, part 1, example 1: {Day23.Part1(Example1)} (expected 7)");
 Console.WriteLine($"Day 23, part 1, my input: {Day23.Part1(MyInput)}");
-Console.WriteLine($"Day 23, part 2, example 2: {Day23.Part2(Example2)} (expected ?)");
+Console.WriteLine($"Day 23, part 2, example 1: {Day23.Part2(Example1)} (expected co,de,ka,ta)");
 Console.WriteLine($"Day 23, part 2, my input: {Day23.Part2(MyInput)}");
