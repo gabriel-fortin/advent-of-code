@@ -50,24 +50,22 @@ public static partial class Day23
         return network.Values.OrderBy(x => x.Name).ToList();
     }
 
-    private static IEnumerable<Computer[]> FindCliquesOfSize3(List<Computer> lanParty)
+    private static IEnumerable<Computer[]> FindCliquesOfSize3(List<Computer> network)
     {
-        return InternalFindCliques().SelectMany(x => x);
-
-        IEnumerable<IEnumerable<Computer[]>> InternalFindCliques()
+        foreach (Computer c1 in network)
         {
-            foreach (Computer c1 in lanParty)
+            foreach (Computer c2 in c1.Connections)
             {
-                foreach (Computer c2 in c1.Connections)
-                {
-                    yield return c1.Connections
+                IEnumerable<List<Computer>> cliquesOfSize3 =
+                    c1.Connections
                         .Intersect(c2.Connections)
-                        .Select(c3 =>
-                        {
-                            List<Computer> result = [c1, c2, c3];
-                            result.Sort();
-                            return result.ToArray();
-                        });
+                        .Select(c3 => (List<Computer>) [c1, c2, c3]);
+
+                foreach (var clique in cliquesOfSize3)
+                {
+                    // canonical order: computers are sorted by name
+                    clique.Sort();
+                    yield return clique.ToArray();
                 }
             }
         }
