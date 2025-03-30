@@ -41,6 +41,15 @@
       <Compile Update="day24\Day24.Input.cs">
         <DependentUpon>Day24.cs</DependentUpon>
       </Compile>
+      <Compile Update="day24\circuit\Circuit.AbstractCircuitElement.cs">
+        <DependentUpon>Circuit.cs</DependentUpon>
+      </Compile>
+      <Compile Update="day24\circuit\Circuit.Gate.cs">
+        <DependentUpon>Circuit.cs</DependentUpon>
+      </Compile>
+      <Compile Update="day24\circuit\Circuit.Wire.cs">
+        <DependentUpon>Circuit.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
