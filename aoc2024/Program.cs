@@ -190,3 +190,5 @@ Console.WriteLine($"Day 24, part 1, my input: {Day24.Part1(MyInput)}");
 Day24.Part2(MyInput);
 
 Console.WriteLine("== Day 25 ==");
+Console.WriteLine($"Day 25, part 1, example 1: {Day25.Part1(Example1)} (expected 3)");
+Console.WriteLine($"Day 25, part 1, my input: {Day25.Part1(MyInput)}");
