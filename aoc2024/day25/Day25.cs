@@ -25,11 +25,6 @@ public static partial class Day25
         return result.ToString();
     }
 
-    public static string Part2(InputSelector inputSelector)
-    {
-        throw new NotImplementedException();
-    }
-
     private static bool IsKeyChunk(string inputChunk) => inputChunk[0] == '.';
 
     private static bool IsLockChunk(string inputChunk) => inputChunk[0] == '#';
