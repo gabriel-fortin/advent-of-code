@@ -81,11 +81,13 @@ Console.WriteLine("Day 09, part 1, actual: " + Day09.Part1(useExampleData: false
 Console.WriteLine("Day 09, part 2, example: " + Day09.Part2(useExampleData: true));
 Console.WriteLine("Day 09, part 2, actual: " + Day09.Part2(useExampleData: false));
 
+/*
 Console.WriteLine("== Day 07 again ==");
 Console.WriteLine("Day 07 again, part 1, example: " + Day07Again.Part1(useExampleData: true));
 Console.WriteLine("Day 07 again, part 1, actual: " + Day07Again.Part1(useExampleData: false));
 Console.WriteLine("Day 07 again, part 2, example: " + Day07Again.Part2(useExampleData: true));
 Console.WriteLine("Day 07 again, part 2, actual: " + Day07Again.Part2(useExampleData: false));
+*/
 
 Console.WriteLine("== Day 10 ==");
 Console.WriteLine("Day 10, part 1, example: " + Day10.Part1(useExampleData: true));
