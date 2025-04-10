@@ -186,5 +186,4 @@ Console.WriteLine("== Day 24 ==");
 Console.WriteLine($"Day 24, part 1, example 1: {Day24.Part1(Example1)} (expected 4)");
 Console.WriteLine($"Day 24, part 1, example 2: {Day24.Part1(Example2)} (expected 2024)");
 Console.WriteLine($"Day 24, part 1, my input: {Day24.Part1(MyInput)}");
-Console.WriteLine($"Day 24, part 2, example 1: {Day24.Part2(Example1)} (expected ?)");
-Console.WriteLine($"Day 24, part 2, my input: {Day24.Part2(MyInput)}");
+Day24.Part2(MyInput);
